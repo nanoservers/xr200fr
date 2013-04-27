@@ -1,0 +1,56 @@
+/* Reset Style for Mobile */
+
+body {
+	min-width: 0;
+}
+
+.container_12 {
+	margin: 0 10px;
+	width: auto;
+}
+
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12,
+.grid_13,
+.grid_14,
+.grid_15,
+.grid_16 {
+	display: inline;
+	float: none;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.container_12 .grid_1,
+.container_12 .grid_2,
+.container_12 .grid_3,
+.container_12 .grid_4,
+.container_12 .grid_5,
+.container_12 .grid_6,
+.container_12 .grid_7,
+.container_12 .grid_8,
+.container_12 .grid_9,
+.container_12 .grid_10,
+.container_12 .grid_11,
+.container_12 .grid_12,
+ {
+	width: auto;
+}
+
+.center-top-left,
+.center-top-right,
+.center-bottom-left,
+.center-bottom-right {
+	width: auto;
+	float: none;
+}

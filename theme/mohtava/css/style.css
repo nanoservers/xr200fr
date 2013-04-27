@@ -1,0 +1,24 @@
+/* Import */
+
+@import url(reset.css);
+@import url(960.css);
+@import url(content.css);
+@import url(block.css);
+@import url(sidemenu.css);
+@import url(table.css);
+@import url(form.css);
+@import url(header.css);
+@import url(footer.css);
+@import url(class.css);
+
+/* Global Style */
+
+body {
+	color: #666;
+	font-size: 13px;
+	font-family: Arial, Verdana, sans-serif;
+	line-height: 1.6;
+}
+
+.xo-cotent {
+}

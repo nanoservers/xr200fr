@@ -1,0 +1,84 @@
+table {
+	width:100%; 
+	margin: .5em 0 1em 0; 
+	border-collapse: collapse;
+}
+
+caption {
+
+}
+
+th {
+	font-weight: bold;
+	text-align: center;
+	vertical-align : middle;
+	background: #e7eef7;
+	padding: 5px;
+}
+
+th.head a:hover {
+
+}
+
+.foot, tfoot {
+
+}
+
+tbody {
+
+}
+
+table.outer {
+	border-collapse: separate;
+}
+
+tr {
+	border: 1px solid #eee;
+}
+
+td {
+	padding: 5px;
+}
+
+.outer {	
+	padding: 5px;
+}
+
+.head {
+	font-weight: bold;
+	vertical-align: top;
+}
+
+tr.even {
+	padding: 5px;
+	border-left: 1px solid #eee;
+}
+
+tr.head {
+	border-left: 1px solid #eee;
+}
+
+tr.head td {
+	border-top: 1px solid #eee;
+	border-right: 1px solid #eee;
+}
+
+tr.odd {
+	padding: 5px;
+	border-left: 1px solid #eee;
+	background: #e7eef7;
+}
+tr.even td {
+	border-right: 1px solid #eee;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+tr.odd td {
+	border-right: 1px solid #eee;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+tr td.head {
+	background: #f8f8f8;
+} 

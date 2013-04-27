@@ -1,0 +1,79 @@
+<div id="mo-content">
+	<!-- Content -->
+	<div class="container_12">
+		<{if $xoBlocks.canvas_left}>
+		<!-- Left Blocks -->
+		<div class="grid_3">
+		<div class="left-block">
+			<{foreach item=block from=$xoBlocks.canvas_left}>
+				<{includeq file="$theme_name/block.html"}>
+			<{/foreach}>
+		</div>
+		</div>
+		<{/if}>
+		<!-- Center Blocks -->
+		<{if $xoBlocks.canvas_left and $xoBlocks.canvas_right}>
+		<div class="grid_6">
+		<{else}><{if $xoBlocks.canvas_left or $xoBlocks.canvas_right}>
+		<div class="grid_9">
+		<{else}>
+		<div class="grid_12">
+		<{/if}><{/if}>
+			<{if $xoBlocks.page_topleft or $xoBlocks.page_topcenter or $xoBlocks.page_topright}>
+				<!-- Center Top Center -->
+				<div class="center-top-center">
+				<{foreach item=block from=$xoBlocks.page_topcenter}>
+					<{includeq file="$theme_name/block.html"}>
+				<{/foreach}>
+				</div>
+				<!-- Center Top Left -->
+				<div class="center-top-left">
+				<{foreach item=block from=$xoBlocks.page_topleft}>
+					<{includeq file="$theme_name/block.html"}>
+				<{/foreach}>
+				</div>
+				<!-- Center Top Right -->
+				<div class="center-top-right">
+				<{foreach item=block from=$xoBlocks.page_topright}>
+					<{includeq file="$theme_name/block.html"}>
+				<{/foreach}>
+				</div>
+			<{/if}>
+			<!-- Content -->
+			<{if $xoops_contents && ($xoops_contents != '') }>
+				<div class="xo-cotent"><{$xoops_contents}></div>
+			<{/if}>
+			<{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomcenter or $xoBlocks.page_bottomright}>
+				<!-- Center Bottom Center -->
+				<div class="center-bottom-center">
+				<{foreach item=block from=$xoBlocks.page_bottomcenter}>
+					<{includeq file="$theme_name/block.html"}>
+				<{/foreach}>
+				</div>
+				<!-- Center Bottom Left -->
+				<div class="center-bottom-left">
+				<{foreach item=block from=$xoBlocks.page_bottomleft}>
+					<{includeq file="$theme_name/block.html"}>
+				<{/foreach}>
+				</div>
+				<!-- Center Bottom Right -->
+				<div class="center-bottom-right">
+				<{foreach item=block from=$xoBlocks.page_bottomright}>
+					<{includeq file="$theme_name/block.html"}>
+				<{/foreach}>
+				</div>
+			<{/if}>
+		</div>
+		<{if $xoBlocks.canvas_right}>
+		<!-- Right Blocks -->
+		<div class="grid_3">
+		<div class="right-block">
+			<{foreach item=block from=$xoBlocks.canvas_right}>
+				<{includeq file="$theme_name/block.html"}>
+			<{/foreach}>
+		</div>	
+		</div>
+		<{/if}>
+		<div class="clear"></div>
+	</div>
+</div>

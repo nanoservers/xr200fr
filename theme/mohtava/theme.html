@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- Smarty Assign -->
+<{assign var=theme_name value=$xoTheme->folderName}>
+<{assign var=theme_name value=$xoTheme->folderName|cat:'/tpl'}>
+<{includeq file="$theme_name/meta.html"}>
+</head>
+<body id="<{$xoops_dirname}>" class="<{$xoops_langcode}>">
+<{includeq file="$theme_name/header.html"}>
+<{includeq file="$theme_name/content.html"}>
+<{includeq file="$theme_name/footer.html"}>
+</body>
+</html>

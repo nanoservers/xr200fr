@@ -1,0 +1,35 @@
+<title><{$xoops_sitename}><{if $xoops_pagetitle !=''}> - <{$xoops_pagetitle}><{/if}></title>
+<!-- Meta Tags -->
+<meta name="Description" content="<{$xoops_meta_description}>" />
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="keywords" content="<{$xoops_pagetitle}>,<{$xoops_meta_keywords}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="voltan" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="Bluefish 2.0.3" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="revisit-after" content="<{$smarty.const.META_REV_AFT}>" />
+<meta name="viewport" content="width=device-width" />
+<!-- Styles/Relations -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="<{xoAppUrl backend.php}>" />
+
+<link rel="stylesheet" type="text/css" media="all" href="<{xoImgUrl css/style.css}>" />
+
+<!-- JS -->
+<!--
+<{php}> 
+	global $xoTheme; 
+	//$xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
+	//$xoTheme->addScript('js/jquery.tools.min.js');
+	$this->assign('xoops_module_header', $xoTheme->renderMetas(null, true)); 
+<{/php}> 
+-->
+<{$xoops_module_header}>
+
+<!--[if lt IE 7]>
+<script src="<{xoImgUrl js/unitpngfix.js}>" type="text/javascript"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+<script src="<{xoImgUrl js/IE8.js}>" type="text/javascript"></script>
+<![endif]-->

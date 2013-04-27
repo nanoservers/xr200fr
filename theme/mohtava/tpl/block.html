@@ -1,0 +1,11 @@
+<{if $block.title}>
+<div class="block">
+	<div class="blocktitle"><h2><{$block.title}></h2></div>
+	<div class="blockcontent"><{$block.content}></div>
+</div>
+<{else}>
+<div class="blocknotitle">
+	<div class="blockcontent"><{$block.content}></div>
+</div>
+<{/if}>
+<div class="clear"></div>

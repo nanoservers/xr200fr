@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="<{$xoops_langcode}>">
+<head>
+<title><{$xoops_sitename}><{if $xoops_pagetitle !=''}> - <{$xoops_pagetitle}><{/if}></title>
+<!-- Meta Tags -->
+<meta charset="<{$xoops_charset}>">
+
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="Description" content="<{$xoops_meta_description}>" />
+<meta name="keywords" content="<{$xoops_pagetitle}>,<{$xoops_meta_keywords}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="voltan" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="Bluefish 2.2.3" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="revisit-after" content="<{$smarty.const.META_REV_AFT}>" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Styles/Relations -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="<{xoAppUrl backend.php}>" />
+<link rel="stylesheet" type="text/css" media="all" href="<{xoImgUrl css/bootstrap.min.css}>" />
+<link rel="stylesheet" type="text/css" media="all" href="<{xoImgUrl css/bootstrap-responsive.min.css}>" />
+<link rel="stylesheet" type="text/css" media="all" href="<{xoImgUrl css/style.css}>" />
+
+<!-- JS -->
+<{php}> 
+	global $xoTheme; 
+	$xoTheme->addScript('browse.php?Frameworks/jquery/jquery.js');
+	$this->assign('xoops_module_header', $xoTheme->renderMetas(null, true)); 
+<{/php}> 
+
+<{$xoops_module_header}>
+
+<!--[if lt IE 7]>
+<script src="<{xoImgUrl js/unitpngfix.js}>" type="text/javascript"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+<script src="<{xoImgUrl js/IE8.js}>" type="text/javascript"></script>
+<![endif]-->
+
+</head>
+<body id="<{$xoops_dirname}>" class="<{$xoops_langcode}>">
+	<div class="container">
+		<div class="row">
+			<div id="xo-header" class="span12">
+				<h1><a href="<{xoAppUrl}>"><{$xoops_sitename}></a></h1>
+			</div>
+			<div id="xo-content" class="span12">
+				<!-- Content -->
+				<div class="row">
+					<{if $xoBlocks.canvas_left}>
+					<!-- Left Blocks -->
+					<div class="span3">
+					<div class="left-block">
+						<{foreach item=block from=$xoBlocks.canvas_left}>
+							<{if $block.title}>
+							<div class="block">
+								<div class="blocktitle clear"><h2><{$block.title}></h2></div>
+								<div class="blockcontent"><{$block.content}></div>
+							</div>
+							<{else}>
+							<div class="blocknotitle">
+								<div class="blockcontent"><{$block.content}></div>
+							</div>
+							<{/if}>
+						<{/foreach}>
+					</div>
+					</div>
+					<{/if}>
+					<!-- Center Blocks -->
+					<div <{if $xoBlocks.canvas_left and $xoBlocks.canvas_right}>class="span6"<{else}>class="span9"<{/if}>>
+						<{if $xoBlocks.page_topleft or $xoBlocks.page_topcenter or $xoBlocks.page_topright}>
+							<!-- Center Top Center -->
+							<div class="center-top-center">
+							<{foreach item=block from=$xoBlocks.page_topcenter}>
+								<{if $block.title}>
+								<div class="block">
+									<div class="blocktitle"><h2><{$block.title}></h2></div>
+									<div class="blockcontent"><{$block.content}></div>
+								</div>
+								<{else}>
+								<div class="blocknotitle">
+									<div class="blockcontent"><{$block.content}></div>
+								</div>
+								<{/if}>
+							<{/foreach}>
+							</div>
+							<!-- Center Top Left -->
+							<div class="center-top-left">
+							<{foreach item=block from=$xoBlocks.page_topleft}>
+								<{if $block.title}>
+								<div class="block">
+									<div class="blocktitle"><h2><{$block.title}></h2></div>
+									<div class="blockcontent"><{$block.content}></div>
+								</div>
+								<{else}>
+								<div class="blocknotitle">
+									<div class="blockcontent"><{$block.content}></div>
+								</div>
+								<{/if}>
+							<{/foreach}>
+							</div>
+							<!-- Center Top Right -->
+							<div class="center-top-right">
+							<{foreach item=block from=$xoBlocks.page_topright}>
+								<{if $block.title}>
+								<div class="block">
+									<div class="blocktitle"><h2><{$block.title}></h2></div>
+									<div class="blockcontent"><{$block.content}></div>
+								</div>
+								<{else}>
+								<div class="blocknotitle">
+									<div class="blockcontent"><{$block.content}></div>
+								</div>
+								<{/if}>
+							<{/foreach}>
+							</div>
+						<{/if}>
+						<!-- Content -->
+						<{if $xoops_contents && ($xoops_contents != '') }>
+							<div class="xo-cotent"><{$xoops_contents}></div>
+						<{/if}>
+						<{if $xoBlocks.page_bottomleft or $xoBlocks.page_bottomcenter or $xoBlocks.page_bottomright}>
+							<!-- Center Bottom Center -->
+							<div class="center-bottom-center">
+							<{foreach item=block from=$xoBlocks.page_bottomcenter}>
+								<{if $block.title}>
+								<div class="block">
+									<div class="blocktitle"><h2><{$block.title}></h2></div>
+									<div class="blockcontent"><{$block.content}></div>
+								</div>
+								<{else}>
+								<div class="blocknotitle">
+									<div class="blockcontent"><{$block.content}></div>
+								</div>
+								<{/if}>
+							<{/foreach}>
+							</div>
+							<!-- Center Bottom Left -->
+							<div class="center-bottom-left">
+							<{foreach item=block from=$xoBlocks.page_bottomleft}>
+								<{if $block.title}>
+								<div class="block">
+									<div class="blocktitle"><h2><{$block.title}></h2></div>
+									<div class="blockcontent"><{$block.content}></div>
+								</div>
+								<{else}>
+								<div class="blocknotitle">
+									<div class="blockcontent"><{$block.content}></div>
+								</div>
+								<{/if}>
+							<{/foreach}>
+							</div>
+							<!-- Center Bottom Right -->
+							<div class="center-bottom-right">
+							<{foreach item=block from=$xoBlocks.page_bottomright}>
+								<{if $block.title}>
+								<div class="block">
+									<div class="blocktitle"><h2><{$block.title}></h2></div>
+									<div class="blockcontent"><{$block.content}></div>
+								</div>
+								<{else}>
+								<div class="blocknotitle">
+									<div class="blockcontent"><{$block.content}></div>
+								</div>
+								<{/if}>
+							<{/foreach}>
+							</div>
+						<{/if}>
+					</div>
+					<{if $xoBlocks.canvas_right}>
+					<!-- Right Blocks -->
+					<div class="span3">
+					<div class="right-block">
+						<{foreach item=block from=$xoBlocks.canvas_right}>
+							<{if $block.title}>
+							<div class="block">
+								<div class="blocktitle"><h2><{$block.title}></h2></div>
+								<div class="blockcontent"><{$block.content}></div>
+							</div>
+							<{else}>
+							<div class="blocknotitle">
+								<div class="blockcontent"><{$block.content}></div>
+							</div>
+							<{/if}>
+						<{/foreach}>
+					</div>	
+					</div>
+					<{/if}>
+				</div>
+			</div>
+			<div id="xo-footer" class="span12">
+					<{$xoops_footer}>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
