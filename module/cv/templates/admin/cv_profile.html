@@ -1,0 +1,32 @@
+<{includeq file="$xoops_rootpath/modules/cv/templates/admin/cv_header.html"}>
+<div class="cv">
+	<table class="outer">
+	    <thead>
+		    <th><{$smarty.const._AM_CV_ID}></th>
+		    <th><{$smarty.const._AM_CV_FIRSTNAME}></th>
+		    <th><{$smarty.const._AM_CV_LASTNAME}></th>
+		    <th><{$smarty.const._AM_CV_CREATE}></th>
+          <th><{$smarty.const._AM_CV_STATUS}></th>		    
+		    <th><{$smarty.const._AM_CV_ACTION}></th>
+	    </thead>
+	    <tbody class="xo-cv">
+		   <{foreach item=item from=$list}>
+		   <tr class="odd" id="mod_<{$item.paper_id}>">
+			   <td><{$item.profile_id}></td>
+			   <td><{$item.profile_firstname}></td>
+			   <td><{$item.profile_lastname}></td>
+			   <td><{$item.profile_create}></td>
+			   <td><{$item.profile_status}></td>
+			   <td class="txtcenter width15 xo-actions">
+				   <a title="<{$smarty.const._MORE}>" href="profile.php?op=view&amp;id=<{$item.profile_id}>"><img src="<{xoAdminIcons display.png}>" alt="<{$smarty.const._MORE}>" /></a>
+				   <a title="<{$smarty.const._EDIT}>" href="profile.php?op=edit&amp;id=<{$item.profile_id}>"><img src="<{xoAdminIcons edit.png}>" alt="<{$smarty.const._EDIT}>" /></a>
+	            <a title="<{$smarty.const._DELETE}>" href="profile.php?op=delete&amp;id=<{$item.profile_id}>"><img src="<{xoAdminIcons delete.png}>" alt="<{$smarty.const._DELETE}>" /></a>
+			   </td>
+		    </tr>
+		    <{/foreach}>
+	    </tbody>
+	</table>
+   <{if $pagenav}>
+	<div class="pagenav"><{$pagenav}></div>
+	<{/if}>
+</div>

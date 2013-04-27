@@ -1,0 +1,37 @@
+<{includeq file="$xoops_rootpath/modules/cv/templates/admin/cv_header.html"}>
+<div class="cv">
+	<table class="outer">
+	    <thead>
+		    <th><{$smarty.const._AM_CV_ID}></th>
+		    <th><{$smarty.const._AM_CV_FIRSTNAME}></th>
+		    <th><{$smarty.const._AM_CV_LASTNAME}></th>
+		    <th><{$smarty.const._AM_CV_DEGREE}></th>
+		    <th><{$smarty.const._AM_CV_TITLE}></th>
+		    <th><{$smarty.const._AM_CV_DEFENSE_DATE}></th>
+		    <th><{$smarty.const._AM_CV_CREATE}></th>
+          <th><{$smarty.const._AM_CV_STATUS}></th>		    
+		    <th><{$smarty.const._AM_CV_ACTION}></th>
+	    </thead>
+	    <tbody class="xo-cv">
+		   <{foreach item=item from=$list}>
+		   <tr class="odd" id="mod_<{$item.thesis_id}>">
+			   <td><{$item.thesis_id}></td>
+			   <td><{$item.thesis_student_firstname}></td>
+			   <td><{$item.thesis_student_lastname}></td>
+			   <td><{$item.thesis_degree}></td>
+			   <td><{$item.thesis_title}></td>
+			   <td><{$item.thesis_defense_date}></td>
+			   <td><{$item.thesis_create}></td>
+			   <td><{$item.thesis_status}></td>
+			   <td class="txtcenter width15 xo-actions">
+				   <a title="<{$smarty.const._EDIT}>" href="thesis.php?op=edit&amp;id=<{$item.thesis_id}>"><img src="<{xoAdminIcons edit.png}>" alt="<{$smarty.const._EDIT}>" /></a>
+	            <a title="<{$smarty.const._DELETE}>" href="thesis.php?op=delete&amp;id=<{$item.thesis_id}>"><img src="<{xoAdminIcons delete.png}>" alt="<{$smarty.const._DELETE}>" /></a>
+			   </td>
+		    </tr>
+		    <{/foreach}>
+	    </tbody>
+	</table>
+   <{if $pagenav}>
+	<div class="pagenav"><{$pagenav}></div>
+	<{/if}>
+</div>

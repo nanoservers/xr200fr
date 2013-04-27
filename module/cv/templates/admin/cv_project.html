@@ -1,0 +1,32 @@
+<{includeq file="$xoops_rootpath/modules/cv/templates/admin/cv_header.html"}>
+<div class="cv">
+	<table class="outer">
+	    <thead>
+		    <th><{$smarty.const._AM_CV_ID}></th>
+		    <th><{$smarty.const._AM_CV_TITLE}></th>
+		    <th><{$smarty.const._AM_CV_CREATE}></th>
+          <th><{$smarty.const._AM_CV_STATUS}></th>		    
+		    <th><{$smarty.const._AM_CV_ACTION}></th>
+	    </thead>
+	    <tbody class="xo-cv">
+		   <{foreach item=item from=$list}>
+		   <tr class="odd" id="mod_<{$item.project_id}>">
+			   <td><{$item.project_id}></td>
+			   <td>
+				   <p><{$item.project_title_fa}></p>
+				   <p><{$item.project_title_en}></p>
+			   </td>
+			   <td><{$item.project_create}></td>
+			   <td><{$item.project_status}></td>
+			   <td class="txtcenter width15 xo-actions">
+				   <a title="<{$smarty.const._EDIT}>" href="project.php?op=edit&amp;id=<{$item.project_id}>"><img src="<{xoAdminIcons edit.png}>" alt="<{$smarty.const._EDIT}>" /></a>
+	            <a title="<{$smarty.const._DELETE}>" href="project.php?op=delete&amp;id=<{$item.project_id}>"><img src="<{xoAdminIcons delete.png}>" alt="<{$smarty.const._DELETE}>" /></a>
+			   </td>
+		    </tr>
+		    <{/foreach}>
+	    </tbody>
+	</table>
+   <{if $pagenav}>
+	<div class="pagenav"><{$pagenav}></div>
+	<{/if}>
+</div>
