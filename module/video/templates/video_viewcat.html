@@ -1,0 +1,73 @@
+<div class="video">
+	<div class="breadcrumb"><{$breadcrumb}></div>
+	<div class="video-main">
+		<{if count($subcategories) gt 0}>
+		<div class="bottomlinetext"><{$smarty.const._MD_VIDEO_SEARCH_CATEGORIES}></div>
+		<table>
+		    <tr>
+		    <{foreach item=subcat from=$subcategories}>
+		        <td valign="top">
+		            <a class="bold" href="<{$xoops_url}>/modules/video/viewcat.php?cid=<{$subcat.id}>"><{$subcat.title}></a>
+		        </td>
+		    <{if $subcat.count is div by 3}>
+		    </tr>
+		    <tr>
+		    <{/if}>
+		    <{/foreach}>
+		    </tr>
+		</table>
+		<{/if}>
+		<{if $navigation == true}>
+		<div class="navigation center pad5 marg5">
+		    <{$smarty.const._MD_VIDEO_CAT_SORTBY}>&nbsp;&nbsp;<{$smarty.const._MD_VIDEO_CAT_TITLE}> (
+		    <a href="<{$xoops_url}>/modules/video/viewcat.php?cid=<{$category_id}>&amp;sort=title&amp;order=ASC" title="<{$smarty.const._MD_VIDEO_CAT_TITLEATOZ}>">
+			    <img src="<{$xoops_url}>/modules/video/images/up.gif" align="middle" alt="<{$smarty.const._MD_VIDEO_CAT_TITLEATOZ}>" />
+		    </a>
+		    <a href="<{$xoops_url}>/modules/video/viewcat.php?cid=<{$category_id}>&amp;sort=title&amp;order=DESC" title="<{$smarty.const._MD_VIDEO_CAT_TITLEZTOA}>">
+			    <img src="<{$xoops_url}>/modules/video/images/down.gif" align="middle"  alt="<{$smarty.const._MD_VIDEO_CAT_TITLEZTOA}>" />
+		    </a>)&nbsp;<{$smarty.const._MD_VIDEO_CAT_DATE}>(
+		    <a href="<{$xoops_url}>/modules/video/viewcat.php?cid=<{$category_id}>&amp;sort=date&amp;order=ASC" title="<{$smarty.const._MD_VIDEO_CAT_DATEOLD}>">
+			    <img src="<{$xoops_url}>/modules/video/images/up.gif" align="middle" alt="<{$smarty.const._MD_VIDEO_CAT_DATEOLD}>" />
+		    </a>
+		    <a href="<{$xoops_url}>/modules/video/viewcat.php?cid=<{$category_id}>&amp;sort=date&amp;order=DESC" title="<{$smarty.const._MD_VIDEO_CAT_DATENEW}>">
+			    <img src="<{$xoops_url}>/modules/video/images/down.gif" align="middle" alt="<{$smarty.const._MD_VIDEO_CAT_DATENEW}>" />
+		    </a>)&nbsp;<{$smarty.const._MD_VIDEO_CAT_RATING}>(
+		    <a href="<{$xoops_url}>/modules/video/viewcat.php?cid=<{$category_id}>&amp;sort=rating&amp;order=ASC" title="<{$smarty.const._MD_VIDEO_CAT_RATINGLTOH}>">
+			    <img src="<{$xoops_url}>/modules/video/images/up.gif" align="middle" alt="<{$smarty.const._MD_VIDEO_CAT_RATINGLTOH}>" />
+		    </a>
+		    <a href="<{$xoops_url}>/modules/video/viewcat.php?cid=<{$category_id}>&amp;sort=rating&amp;order=DESC" title="<{$smarty.const._MD_VIDEO_CAT_RATINGHTOL}>">
+			    <img src="<{$xoops_url}>/modules/video/images/down.gif" align="middle" alt="<{$smarty.const._MD_VIDEO_CAT_RATINGHTOL}>" />
+		    </a>)&nbsp;<{$smarty.const._MD_VIDEO_CAT_POPULARITY}>(
+		    <a href="<{$xoops_url}>/modules/video/viewcat.php?cid=<{$category_id}>&amp;sort=hits&amp;order=ASC" title="<{$smarty.const._MD_VIDEO_CAT_POPULARITYLTOM}>">
+			    <img src="<{$xoops_url}>/modules/video/images/up.gif" align="middle" alt="<{$smarty.const._MD_VIDEO_CAT_POPULARITYLTOM}>" />
+		    </a>
+		    <a href="<{$xoops_url}>/modules/video/viewcat.php?cid=<{$category_id}>&amp;sort=hits&amp;order=DESC" title="<{$smarty.const._MD_VIDEO_CAT_POPULARITYMTOL}>">
+			    <img src="<{$xoops_url}>/modules/video/images/down.gif" align="middle" alt="<{$smarty.const._MD_VIDEO_CAT_POPULARITYMTOL}>" />
+		    </a>)<br />
+			<span class="bold"><{$affichage_tri}></span>
+		</div>
+		<{/if}>
+		<div class="video-list">
+		<{if $file != ""}>
+		   <div class="bottomlinetext"><{$smarty.const._MD_VIDEO_INDEX_LATESTLIST}></div>
+			<table>
+				<tr>
+				<{section name=i loop=$file}>
+				<{if $smarty.section.i.index % $nbcolumn == 0 && !$smarty.section.i.first}>
+				</tr>
+				<tr>
+				<{/if}>
+					<td class="center top">
+						<{include file="db:video_download.html" down=$file[i]}>
+					</td>
+				<{/section}>
+				</tr>
+			</table>
+		<{/if}>
+		</div>
+		<{if $pagenav != ''}>
+		<div class="pagenave"><{$pagenav}></div>
+		<{/if}>	
+		<div class="pad5 marg5"><{include file="db:system_notification_select.html"}></div>
+	</div>
+</div>

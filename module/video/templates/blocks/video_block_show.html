@@ -1,0 +1,25 @@
+<div class="video_show">
+	<{foreachq item=downloads from=$block.video}>
+	<div class="videoselecttitle"><a title="<{$downloads.title}>" href="<{$xoops_url}>/modules/video/singlefile.php?lid=<{$downloads.lid}>"><{$downloads.title}></a></div>
+	<div class="videoselectplayer">
+		<div id='mediaplayer'></div>
+		<script type="text/javascript">
+		  jwplayer('mediaplayer').setup({
+			'flashplayer': '<{$xoops_url}>/modules/video/js/jwplayer/player.swf',
+			'id': 'playerID',
+			'width': '<{$downloads.flvWidth}>',
+			'height': '<{$downloads.flvHeight}>',
+			'file': '<{$downloads.flashFile}>',
+			'image': '<{$downloads.imgurl}>',
+         'skin': '<{$xoops_url}>/modules/video/js/jwplayer/glow.zip',
+         'stretching': 'fill',
+			'controlbar': 'bottom',
+			'plugins': 'timeslidertooltipplugin-3',
+			'logo.file': '<{$xoops_url}>/modules/video/images/logo.png',
+			'logo.hide' : 'false',
+			'logo.position' : 'top-left',
+		  });
+		</script>
+	</div>
+	<{/foreach}>
+</div>

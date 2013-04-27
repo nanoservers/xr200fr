@@ -1,0 +1,70 @@
+<{if $uuid}>
+<script type="text/javascript">
+	var progress_key = '<{$uuid}>';
+
+	$(document).ready(function() {
+		$("#pb1").progressBar();
+		$("#pb2").progressBar({ barImage: 'images/progressbg_yellow.gif'} );
+		$("#pb3").progressBar({ barImage: 'images/progressbg_orange.gif', showText: false} );
+		$("#pb4").progressBar(65, { showText: false, barImage: 'images/progressbg_red.gif'} );
+		$(".pb5").progressBar({ max: '<{$maxuploadsize}>', textFormat: 'fraction', callback: function(data) { if (data.running_value == data.value) { alert("Callback example: Target reached!"); } }} );
+		$("#uploadprogressbar").progressBar();
+	});
+
+	function beginUpload() {
+		$("#uploadprogressbar").fadeIn();
+
+		setInterval(function() { 
+			$.getJSON("submit.php?id=" + progress_key, function(data) {
+				if (data == null)
+					return;
+
+				var percentage = Math.floor(100 * parseInt(data.bytes_uploaded) / parseInt(data.bytes_total));
+				$("#uploadprogressbar").progressBar(percentage);
+			});
+		}, 1500);
+
+		return true;
+	}
+</script>
+<{/if}>
+<div class="video">
+	<div class="breadcrumb"><{$breadcrumb}></div>
+	<div class="bottomline"></div>
+	<div class="marg2 pad2">
+		<ul>
+		    <li><{$smarty.const._MD_VIDEO_SUBMIT_SUBMITONCE}></li>
+		    <li><{$smarty.const._MD_VIDEO_SUBMIT_ALLPENDING}></li>
+		    <li><{$smarty.const._MD_VIDEO_SUBMIT_DONTABUSE}></li>
+		    <li><{$smarty.const._MD_VIDEO_SUBMIT_TAKEDAYS}></li>
+		    <li><{$smarty.const._MD_VIDEO_SUBMIT_LEVEL}></li>
+		</ul>
+	</div>
+	<{if $message_erreur != ''}>
+	<div class="errorMsg"><{$message_erreur}></div>   
+	<{/if}>
+	<{if $uuid}>
+		<div class="contentblock">
+			<div class="edit_panel">
+				<form action="submit.php"  method="post" id="form" enctype="multipart/form-data" onsubmit="beginUpload();">	
+					<table class="outer" cellspacing="1" width="100%">
+					<tbody><tr><th colspan="2"><{$smarty.const._AM_VIDEO_FORMADD}></th></tr>
+					<tr valign="top" align="left"><td class="head"><div class="xoops-form-element-caption"><span class="caption-text"><{$smarty.const._AM_VIDEO_FORMFILE}></span><span class="caption-marker">*</span></div></td><td class="even"><{$smarty.const._AM_VIDEO_FORMUPLOAD}>&nbsp;
+					<input type="hidden" name="XOOPS_TOKEN_REQUEST" id="XOOPS_TOKEN_REQUEST" value="<{$token}>" />
+					<input type="hidden" name="UPLOAD_IDENTIFIER" id="progress_key" value="<{$uuid}>" />
+					<input type="hidden" name="op" id="op" value="upload" />
+               <input type="hidden" name="MAX_FILE_SIZE" value="<{$maxuploadsize}>" />
+					<input type="hidden" name="xoops_upload_file[]" id="xoops_upload_file[]" value="attachedfile" />
+					<input onchange="fileSelected();" type="file" name="attachedfile" id="attachedfile" title="<{$smarty.const._AM_VIDEO_FORMUPLOAD}>"   />
+					</td></tr>
+					<tr valign="top" align="left"><td class="head"></td><td class="even"><span class="progressbar" id="uploadprogressbar">0%</span></td></tr>
+					<tr valign="top" align="left"><td class="head"></td><td class="even"><input onclick='uploadFile()' type='submit' class='formButton' name='submit'  id='submit' value='<{$smarty.const._SUBMIT}>' title='<{$smarty.const._SUBMIT}>'  /></td></tr>
+					</tbody></table>
+				</form>
+			<iframe style="display: none;" name="progressFrame"></iframe>
+			</div>
+		</div>
+	<{else}>
+		<{$themeForm}>
+	<{/if}>
+</div>

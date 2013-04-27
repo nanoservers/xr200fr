@@ -1,0 +1,34 @@
+<div class="video">
+   <div class="breadcrumb"><{$breadcrumb}></div>
+	<div class="marg5 pad5"><{$searchForm}></div>
+	<div class="thereare"><{$lang_thereare}></div>
+	<table width="100%" cellspacing="0" class="outer_sertec" border="1">
+	    <tr>
+	        <td class="head middle"><{$smarty.const._MD_VIDEO_SEARCH_TITLE}></td>
+	        <td class="head middle" style="width: 150px;" colspan="2"><{$smarty.const._MD_VIDEO_SEARCH_CATEGORIES}></td>
+	        <{foreach item=field from=$field}>
+	        <td class="head middle"><{$field}></td>
+	        <{/foreach}>
+	        <td class="head center middle" style="width: 100px;"><{$smarty.const._MD_VIDEO_SEARCH_DATE}></td>
+	        <td class="head center middle" style="width: 60px;"><{$smarty.const._MD_VIDEO_SEARCH_NOTE}></td>
+	        <td class="head center middle" style="width: 60px;"><{$smarty.const._MD_VIDEO_SEARCH_HITS}></td>
+	    </tr>
+	    <{foreach item=downloads from=$downloads}>
+	    <{cycle values=odd,even assign=class}>
+	    <tr class="<{$class}>">
+	        <td class="middle"><a href="<{$xoops_url}>/modules/video/singlefile.php?cid=<{$downloads.cid}>&amp;lid=<{$downloads.lid}>" title="<{$downloads.title}>"><{$downloads.title}></a></td>
+	        <td class="center middle" style="width: 32px;"><img src="<{$downloads.imgurl}>" alt="<{$downloads.cat}>" title="<{$downloads.cat}>" width="30" /></td>
+	        <td class="middle"><a href="<{$xoops_url}>/modules/video/viewcat.php?cid=<{$downloads.cid}>" target="_blank" title="<{$downloads.cat}>"><{$downloads.cat}></a></td>
+	        <{foreach item=fielddata from=$downloads.fielddata}>
+	        <td class="middle"><{$fielddata}></td>
+	        <{/foreach}>
+	        <td class="center middle"><{$downloads.date}></td>
+	        <td class="center middle"><{$downloads.rating}></td>
+	        <td class="center middle"><{$downloads.hits}></td>
+	    </tr>
+	    <{/foreach}>
+	</table>
+	<{if $pagenav != ''}>
+		<div class="pagenave"><{$pagenav}></div>
+	<{/if}>	
+</div>

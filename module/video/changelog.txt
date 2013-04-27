@@ -1,0 +1,21 @@
+[1391-05-17] 
+- Fix : Bug in save image in edit video
+
+[1391-05-24]
+- Add : Duration as Extra Fields 
+- Fix : Change breadcrumb name for use in theme
+- Fix : in homepage just get main cats
+- Fix : Upload image
+- Fix : Submit form language
+- Fix : POST parameter is seto or not in save video
+
+[1391-06-04]
+- Add : Get duration whit flv class
+
+[1391-06-05]
+- Fix : Bug in Get duration in video/submit.php
+- Add : singlefile.css
+
+[1391-06-15]
+- Remove to many old codes
+- Refix templates

@@ -1,0 +1,50 @@
+<div class="video">
+	<div class="breadcrumb"><{$breadcrumb}></div>
+	<div class="bottomline"></div>
+   <div class="profile">
+	    <{if $profile.avatar}>
+	        <div class="floatleft pad5">
+	            <img src="<{$profile.avatar}>" alt="<{$profile.uname}>" />
+	        </div>
+	    <{/if}>
+	    <div class="floatleft pad10 block">
+	        <strong><{$profile.uname}></strong>
+	        <div class="pad2"><{$profile.video}> <{$smarty.const._MD_VIDEO_SINGLEFILE_COUNT}></div>
+	        <{if $profile.bio}><div class="pad2"><{$profile.bio}></div><{/if}>
+           <{if $userinfo}> 
+           <div class="pad2">
+			    <form name="usernav" action="user.php" method="post">
+			        <input type="button" value="<{$smarty.const._MD_VIDEO_CHANNEL_USER}>" onclick="location='<{$xoops_url}>/modules/profile/user.php'" />
+			        <input type="button" value="<{$smarty.const._MD_VIDEO_CHANNEL_EDIT}>" onclick="location='<{$xoops_url}>/modules/profile/edituser.php'" />
+			        <input type="button" value="<{$smarty.const._MD_VIDEO_CHANNEL_PASS}>" onclick="location='<{$xoops_url}>/modules/profile/changepass.php'" />
+			        <input type="button" value="<{$smarty.const._MD_VIDEO_CHANNEL_AVATAR}>" onclick="location='<{$xoops_url}>/modules/profile/edituser.php?op=avatarform'" />
+			        <input type="button" value="<{$smarty.const._MD_VIDEO_CHANNEL_LOGOUT}>" onclick="location='<{$xoops_url}>/modules/profile/user.php?op=logout'" />
+			    </form>
+           </div>
+           <{/if}>
+	    </div>
+       <div class="clear"></div>	
+   </div>
+   <div class="bottomlinetext"></div>
+   <div class="clear"></div>	
+	<div class="video-list">
+	<{if $file != ""}>
+		<table>
+			<tr>
+			<{section name=i loop=$file}>
+			<{if $smarty.section.i.index % $nbcolumn == 0 && !$smarty.section.i.first}>
+			</tr>
+			<tr>
+			<{/if}>
+				<td>
+					<{include file="db:video_download.html" down=$file[i]}>
+				</td>
+			<{/section}>
+			</tr>
+		</table>
+	<{/if}>
+	</div>
+	<{if $pagenav != ''}>
+	<div class="pagenave"><{$pagenav}></div>
+	<{/if}>
+</div>

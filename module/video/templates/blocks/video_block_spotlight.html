@@ -1,0 +1,43 @@
+<div class="video_spotlight">
+	<ul id="main_navi">
+   <{foreachq item=downloads from=$block.video}>
+		<li<{if $downloads.lid == $block.selectid}> class="active"<{/if}>>
+			<img src="<{$downloads.logourl}>" alt="<{$downloads.title}>" />
+		</li>
+	<{/foreach}> 
+	</ul>
+	<div id="main">
+		<div id="pages">
+      <{foreachq item=downloads from=$block.video}>
+			<div class="page">
+				<div class="scrollable">
+					<div class="items">
+						<div class="item">
+							<a href="<{$xoops_url}>/modules/video/singlefile.php?lid=<{$downloads.lid}>" title="<{$downloads.title}>">
+								<img src="<{$downloads.logourl}>" alt="<{$downloads.title}>" />
+							</a>
+							<div class="select-box">
+								<div class="select-title"><h2><{$downloads.title}></h2></div>
+								<div class="select-text"><{$downloads.description}></div>
+							</div>
+						</div>
+	 				</div>
+				</div>
+			</div>
+      <{/foreach}> 
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#main").scrollable({
+				vertical: true,
+				keyboard: 'static',
+				onSeek: function(event, i) {
+					horizontal.eq(i).data("scrollable").focus();
+				}
+			}).navigator("#main_navi");
+			var horizontal = $(".scrollable").scrollable({ circular: true }).navigator(".navi");
+			horizontal.eq(0).data("scrollable").focus();
+		});
+	</script>
+</div>

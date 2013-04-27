@@ -1,0 +1,16 @@
+<div class="video">
+	<div class="breadcrumb"><{$breadcrumb}></div>
+	<div class="bottomline"></div>
+	<div class="marg2 pad2">
+		<ul>
+		    <li><{$smarty.const._MD_VIDEO_RATEFILE_VOTEONCE}></li>
+		    <li><{$smarty.const._MD_VIDEO_RATEFILE_RATINGSCALE}></li>
+		    <li><{$smarty.const._MD_VIDEO_RATEFILE_BEOBJECTIVE}></li>
+		    <li><{$smarty.const._MD_VIDEO_RATEFILE_DONOTVOTE}></li>
+		</ul>
+	</div>
+	<{if $message_erreur != ''}>
+		<div class="errorMsg"><{$message_erreur}></div>   
+	<{/if}>
+	<{$themeForm}>
+</div>
