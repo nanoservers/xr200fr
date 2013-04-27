@@ -1,0 +1,3 @@
+<?php
+if (!defined("XOOPS_ROOT_PATH")) {	die("XOOPS root path not defined");}class audio_modfielddata extends XoopsObject{	// constructor	function __construct()	{		$this->XoopsObject();		$this->initVar("modiddata",XOBJ_DTYPE_INT,null,false,11);		$this->initVar("fid",XOBJ_DTYPE_INT,null,false,11);		$this->initVar("lid",XOBJ_DTYPE_INT,null,false,11);		$this->initVar("moddata",XOBJ_DTYPE_TXTAREA, null, false);		$this->initVar('dohtml', XOBJ_DTYPE_INT, 1, false);	}	function audio_modfielddata()	{		$this->__construct();	}}
+class audioaudio_modfielddataHandler extends XoopsPersistableObjectHandler{	function __construct(&$db)	{		parent::__construct($db, "audio_modfielddata", 'audio_modfielddata', 'modiddata', 'moddata');	}}?>

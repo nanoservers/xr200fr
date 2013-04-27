@@ -1,0 +1,73 @@
+<div class="audio">
+	<div class="breadcrumb"><{$breadcrumb}></div>
+	<div class="audio-main">
+		<{if count($categories) gt 0}>
+		<div class="bottomlinetext"><{$smarty.const._MD_AUDIO_SEARCH_CATEGORIES}></div>
+		<table>
+		    <tr>
+		    <{foreach item=category from=$categories}>
+		        <td valign="top">
+		            <a class="bold" href="<{$xoops_url}>/modules/audio/viewcat.php?cid=<{$category.id}>"><{$category.title}></a>
+		        </td>
+		    <{if $category.count is div by 3}>
+		    </tr>
+		    <tr>
+		    <{/if}>
+		    <{/foreach}>
+		    </tr>
+		</table>
+		<{/if}>
+		<{if $navigation == true}>
+		<div class="navigation center pad5 marg5">
+		    <{$smarty.const._MD_AUDIO_CAT_SORTBY}>&nbsp;&nbsp;<{$smarty.const._MD_AUDIO_CAT_TITLE}> (
+		    <a href="<{$xoops_url}>/modules/audio/index.php?sort=title&amp;order=ASC" title="<{$smarty.const._MD_AUDIO_CAT_TITLEATOZ}>">
+			    <img src="<{$xoops_url}>/modules/audio/images/up.gif" align="middle" alt="<{$smarty.const._MD_AUDIO_CAT_TITLEATOZ}>" />
+		    </a>
+		    <a href="<{$xoops_url}>/modules/audio/index.php?sort=title&amp;order=DESC" title="<{$smarty.const._MD_AUDIO_CAT_TITLEZTOA}>">
+			    <img src="<{$xoops_url}>/modules/audio/images/down.gif" align="middle"  alt="<{$smarty.const._MD_AUDIO_CAT_TITLEZTOA}>" />
+		    </a>)&nbsp;<{$smarty.const._MD_AUDIO_CAT_DATE}>(
+		    <a href="<{$xoops_url}>/modules/audio/index.php?sort=date&amp;order=ASC" title="<{$smarty.const._MD_AUDIO_CAT_DATEOLD}>">
+			    <img src="<{$xoops_url}>/modules/audio/images/up.gif" align="middle" alt="<{$smarty.const._MD_AUDIO_CAT_DATEOLD}>" />
+		    </a>
+		    <a href="<{$xoops_url}>/modules/audio/index.php?sort=date&amp;order=DESC" title="<{$smarty.const._MD_AUDIO_CAT_DATENEW}>">
+			    <img src="<{$xoops_url}>/modules/audio/images/down.gif" align="middle" alt="<{$smarty.const._MD_AUDIO_CAT_DATENEW}>" />
+		    </a>)&nbsp;<{$smarty.const._MD_AUDIO_CAT_RATING}>(
+		    <a href="<{$xoops_url}>/modules/audio/index.php?sort=rating&amp;order=ASC" title="<{$smarty.const._MD_AUDIO_CAT_RATINGLTOH}>">
+			    <img src="<{$xoops_url}>/modules/audio/images/up.gif" align="middle" alt="<{$smarty.const._MD_AUDIO_CAT_RATINGLTOH}>" />
+		    </a>
+		    <a href="<{$xoops_url}>/modules/audio/index.php?sort=rating&amp;order=DESC" title="<{$smarty.const._MD_AUDIO_CAT_RATINGHTOL}>">
+			    <img src="<{$xoops_url}>/modules/audio/images/down.gif" align="middle" alt="<{$smarty.const._MD_AUDIO_CAT_RATINGHTOL}>" />
+		    </a>)&nbsp;<{$smarty.const._MD_AUDIO_CAT_POPULARITY}>(
+		    <a href="<{$xoops_url}>/modules/audio/index.php?sort=hits&amp;order=ASC" title="<{$smarty.const._MD_AUDIO_CAT_POPULARITYLTOM}>">
+			    <img src="<{$xoops_url}>/modules/audio/images/up.gif" align="middle" alt="<{$smarty.const._MD_AUDIO_CAT_POPULARITYLTOM}>" />
+		    </a>
+		    <a href="<{$xoops_url}>/modules/audio/index.php?sort=hits&amp;order=DESC" title="<{$smarty.const._MD_AUDIO_CAT_POPULARITYMTOL}>">
+			    <img src="<{$xoops_url}>/modules/audio/images/down.gif" align="middle" alt="<{$smarty.const._MD_AUDIO_CAT_POPULARITYMTOL}>" />
+		    </a>)<br />
+			<span class="bold"><{$affichage_tri}></span>
+		</div>
+		<{/if}>
+		<div class="audio-list">
+		<{if $file != ""}>
+			<div class="bottomlinetext"><{$smarty.const._MD_AUDIO_INDEX_LATESTLIST}></div>
+			<table>
+				<tr>
+				<{section name=i loop=$file}>
+				<{if $smarty.section.i.index % $nbcolumn == 0 && !$smarty.section.i.first}>
+				</tr>
+				<tr>
+				<{/if}>
+					<td class="center top">
+						<{include file="db:audio_download.html" down=$file[i]}>
+					</td>
+				<{/section}>
+				</tr>
+			</table>
+		<{/if}>
+		</div>
+		<{if $pagenav != ''}>
+		<div class="pagenave"><{$pagenav}></div>
+		<{/if}>
+		<div class="pad5 marg5"><{include file="db:system_notification_select.html"}></div>
+	</div>	
+</div>

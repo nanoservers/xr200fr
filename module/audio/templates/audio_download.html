@@ -1,0 +1,15 @@
+<div class="viditem">
+	<div class="duration"><{$down.duration}></div>
+	<div class="vidimg">
+		<a title="<{$down.shorttitle}>" href="<{$xoops_url}>/modules/audio/singlefile.php?cid=<{$down.cid}>&amp;lid=<{$down.id}>">
+			<img src="<{$down.logourl}>" alt="<{$down.shorttitle}>" />
+		</a>
+	</div>
+	<div class="vidtitle">
+		<a href="<{$xoops_url}>/modules/audio/singlefile.php?cid=<{$down.cid}>&amp;lid=<{$down.id}>" title="<{$down.shorttitle}>"><{$down.title}></a>&nbsp;<{$down.adminlink}>
+	</div>
+	<div class="vidinfo">
+	<div class="vidinfotext"><{$smarty.const._MD_AUDIO_INDEX_SUBMITDATE}><{$down.updated}></div>
+	<div class="vidinfotext"><{$down.hits}> <{$smarty.const._MD_AUDIO_INDEX_HITS}></div>
+	</div>
+</div>

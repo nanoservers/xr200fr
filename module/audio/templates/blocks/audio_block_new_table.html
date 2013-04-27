@@ -1,0 +1,19 @@
+<table>
+	<tr>
+		<{foreachq item=downloads from=$block.audio}>
+		<td>
+			<div class="vidblockitem">
+				<div class="vidimg">
+					<a class="tooltip" href="<{$xoops_url}>/modules/audio/singlefile.php?lid=<{$downloads.lid}>" title="<{$downloads.title}> - <{$downloads.hits}> Hits - Rating <{$downloads.rating}> - Date <{$downloads.date}> - Duration <{$downloads.duration}>">
+						<img src="<{$downloads.logourl}>" alt="<{$downloads.title}>" />
+					</a>
+				</div>
+			</div>
+		</td>
+	 <{if $downloads.count is div by 4}>
+    </tr>
+    <tr>
+    <{/if}>
+    <{/foreach}>
+    </tr>
+</table>

@@ -1,0 +1,17 @@
+<div class="audio">
+	<!-- Category path -->
+	<div class="breadcrumb"><{$breadcrumb}></div>
+	<!-- Submit helps -->
+	<div class="downloads-tips">
+		<ul>
+			<li><{$smarty.const._MD_AUDIO_BROKENFILE_FORSECURITY}></li>
+			<li><{$smarty.const._MD_AUDIO_BROKENFILE_THANKSFORHELP}></li>
+		</ul>
+	</div>
+	<{if $message_erreur != ''}>
+	<!-- Error message-->
+	<div class="errorMsg"><{$message_erreur}></div>   
+	<{/if}>
+	<!-- Submit form -->
+	<div class="downloads-submitform"><{$themeForm}></div>
+</div>

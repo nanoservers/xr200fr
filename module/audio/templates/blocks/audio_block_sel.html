@@ -1,0 +1,24 @@
+<table>
+	<tr>
+		<{foreachq item=downloads from=$block}>
+		<td>
+			<div class="vidblockitem">
+				<div class="vidimg">
+					<a href="<{$xoops_url}>/modules/audio/singlefile.php?lid=<{$downloads.lid}>" title="<{$downloads.title}>">
+						<img src="<{$downloads.logourl}>" alt="<{$downloads.title}>" />
+					</a>
+				</div>
+				<div class="vidtitle">
+					<a href="<{$xoops_url}>/modules/audio/singlefile.php?lid=<{$downloads.lid}>" title="<{$downloads.title}>">
+						<{$downloads.title}>
+					</a>
+				</div>
+            <div class="center">
+	            <div class="small"><{$smarty.const._MB_AUDIO_DATE}>:<{$downloads.date}></div>
+				   <div class="small"><{$smarty.const._MB_AUDIO_HIT}><{$downloads.hits}></div>
+            </div>
+			</div>
+		</td>
+		<{/foreach}>
+	</tr>
+</table>

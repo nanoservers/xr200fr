@@ -1,0 +1,104 @@
+.viditem {
+	padding: 3px;
+	margin: 1px
+}
+
+.vidimg,.vidtitle,.viddesc {
+	text-align: center;
+}
+
+.vidtitle {
+	font-size: 1em !important;
+	font-weight: bold;
+	margin: 2px;
+}
+
+.vidtitle a {
+	font-size: 1em !important;
+	font-weight: bold;
+	margin: 2px;
+}
+
+.player {
+	padding: 10px;
+	margin: 20px 12px;
+	height: 100%;
+}
+
+.topvidblockleft {
+	float: left;
+	width: 48%;
+}
+
+.topvidblockright {
+	float: right;
+	width: 48%;
+}
+
+.topvidblockmore {
+	text-align: left;
+	margin-top: 10px;
+	margin-right: 40px;
+}
+
+.topvidblockmorehome {
+	text-align: center;
+	margin: 0 auto !important;
+}
+
+.bottomline {
+	border-bottom: 1px #333 solid;
+}
+
+.bottomlinetext {
+	font-size: 1.3em;
+	margin: 15px 0 5px 0;
+	padding: 5px 10px;
+	border-bottom: 1px #333 solid;
+}
+
+.summary {
+	margin: 0 0 0 20px;
+}
+
+.thereare {
+	font-size: .9em;
+	text-align: right;
+	font-style: italic;
+	padding: 0 20px 0 0;
+	"
+}
+
+.socialnetwork {
+	width: 100%;
+	height : 25px;
+	margin-bottom: 40px;
+}
+
+.socialnetwork ul li {
+	list-style: none;
+	float: left;
+}
+
+.bookmarkme {
+	width: 100% height :     50px;
+}
+
+.bookmarkmetitle {
+	text-align: center;
+}
+
+.bookmarkmeitems {
+	text-align: center;
+	margin: 5px;
+}
+
+.iconbackground {
+	background-repeat: no-repeat !important;
+	background-position: center left;
+	padding: 0 30px !important;
+}
+
+.duration {
+
+}

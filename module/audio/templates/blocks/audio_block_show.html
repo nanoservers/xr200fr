@@ -1,0 +1,24 @@
+<div class="audio_show">
+	<{foreachq item=downloads from=$block.audio}>
+	<div class="audioselecttitle"><a title="<{$downloads.title}>" href="<{$xoops_url}>/modules/audio/singlefile.php?lid=<{$downloads.lid}>"><{$downloads.title}></a></div>
+	<div class="audioselectplayer">
+		<div id='mediaplayer'></div>
+		<script type="text/javascript">
+		  jwplayer('mediaplayer').setup({
+			'flashplayer': '<{$xoops_url}>/modules/audio/js/jwplayer/player.swf',
+			'id': 'playerID',
+			'width': '<{$downloads.mp3Width}>',
+			'height': '<{$downloads.mp3Height}>',
+			'file': '<{$downloads.audioFile}>',
+			'image': '<{$downloads.imgurl}>',
+         'stretching': 'fill',
+			'controlbar': 'bottom',
+			'plugins': 'timeslidertooltipplugin-3',
+			'logo.file': '<{$xoops_url}>/modules/audio/images/logo.png',
+			'logo.hide' : 'false',
+			'logo.position' : 'top-left',
+		  });
+		</script>
+	</div>
+	<{/foreach}>
+</div>
