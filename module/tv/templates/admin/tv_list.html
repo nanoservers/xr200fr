@@ -1,0 +1,34 @@
+<{includeq file="$xoops_rootpath/modules/tv/templates/admin/tv_header.html"}>
+<table id="xo-sort" class="outer" cellspacing="1" width="100%">
+    <thead>
+    <th><{$smarty.const._AM_TV_LIST_ID}></th>
+    <th><{$smarty.const._AM_TV_LIST_ORDER}></th>
+    <th><{$smarty.const._AM_TV_LIST_TITLE}></th>
+    <th><{$smarty.const._AM_TV_LIST_DAY}></th>
+    <th><{$smarty.const._AM_TV_LIST_TIME}></th>
+    <th><{$smarty.const._AM_TV_LIST_SITUATION}></th>
+    <th><{$smarty.const._AM_TV_LIST_STATUS}></th>
+    <th><{$smarty.const._AM_TV_LIST_ACTION}></th>
+    </thead>
+    <tbody class="xo-list">
+    <{foreach item=list from=$lists}>
+    <tr class="odd" id="mod_<{$list.list_id}>">
+        <td class="width5 txtcenter"><img src="../images/puce.png" alt=""/><{$list.list_id}></td>
+        <td class="width5 txtcenter"><img src="../images/puce.png" alt=""/><{$list.list_order}></td>
+        <td class="txtcenter width35 bold"><a title="<{$list.list_title}>" href="<{$xoops_url}>/modules/tv/program.php?id=<{$list.list_item}>"><{$list.list_title}></a></td>
+        <td class="txtcenter width10 bold"><a title="<{$list.list_dayname}>" href="list.php?day=<{$list.list_day}>"><{$list.list_dayname}></a></td>
+        <td class="txtcenter width10 bold"><{$list.list_time}></td>
+        <td class="txtcenter width10 bold"><{$list.list_situation}></td>
+        <td class="txtcenter width5 bold">
+            <img class="cursorpointer" id="list_status<{$list.list_id}>" onclick="setStatus( { op: 'list_status', list_id: <{$list.list_id}> }, 'list_status<{$list.list_id}>', 'backend.php' )" src="<{if $list.list_status}>../images/ok.png<{else}>../images/cancel.png<{/if}>" alt=""/>
+        </td>
+        <td class="txtcenter width10 xo-actions">
+            <a href="list.php?op=edit_list&amp;list_id=<{$list.list_id}>"><img class="tooltip" src="<{xoAdminIcons edit.png}>" alt="<{$smarty.const._EDIT}>" title="<{$smarty.const._EDIT}>"/></a>
+            <a href="list.php?op=delete_list&amp;list_id=<{$list.list_id}>"><img class="tooltip" src="<{xoAdminIcons delete.png}>" alt="<{$smarty.const._DELETE}>" title="<{$smarty.const._DELETE}>"/></a>
+        </td>
+    </tr>
+    <{/foreach}>
+    </tbody>
+</table>
+
+<div class="pagenav"><{$list_pagenav}></div>

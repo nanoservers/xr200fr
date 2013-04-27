@@ -1,0 +1,15 @@
+.tvItem {
+	margin-bottom: 5px;
+}
+
+.tvItemTitle {
+	position: absolute;
+	color: #fff;
+	background-image: url(../images/b60.png);
+	width: 278px;
+	padding: 5px 0;
+}
+
+.tvItemTitle a {
+	color: #fff;
+}

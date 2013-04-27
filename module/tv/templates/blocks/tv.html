@@ -1,0 +1,15 @@
+<table class="outer">
+	<thead>
+		<th class="txtcenter"><{$smarty.const._MB_TV_LIST_TIME}></th>
+		<th class="txtcenter"><{$smarty.const._MB_TV_LIST_TITLE}></th>
+	</thead>
+	<tbody class="xo-list">
+		<{foreach item=list from=$block.lists}>
+		<tr class="odd">
+			<td class="txtcenter width10 bold"><{$list.list_time}></td>
+			<td class="txtcenter bold"><a title="<{$list.list_title}>" href="<{$xoops_url}>/modules/tv/program.php?id=<{$list.list_item}>"><{$list.list_title}></a></td>
+		</tr>
+		<{/foreach}>
+	</tbody>
+</table>
+<div class="tvblocklist"><a title="<{$smarty.const._MB_TV_ALL}>" href="<{$xoops_url}>/modules/tv/index.php?day=<{$block.today}>"><{$smarty.const._MB_TV_ALL}></a></div>

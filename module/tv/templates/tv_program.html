@@ -1,0 +1,20 @@
+<div class="tvindex"> 
+	<div class="item">
+		<div class="itemHead">
+			<div class="itemTitle">
+				<h2><{$program.item_title}></h2>
+			</div>
+		</div>
+		<div class="itemInfo">
+			<span class="itemPostDate"><{$smarty.const._MD_TV_ITEM_SUBMIT}> : <{$program.item_created}></span>
+		</div>
+		<div class="itemBody">
+		   <{if $program.item_img}><div class="itemImage"><img class="left" src="<{$program.item_imgurl}>" alt="<{$program.item_title}>" /></div><{/if}>
+			<div class="itemText"><{$program.item_text}></div>
+			<div class="clear"></div>
+		</div>
+		<div class="itemFoot">
+		<span class="itemPermaLink"><a title="<{$smarty.const._MD_TV_ITEM_BACK}>" href="index.php"><{$smarty.const._MD_TV_ITEM_BACK}></a></span>
+	</div>
+	</div>
+</div>

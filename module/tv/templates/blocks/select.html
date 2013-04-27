@@ -1,0 +1,8 @@
+<div class="tvItemSelect center">
+<{foreach item=item from=$block.items}>
+	<div class="tvItem">
+	   <div class="tvItemTitle"><a title="<{$item.item_title}>" href="<{$item.itemurl}>"><{$item.item_title}></a></div>
+		<div class="tvItemImg"><a title="<{$item.item_title}>" href="<{$item.itemurl}>"><img width="280" height="140" src="<{$item.imgurl}>" alt="<{$item.item_title}>" /></a></div>
+	</div>
+<{/foreach}>
+</div>

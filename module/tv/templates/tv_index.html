@@ -1,0 +1,169 @@
+<div class="tvindex">
+
+	<div class="pad2 marg2" id='info-tab'>
+		<ul>
+			<li><a href="#tabs-1"><{$smarty.const._MD_TV_LIST_DAY1}></a></li>
+			<li><a href="#tabs-2"><{$smarty.const._MD_TV_LIST_DAY2}></a></li>
+			<li><a href="#tabs-3"><{$smarty.const._MD_TV_LIST_DAY3}></a></li>
+			<li><a href="#tabs-4"><{$smarty.const._MD_TV_LIST_DAY4}></a></li>
+			<li><a href="#tabs-5"><{$smarty.const._MD_TV_LIST_DAY5}></a></li>
+			<li><a href="#tabs-6"><{$smarty.const._MD_TV_LIST_DAY6}></a></li>
+	      <li><a href="#tabs-7"><{$smarty.const._MD_TV_LIST_DAY7}></a></li>
+		</ul>
+		
+		<!-- Tab 1-->
+		<div id="tabs-1">
+			<table id="xo-sort" class="outer" cellspacing="1" width="100%">
+			    <thead>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TIME}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TITLE}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_SITUATION}></th>
+			    </thead>
+			    <tbody class="xo-list">
+				    <{foreach item=list from=$lists}>
+				    <{if $list.list_day == 1}>
+				    <tr class="odd" id="mod_<{$list.list_id}>">
+				        <td class="txtcenter width10 bold"><{$list.list_time}></td>
+				        <td class="txtcenter width35 bold"><a title="<{$list.list_title}>" href="<{$xoops_url}>/modules/tv/program.php?id=<{$list.list_item}>"><{$list.list_title}></a></td>
+				        <td class="txtcenter bold"><{$list.list_situation}></td>
+				    </tr>
+				    <{/if}>
+				    <{/foreach}>
+			    </tbody>
+			</table>
+		</div>
+		
+		<!-- Tab 2-->
+		<div id="tabs-2">
+			<table id="xo-sort" class="outer" cellspacing="1" width="100%">
+			    <thead>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TIME}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TITLE}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_SITUATION}></th>
+			    </thead>
+			    <tbody class="xo-list">
+				    <{foreach item=list from=$lists}>
+				    <{if $list.list_day == 2}>
+				    <tr class="odd" id="mod_<{$list.list_id}>">
+				        <td class="txtcenter width10 bold"><{$list.list_time}></td>
+				        <td class="txtcenter width35 bold"><a title="<{$list.list_title}>" href="<{$xoops_url}>/modules/tv/program.php?id=<{$list.list_item}>"><{$list.list_title}></a></td>
+				        <td class="txtcenter bold"><{$list.list_situation}></td>
+				    </tr>
+				    <{/if}>
+				    <{/foreach}>
+			    </tbody>
+			</table>
+		</div>
+		
+		<!-- Tab 3-->	
+		<div id="tabs-3">
+			<table id="xo-sort" class="outer" cellspacing="1" width="100%">
+			    <thead>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TIME}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TITLE}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_SITUATION}></th>
+			    </thead>
+			    <tbody class="xo-list">
+				    <{foreach item=list from=$lists}>
+				    <{if $list.list_day == 3}>
+				    <tr class="odd" id="mod_<{$list.list_id}>">
+				        <td class="txtcenter width10 bold"><{$list.list_time}></td>
+				        <td class="txtcenter width35 bold"><a title="<{$list.list_title}>" href="<{$xoops_url}>/modules/tv/program.php?id=<{$list.list_item}>"><{$list.list_title}></a></td>
+				        <td class="txtcenter bold"><{$list.list_situation}></td>
+				    </tr>
+				    <{/if}>
+				    <{/foreach}>
+			    </tbody>
+			</table>
+		</div>
+		
+		<!-- Tab 4-->		
+		<div id="tabs-4">
+			<table id="xo-sort" class="outer" cellspacing="1" width="100%">
+			    <thead>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TIME}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TITLE}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_SITUATION}></th>
+			    </thead>
+			    <tbody class="xo-list">
+				    <{foreach item=list from=$lists}>
+				    <{if $list.list_day == 4}>
+				    <tr class="odd" id="mod_<{$list.list_id}>">
+				        <td class="txtcenter width10 bold"><{$list.list_time}></td>
+				        <td class="txtcenter width35 bold"><a title="<{$list.list_title}>" href="<{$xoops_url}>/modules/tv/program.php?id=<{$list.list_item}>"><{$list.list_title}></a></td>
+				        <td class="txtcenter bold"><{$list.list_situation}></td>
+				    </tr>
+				    <{/if}>
+				    <{/foreach}>
+			    </tbody>
+			</table>
+		</div>
+			
+		<!-- Tab 5-->		
+		<div id="tabs-5">
+			<table id="xo-sort" class="outer" cellspacing="1" width="100%">
+			    <thead>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TIME}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TITLE}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_SITUATION}></th>
+			    </thead>
+			    <tbody class="xo-list">
+				    <{foreach item=list from=$lists}>
+				    <{if $list.list_day == 5}>
+				    <tr class="odd" id="mod_<{$list.list_id}>">
+				        <td class="txtcenter width10 bold"><{$list.list_time}></td>
+				        <td class="txtcenter width35 bold"><a title="<{$list.list_title}>" href="<{$xoops_url}>/modules/tv/program.php?id=<{$list.list_item}>"><{$list.list_title}></a></td>
+				        <td class="txtcenter bold"><{$list.list_situation}></td>
+				    </tr>
+				    <{/if}>
+				    <{/foreach}>
+			    </tbody>
+			</table>
+		</div>
+		
+		<!-- Tab 6-->		
+		<div id="tabs-6">
+			<table id="xo-sort" class="outer" cellspacing="1" width="100%">
+			    <thead>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TIME}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TITLE}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_SITUATION}></th>
+			    </thead>
+			    <tbody class="xo-list">
+				    <{foreach item=list from=$lists}>
+				    <{if $list.list_day == 6}>
+				    <tr class="odd" id="mod_<{$list.list_id}>">
+				        <td class="txtcenter width10 bold"><{$list.list_time}></td>
+				        <td class="txtcenter width35 bold"><a title="<{$list.list_title}>" href="<{$xoops_url}>/modules/tv/program.php?id=<{$list.list_item}>"><{$list.list_title}></a></td>
+				        <td class="txtcenter bold"><{$list.list_situation}></td>
+				    </tr>
+				    <{/if}>
+				    <{/foreach}>
+			    </tbody>
+			</table>
+		</div>
+		
+		<!-- Tab 7-->		
+		<div id="tabs-7">
+			<table id="xo-sort" class="outer" cellspacing="1" width="100%">
+			    <thead>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TIME}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TITLE}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_SITUATION}></th>
+			    </thead>
+			    <tbody class="xo-list">
+				    <{foreach item=list from=$lists}>
+				    <{if $list.list_day == 7}>
+				    <tr class="odd" id="mod_<{$list.list_id}>">
+				        <td class="txtcenter width10 bold"><{$list.list_time}></td>
+				        <td class="txtcenter width35 bold"><a title="<{$list.list_title}>" href="<{$xoops_url}>/modules/tv/program.php?id=<{$list.list_item}>"><{$list.list_title}></a></td>
+				        <td class="txtcenter bold"><{$list.list_situation}></td>
+				    </tr>
+				    <{/if}>
+				    <{/foreach}>
+			    </tbody>
+			</table>
+		</div>
+		
+	</div>
+</div>
