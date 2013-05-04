@@ -1,0 +1,34 @@
+<{includeq file="$xoops_rootpath/modules/lives/templates/admin/lives_header.html"}>
+<table id="xo-channel-sort" class="outer" cellspacing="1" width="100%">
+    <thead>
+    <th class="txtcenter"><{$smarty.const._AM_LIVES_CHANNEL_ID}></th>
+    <th class="txtcenter"><{$smarty.const._AM_LIVES_CHANNEL_ORDER}></th>
+    <th><{$smarty.const._AM_LIVES_CHANNEL_TITLE}></th>
+    <th><{$smarty.const._AM_LIVES_CHANNEL_STATUS}></th>
+    <th><{$smarty.const._AM_LIVES_CHANNEL_ACTION}></th>
+    </thead>
+    <tbody class="xo-channel">
+    <{foreach item=channel from=$channels}>
+    <tr class="odd" id="mod_<{$channel.channel_id}>">
+        <td class="width5 txtcenter"><img src="../images/puce.png" alt=""/><{$channel.channel_id}></td>
+        <td class="width5 txtcenter"><img src="../images/puce.png" alt=""/><{$channel.channel_order}></td>
+        <td class="txtcenter bold"><{$channel.channel_title}></td>
+        <td class="txtcenter width10 bold">
+            <{if $channel.channel_status == 1}>
+            <{$smarty.const._AM_LIVES_CHANNEL_STATUS2}>
+            <{elseif $channel.channel_status == 2}>
+            <{$smarty.const._AM_LIVES_CHANNEL_STATUS3}>
+            <{else}>
+            <{$smarty.const._AM_LIVES_CHANNEL_STATUS1}>
+            <{/if}>
+            <!-- <img class="cursorpointer" id="channel_status<{$channel.channel_id}>" onclick="channel_setStatus( { op: 'channel_status', channel_id: <{$channel.channel_id}> }, 'channel_status<{$channel.channel_id}>', 'backend.php' )" src="<{if $channel.channel_status}>../images/ok.png<{else}>../images/cancel.png<{/if}>" alt=""/>-->
+        </td>
+        <td class="txtcenter width10 xo-actions">
+            <a href="channel.php?op=edit&amp;channel_id=<{$channel.channel_id}>"><img class="tooltip" src="<{xoAdminIcons edit.png}>" alt="<{$smarty.const._EDIT}>" title="<{$smarty.const._EDIT}>"/></a>
+            <a href="channel.php?op=delete&amp;channel_id=<{$channel.channel_id}>"><img class="tooltip" src="<{xoAdminIcons delete.png}>" alt="<{$smarty.const._DELETE}>" title="<{$smarty.const._DELETE}>"/></a>
+        </td>
+    </tr>
+    <{/foreach}>
+    </tbody>
+</table>
+<div class="pagenav"><{$channel_pagenav}></div>

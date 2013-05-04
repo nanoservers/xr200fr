@@ -1,0 +1,372 @@
+<div class="lives">
+   <div class="breadcrumb"><{$breadcrumb}></div>
+   <{if $type == 'list'}>
+	<div class="channels">
+	<{foreach item=channel from=$channels}>
+		<div class="channel">
+			<{if $channel.channel_status == 1}>
+			<div class="channel-active">
+				<div class="channel-image"><a title="<{$channel.channel_title}>" href="<{$channel.url}>"><img src="<{$channel.imgurl}>" alt="<{$channel.channel_title}>" /></a></div>
+				<div class="channel-title"><{$channel.channel_title}></div>
+			</div>
+			<{else}>
+			<div class="channel-deactivate">
+				<div class="channel-image"><img src="<{$channel.imgurl}>" alt="<{$channel.channel_title}>" /></div>
+				<div class="channel-title"><{$channel.channel_title}></div>
+			</div>
+			<{/if}>
+		</div>
+	<{/foreach}>
+	<div class="clear"></div> 
+	</div>
+   <{else}>
+   <div class="thischannel">
+      <{if $op == fpl}>
+		<div class="live-player">
+			<div id="mediaspace" class="live-mediaspace"><{$smarty.const._MD_LIVES_INSTALLFLASH}></div>
+			<script type='text/javascript'>
+			  jwplayer('mediaspace').setup({
+			    'flashplayer': '<{$moduleurl}>/js/jwplayer/player.swf',
+			    'file': '<{$channel.channel_low_pp}>',
+			    'streamer': '<{$channel.channel_rtmp_url}>',
+			    'controlbar': 'bottom',
+			    'width': '<{$width}>',
+			    'height': '<{$height}>',
+			    'skin': '<{$moduleurl}>/js/jwplayer/glow.zip',
+			    'autostart': 'true',
+			    'stretching': 'fill',
+				 'controlbar': 'bottom',
+				 'logo.file': '<{$logourl}>',
+	          'logo.hide' : 'false',
+	          'logo.position' : 'top-left',
+			  });
+			</script>
+		</div>
+		<{elseif $op == fpm}>
+		<div class="live-player">
+			<div id="mediaspace" class="live-mediaspace"><{$smarty.const._MD_LIVES_INSTALLFLASH}></div>
+			<script type='text/javascript'>
+			  jwplayer('mediaspace').setup({
+			    'flashplayer': '<{$moduleurl}>/js/jwplayer/player.swf',
+			    'file': '<{$channel.channel_medium_pp}>',
+			    'streamer': '<{$channel.channel_rtmp_url}>',
+			    'controlbar': 'bottom',
+			    'width': '<{$width}>',
+			    'height': '<{$height}>',
+			    'skin': '<{$moduleurl}>/js/jwplayer/glow.zip',
+			    'autostart': 'true',
+			    'stretching': 'fill',
+				 'controlbar': 'bottom',
+				 'logo.file': '<{$logourl}>',
+	          'logo.hide' : 'false',
+	          'logo.position' : 'top-left',
+			  });
+			</script>
+		</div>
+		<{elseif $op == fph}>
+		<div class="live-player">
+			<div id="mediaspace" class="live-mediaspace"><{$smarty.const._MD_LIVES_INSTALLFLASH}></div>
+			<script type='text/javascript'>
+			  jwplayer('mediaspace').setup({
+			    'flashplayer': '<{$moduleurl}>/js/jwplayer/player.swf',
+			    'file': '<{$channel.channel_high_pp}>',
+			    'streamer': '<{$channel.channel_rtmp_url}>',
+			    'controlbar': 'bottom',
+			    'width': '<{$width}>',
+			    'height': '<{$height}>',
+			    'skin': '<{$moduleurl}>/js/jwplayer/glow.zip',
+			    'autostart': 'true',
+			    'stretching': 'fill',
+				 'controlbar': 'bottom',
+				 'logo.file': '<{$logourl}>',
+	          'logo.hide' : 'false',
+	          'logo.position' : 'top-left',
+			  });
+			</script>
+		</div>
+		<{elseif $op == wms}>
+		 <div class="live-player center">
+			<embed 
+			width="<{$width}>" 
+			height="<{$height}>" 
+			autostart="True" 
+			showstatusbar="1" 
+			showcontrols="1" 
+			src="<{$moduleurl}>/asx/live.asx" 
+			pluginspage="http://www.microsoft.com/Windows/MediaPlayer/" 
+			type="application/x-mplayer2" 
+			name="MediaPlayer"></embed>
+		</div>
+		<{elseif $op == sll}>
+		<div class="marg0">
+			<div id='errorLocation' style="font-size: small;color: Gray;"></div>
+			<div id="silverlightControlHost">
+			<object data="data:application/x-silverlight," type="application/x-silverlight" width="<{$width}>" height="<{$height}>" >
+				<param name="source" value="<{$moduleurl}>/js/MediaPlayerTemplate.xap"/>
+				<param name="onerror" value="onSilverlightError" />
+				<param name="autoUpgrade" value="true" />
+				<param name="minRuntimeVersion" value="4.0.50401.0" />
+				<param name="enableHtmlAccess" value="true" />
+				<param name="enableGPUAcceleration" value="true" />
+				<param name="initparams" value='playerSettings = 
+			    <Playlist>
+			    <AutoLoad>false</AutoLoad>
+			    <AutoPlay>false</AutoPlay>
+			    <DisplayTimeCode>false</DisplayTimeCode>
+			    <EnableOffline>true</EnableOffline>
+			    <EnablePopOut>true</EnablePopOut>
+			    <EnableCaptions>true</EnableCaptions>
+			    <EnableCachedComposition>true</EnableCachedComposition>
+			    <StretchNonSquarePixels>NoStretch</StretchNonSquarePixels>
+			    <StartMuted>false</StartMuted>
+			    <StartWithPlaylistShowing>false</StartWithPlaylistShowing>
+			    <Items>
+						<PlaylistItem>
+							<AudioCodec>WmaProfessional</AudioCodec>
+							<Description></Description>
+							<IsAdaptiveStreaming>true</IsAdaptiveStreaming>
+							<MediaSource><{$channel.channel_http_url}>/<{$channel.channel_low_pp}>/Manifest</MediaSource>
+							<ThumbSource></ThumbSource>
+							<Title>Extremists</Title>
+							<DRM>false</DRM>
+							<VideoCodec>H264</VideoCodec>
+							<FrameRate>29.9700898503294</FrameRate>
+							<Width><{$width}></Width>
+							<Height><{$height}></Height>
+							<AspectRatioWidth>16</AspectRatioWidth>
+							<AspectRatioHeight>9</AspectRatioHeight>
+						</PlaylistItem>
+			    </Items>
+			    </Playlist>' />       
+			
+			   <div onmouseover="highlightDownloadArea(true)" onmouseout="highlightDownloadArea(false)">
+			      <img src="" style="position:absolute;width: <{$width}>px;height: <{$height}>px;border-style:none;" onerror="this.style.display='none'"/>
+			      <img src="<{$imgurl}>/Preview.png" style="position:absolute;width: <{$width}>px;height: <{$height}>px;border-style:none;" onerror="this.style.display='none'"/>                                            
+			      <div id="overlay" class="fadeLots" style="position:absolute;width: <{$width}>px;height: <{$height}>px;border-style:none;background-color:white;"/>
+			   </div>
+			   <table width="<{$width}>" height="<{$height}>" style="position:absolute;">
+				   <tr>
+					   <td align="center" valign="middle">                       
+						   <img src="http://go2.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight"> 
+					   </td>
+				   </tr>
+			   </table>                   
+			   <a href="http://go2.microsoft.com/fwlink/?LinkID=149156">
+			      <img src="" class="fadeCompletely" style="position:absolute;width: <{$width}>px;height: <{$height}>px;border-style:none;" alt="Get Microsoft Silverlight"/>
+			   </a>                   
+			   </object>
+			   <iframe id='_sl_historyFrame' style='visibility:hidden;height:0;width:0;border:0px'></iframe>
+			</div>
+		</div>
+		<{elseif $op == slm}>
+		<div class="marg0">
+			<div id='errorLocation' style="font-size: small;color: Gray;"></div>
+			<div id="silverlightControlHost">
+			<object data="data:application/x-silverlight," type="application/x-silverlight" width="<{$width}>" height="<{$height}>" >
+				<param name="source" value="<{$moduleurl}>/js/MediaPlayerTemplate.xap"/>
+				<param name="onerror" value="onSilverlightError" />
+				<param name="autoUpgrade" value="true" />
+				<param name="minRuntimeVersion" value="4.0.50401.0" />
+				<param name="enableHtmlAccess" value="true" />
+				<param name="enableGPUAcceleration" value="true" />
+				<param name="initparams" value='playerSettings = 
+			    <Playlist>
+			    <AutoLoad>false</AutoLoad>
+			    <AutoPlay>false</AutoPlay>
+			    <DisplayTimeCode>false</DisplayTimeCode>
+			    <EnableOffline>true</EnableOffline>
+			    <EnablePopOut>true</EnablePopOut>
+			    <EnableCaptions>true</EnableCaptions>
+			    <EnableCachedComposition>true</EnableCachedComposition>
+			    <StretchNonSquarePixels>NoStretch</StretchNonSquarePixels>
+			    <StartMuted>false</StartMuted>
+			    <StartWithPlaylistShowing>false</StartWithPlaylistShowing>
+			    <Items>
+						<PlaylistItem>
+							<AudioCodec>WmaProfessional</AudioCodec>
+							<Description></Description>
+							<IsAdaptiveStreaming>true</IsAdaptiveStreaming>
+							<MediaSource><{$channel.channel_http_url}>/<{$channel.channel_medium_pp}>/Manifest</MediaSource>
+							<ThumbSource></ThumbSource>
+							<Title>Extremists</Title>
+							<DRM>false</DRM>
+							<VideoCodec>H264</VideoCodec>
+							<FrameRate>29.9700898503294</FrameRate>
+							<Width><{$width}></Width>
+							<Height><{$height}></Height>
+							<AspectRatioWidth>16</AspectRatioWidth>
+							<AspectRatioHeight>9</AspectRatioHeight>
+						</PlaylistItem>
+			    </Items>
+			    </Playlist>' />       
+			
+			   <div onmouseover="highlightDownloadArea(true)" onmouseout="highlightDownloadArea(false)">
+			      <img src="" style="position:absolute;width: <{$width}>px;height: <{$height}>px;border-style:none;" onerror="this.style.display='none'"/>
+			      <img src="<{$imgurl}>/Preview.png" style="position:absolute;width: <{$width}>px;height: <{$height}>px;border-style:none;" onerror="this.style.display='none'"/>                                            
+			      <div id="overlay" class="fadeLots" style="position:absolute;width: <{$width}>px;height: <{$height}>px;border-style:none;background-color:white;"/>
+			   </div>
+			   <table width="<{$width}>" height="<{$height}>" style="position:absolute;">
+				   <tr>
+					   <td align="center" valign="middle">                       
+						   <img src="http://go2.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight"> 
+					   </td>
+				   </tr>
+			   </table>                   
+			   <a href="http://go2.microsoft.com/fwlink/?LinkID=149156">
+			      <img src="" class="fadeCompletely" style="position:absolute;width: <{$width}>px;height: <{$height}>px;border-style:none;" alt="Get Microsoft Silverlight"/>
+			   </a>                   
+			   </object>
+			   <iframe id='_sl_historyFrame' style='visibility:hidden;height:0;width:0;border:0px'></iframe>
+			</div>
+		</div>
+		<{elseif $op == slh}>
+		<div class="marg0">
+			<div id='errorLocation' style="font-size: small;color: Gray;"></div>
+			<div id="silverlightControlHost">
+			<object data="data:application/x-silverlight," type="application/x-silverlight" width="<{$width}>" height="<{$height}>" >
+				<param name="source" value="<{$moduleurl}>/js/MediaPlayerTemplate.xap"/>
+				<param name="onerror" value="onSilverlightError" />
+				<param name="autoUpgrade" value="true" />
+				<param name="minRuntimeVersion" value="4.0.50401.0" />
+				<param name="enableHtmlAccess" value="true" />
+				<param name="enableGPUAcceleration" value="true" />
+				<param name="initparams" value='playerSettings = 
+			    <Playlist>
+			    <AutoLoad>false</AutoLoad>
+			    <AutoPlay>false</AutoPlay>
+			    <DisplayTimeCode>false</DisplayTimeCode>
+			    <EnableOffline>true</EnableOffline>
+			    <EnablePopOut>true</EnablePopOut>
+			    <EnableCaptions>true</EnableCaptions>
+			    <EnableCachedComposition>true</EnableCachedComposition>
+			    <StretchNonSquarePixels>NoStretch</StretchNonSquarePixels>
+			    <StartMuted>false</StartMuted>
+			    <StartWithPlaylistShowing>false</StartWithPlaylistShowing>
+			    <Items>
+						<PlaylistItem>
+							<AudioCodec>WmaProfessional</AudioCodec>
+							<Description></Description>
+							<IsAdaptiveStreaming>true</IsAdaptiveStreaming>
+							<MediaSource><{$channel.channel_http_url}>/<{$channel.channel_high_pp}>/Manifest</MediaSource>
+							<ThumbSource></ThumbSource>
+							<Title>Extremists</Title>
+							<DRM>false</DRM>
+							<VideoCodec>H264</VideoCodec>
+							<FrameRate>29.9700898503294</FrameRate>
+							<Width><{$width}></Width>
+							<Height><{$height}></Height>
+							<AspectRatioWidth>16</AspectRatioWidth>
+							<AspectRatioHeight>9</AspectRatioHeight>
+						</PlaylistItem>
+			    </Items>
+			    </Playlist>' />       
+			
+			   <div onmouseover="highlightDownloadArea(true)" onmouseout="highlightDownloadArea(false)">
+			      <img src="" style="position:absolute;width: <{$width}>px;height: <{$height}>px;border-style:none;" onerror="this.style.display='none'"/>
+			      <img src="<{$imgurl}>/Preview.png" style="position:absolute;width: <{$width}>px;height: <{$height}>px;border-style:none;" onerror="this.style.display='none'"/>                                            
+			      <div id="overlay" class="fadeLots" style="position:absolute;width: <{$width}>px;height: <{$height}>px;border-style:none;background-color:white;"/>
+			   </div>
+			   <table width="<{$width}>" height="<{$height}>" style="position:absolute;">
+				   <tr>
+					   <td align="center" valign="middle">                       
+						   <img src="http://go2.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight"> 
+					   </td>
+				   </tr>
+			   </table>                   
+			   <a href="http://go2.microsoft.com/fwlink/?LinkID=149156">
+			      <img src="" class="fadeCompletely" style="position:absolute;width: <{$width}>px;height: <{$height}>px;border-style:none;" alt="Get Microsoft Silverlight"/>
+			   </a>                   
+			   </object>
+			   <iframe id='_sl_historyFrame' style='visibility:hidden;height:0;width:0;border:0px'></iframe>
+			</div>
+		</div>
+		<{else}>
+	   <div class="live-index">
+			<div class="live-page">
+				<div class="playlive">
+					<ul>
+						<{if $channel.channel_wms_pp}>
+						<li>
+							<div class="live-player-index">
+								<div class="live-playerimg">
+									<img src="<{$imgurl}>/media.png" alt="<{$smarty.const._MD_LIVES_MEDIAPLAYER}>" />
+								</div>
+								<div class="live-playertxt">
+									<a class="button" title="<{$smarty.const._MD_LIVES_MEDIAPLAYER}>" href="<{$config.wmslink}>"><{$smarty.const._MD_LIVES_ALLQULITYS}></a>
+								</div>
+								<div class="clear"></div>
+							</div>
+		            </li>
+		            <{/if}>
+		            <li>
+							<div class="live-player-index">
+								<div class="live-playerimg">
+									<img src="<{$imgurl}>/flash.png" alt="<{$smarty.const._MD_LIVES_FLASHLAYER}>" />
+								</div>
+								<div class="live-playertxt">
+									<{if $channel.channel_low_pp}><a class="button" title="<{$smarty.const._MD_LIVES_FLASHLAYER}>" href="<{$config.fpllink}>"><{$smarty.const._MD_LIVES_LOW}></a><{/if}>
+									<{if $channel.channel_medium_pp}><a class="button" title="<{$smarty.const._MD_LIVES_FLASHLAYER}>" href="<{$config.fpmlink}>"><{$smarty.const._MD_LIVES_MEDIUM}></a><{/if}>
+									<{if $channel.channel_high_pp}><a class="button" title="<{$smarty.const._MD_LIVES_FLASHLAYER}>" href="<{$config.fphlink}>"><{$smarty.const._MD_LIVES_HIGH}></a><{/if}>
+								</div>
+								<div class="clear"></div>
+							</div>
+		            </li>
+		            <li>
+							<div class="live-player-index">
+								<div class="live-playerimg">
+									<img src="<{$imgurl}>/silver.png" alt="<{$smarty.const._MD_LIVES_SILVERLIGHT}>" />
+								</div>
+								<div class="live-playertxt">
+									<{if $channel.channel_low_pp}><a class="button" title="<{$smarty.const._MD_LIVES_SILVERLIGHT}>" href="<{$config.slllink}>"><{$smarty.const._MD_LIVES_LOW}></a><{/if}>
+									<{if $channel.channel_medium_pp}><a class="button" title="<{$smarty.const._MD_LIVES_SILVERLIGHT}>" href="<{$config.slmlink}>"><{$smarty.const._MD_LIVES_MEDIUM}></a><{/if}>
+									<{if $channel.channel_high_pp}><a class="button" title="<{$smarty.const._MD_LIVES_SILVERLIGHT}>" href="<{$config.slhlink}>"><{$smarty.const._MD_LIVES_HIGH}></a><{/if}>
+								</div>
+		                  <div class="clear"></div>
+							</div>
+		            </li>
+		            <li>
+							<div class="live-player-index">
+								<div class="live-playerimg">
+									<img src="<{$imgurl}>/iphone.png" alt="<{$smarty.const._MD_LIVES_IOS}>" />
+								</div>
+								<div class="live-playertxt">
+									<{if $channel.channel_low_pp}><a class="button" title="<{$smarty.const._MD_LIVES_IOS}>" href="<{$channel.channel_http_url}>/<{$channel.channel_low_pp}>/playlist.m3u8"><{$smarty.const._MD_LIVES_LOW}></a><{/if}>
+									<{if $channel.channel_medium_pp}><a class="button" title="<{$smarty.const._MD_LIVES_IOS}>" href="<{$channel.channel_http_url}>/<{$channel.channel_medium_pp}>/playlist.m3u8"><{$smarty.const._MD_LIVES_MEDIUM}></a><{/if}>
+									<{if $channel.channel_high_pp}><a class="button" title="<{$smarty.const._MD_LIVES_IOS}>" href="<{$channel.channel_http_url}>/<{$channel.channel_high_pp}>/playlist.m3u8"><{$smarty.const._MD_LIVES_HIGH}></a><{/if}>
+								</div>
+		                  <div class="clear"></div>
+							</div>
+		            </li>
+		            <li>
+							<div class="live-player-index">
+								<div class="live-playerimg">
+									<img src="<{$imgurl}>/android.png" alt="<{$smarty.const._MD_LIVES_ANDROID}>" />
+								</div>
+								<div class="live-playertxt">
+									<{if $channel.channel_low_pp}><a class="button"title="<{$smarty.const._MD_LIVES_ANDROID}>" href="<{$channel.channel_rtsp_url}>/<{$channel.channel_low_pp}>"><{$smarty.const._MD_LIVES_LOW}></a><{/if}>
+									<{if $channel.channel_medium_pp}><a class="button" title="<{$smarty.const._MD_LIVES_ANDROID}>" href="<{$channel.channel_rtsp_url}>/<{$channel.channel_medium_pp}>"><{$smarty.const._MD_LIVES_MEDIUM}></a><{/if}>
+									<{if $channel.channel_high_pp}><a class="button" title="<{$smarty.const._MD_LIVES_ANDROID}>" href="<{$channel.channel_rtsp_url}>/<{$channel.channel_high_pp}>"><{$smarty.const._MD_LIVES_HIGH}></a><{/if}>
+								</div>
+								<div class="clear"></div>
+							</div>
+		            </li>
+		            <li>
+							<div class="live-player-index">
+								<div class="live-playerimg">
+									<img src="<{$imgurl}>/symbian.png" alt="<{$smarty.const._MD_LIVES_MOB}>" />
+								</div>
+								<div class="live-playertxt">
+									<{if $channel.channel_low_pp}><a class="button" title="<{$smarty.const._MD_LIVES_MOB}>" href="<{$channel.channel_rtsp_url}>/<{$channel.channel_low_pp}>"><{$smarty.const._MD_LIVES_PLAY}></a><{/if}>
+								</div>
+								<div class="clear"></div>
+							</div>
+		            </li>
+					</ul>
+				</div>
+			   <div class="clear"></div>
+			</div>
+		</div>
+      <{/if}>
+   </div>
+   <{/if}>
+</div>

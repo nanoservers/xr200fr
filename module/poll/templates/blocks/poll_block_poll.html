@@ -1,0 +1,64 @@
+<{foreach item=poll from=$block.polls}>
+<form style="margin-top: 1px;" action="<{$xoops_url}>/modules/poll/index.php" method="post">
+<table cellspacing="1">
+  <tr>
+    <th align="center" colspan="2"><input type="hidden" name="poll_id" value="<{$poll.id}>" /><{$poll.question}></th>
+  </tr>
+
+<{if ($poll.has_expired OR $poll.has_voted>0)}>
+<{foreach item=option from=$poll.options}>
+  <tr class="<{cycle values="even,odd"}>">
+    <td width="30%" align="right">
+    <{$option.text}>
+    </td>
+    <td width="70%" align="right">
+    <{$option.image}> <{$option.percent}> (<{$option.count}>)<br>
+    <img src='<{$xoops_url}>/modules/poll/images/colorbars/<{$option.color}>' height='14' width='<{$option.percent}>' alt="<{$option.percent}>" />
+    </td>
+  </tr>
+  
+  <{/foreach}>
+<{else}>
+  <{foreach item=option from=$poll.options}>
+  <tr>
+    <td align="center"><input type="<{$poll.option_type}>" name="<{$poll.option_name}>" value="<{$option.id}>" /></td>
+    <td align="right"><{$option.text}></td>
+  </tr>
+  <{/foreach}>
+  <tr>
+  <{/if}>
+  <{if ($poll.has_expired OR $poll.has_voted>0)}>
+   <td align="center" colspan="2"><input type="button" value="<{$block.lang_results}>" onclick="location='<{$xoops_url}>/modules/poll/pollresults.php?poll_id=<{$poll.id}>'" /></td>
+  <{else}>
+	<input type="hidden" name="url" value="<{$block.url}>">
+    <td align="center" colspan="2"><input type="submit" value="<{$block.lang_vote}>" /> <input type="button" value="<{$block.lang_results}>" onclick="location='<{$xoops_url}>/modules/poll/pollresults.php?poll_id=<{$poll.id}>'" /></td>
+  <{/if}>
+  </tr>
+  <tr>
+	<td align="center" colspan="2">
+		<{$poll.totalVotes}>
+	</td>
+  </tr>
+   <tr>
+	<{if ($poll.has_expired)}>
+		<td align="center" colspan="2"><{$block.lang_expired}> <{$poll.end_time}></td>	
+	<{else}>
+		<td align="center" colspan="2"><{$block.lang_expires}> <{$poll.end_time}></td>
+	<{/if}>
+  </tr>
+  <{if ($poll.comment_mode>0)}>
+	<tr>
+		<td align="center" colspan="2">
+			<{if ($poll.comments == 1)}>
+				<a href='<{$xoops_url}>/modules/poll/pollresults.php?poll_id=<{$poll.id}>'><{$poll.comments}> <{$block.lang_comment}></a>
+			<{elseif ($poll.comments > 1)}>
+				<a href='<{$xoops_url}>/modules/poll/pollresults.php?poll_id=<{$poll.id}>'><{$poll.comments}> <{$block.lang_comments}></a>
+			<{else}>
+				<a href='<{$xoops_url}>/modules/poll/pollresults.php?poll_id=<{$poll.id}>'><{$block.lang_comments}>?</a>
+			<{/if}>
+		</td>
+	</tr> 
+	<{/if}>
+</table>
+</form>
+<{/foreach}>

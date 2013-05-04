@@ -1,0 +1,21 @@
+<div id="xo-body-contain">
+  <div id="xo-body">
+     <{if $xoops_contents}>
+          <div id="xo-content">
+          <!--[if lt IE 8]>
+				 <div class="errorMsg"><{$smarty.const._OXYGEN_IE}></div>
+			    <div class="marg5 pad5"></div>
+			 <![endif]-->
+          <{if $xo_system_menu}><{$xo_system_menu}><{/if}>
+          <{$xoops_contents}>
+          </div>
+      <{/if}>
+      <{if $modules}>
+      <{includeq file="$theme_tpl/xo_icons.html"}>
+      <div class="clear"></div>
+      <{includeq file="$theme_tpl/xo_modules.html"}>
+	  <div class="clear"></div>
+     <{/if}>
+  </div>
+  <div class="clear"></div>
+</div>

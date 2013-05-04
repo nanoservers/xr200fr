@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/xoops/!svn/ver/3977/XoopsLanguages/persian/modules/news/trunk/language/persian/mail_template
+END
+global_newstory_notify.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svnroot/xoops/!svn/ver/3977/XoopsLanguages/persian/modules/news/trunk/language/persian/mail_template/global_newstory_notify.tpl
+END
+story_approve_notify.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svnroot/xoops/!svn/ver/3977/XoopsLanguages/persian/modules/news/trunk/language/persian/mail_template/story_approve_notify.tpl
+END
+global_storysubmit_notify.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svnroot/xoops/!svn/ver/3977/XoopsLanguages/persian/modules/news/trunk/language/persian/mail_template/global_storysubmit_notify.tpl
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svnroot/xoops/!svn/ver/3977/XoopsLanguages/persian/modules/news/trunk/language/persian/mail_template/index.html
+END
+category_newstory_notify.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svnroot/xoops/!svn/ver/3977/XoopsLanguages/persian/modules/news/trunk/language/persian/mail_template/category_newstory_notify.tpl
+END
+global_newcategory_notify.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svnroot/xoops/!svn/ver/3977/XoopsLanguages/persian/modules/news/trunk/language/persian/mail_template/global_newcategory_notify.tpl
+END
+topic_newstory_notify.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svnroot/xoops/!svn/ver/3977/XoopsLanguages/persian/modules/news/trunk/language/persian/mail_template/topic_newstory_notify.tpl
+END
