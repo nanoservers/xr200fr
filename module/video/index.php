@@ -136,8 +136,11 @@ if ($xoopsModuleConfig ['newdownloads'] > 0) {
 		// Set title
 		$title = mb_substr ( strip_tags($downloads_arr [$i]->getVar ( 'title' ) ), 0, 28, 'utf-8' ) . '...';
 		
+		// category
+		$category = $downloadscat_arr[$downloads_arr[$i]->getVar('cid')]->getVar('cat_title');
+		
 		// Send information to template
-		$xoopsTpl->append ( 'file', array ('id' => $downloads_arr [$i]->getVar ( 'lid' ), 'cid' => $downloads_arr [$i]->getVar ( 'cid' ), 'title' => $title, 'fulltitle' => $downloads_arr [$i]->getVar ( 'title' ) . $new . $pop, 'shorttitle' => $downloads_arr [$i]->getVar ( 'title' ), 'logourl' => $logourl, 'updated' => $datetime, 'description_short' => $description_short, 'adminlink' => $adminlink, 'perm_download' => $perm_download ,'duration' => $duration ,'hits' => $downloads_arr [$i]->getVar ( 'hits' )) );
+		$xoopsTpl->append ( 'file', array ('id' => $downloads_arr [$i]->getVar ( 'lid' ), 'cid' => $downloads_arr [$i]->getVar ( 'cid' ), 'title' => $title, 'fulltitle' => $downloads_arr [$i]->getVar ( 'title' ) . $new . $pop, 'shorttitle' => $downloads_arr [$i]->getVar ( 'title' ), 'logourl' => $logourl, 'updated' => $datetime, 'description_short' => $description_short, 'adminlink' => $adminlink, 'perm_download' => $perm_download ,'duration' => $duration ,'hits' => $downloads_arr [$i]->getVar ( 'hits' ), 'category' => $category));
 		
 		//Set keyword
 		$keywords .= $downloads_arr [$i]->getVar ( 'title' ) . ',';
