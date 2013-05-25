@@ -6,6 +6,8 @@
     <th><{$smarty.const._AM_TV_LIST_TITLE}></th>
     <th><{$smarty.const._AM_TV_LIST_DAY}></th>
     <th><{$smarty.const._AM_TV_LIST_TIME}></th>
+    <th><{$smarty.const._AM_TV_LIST_TIME2}></th>
+    <th><{$smarty.const._AM_TV_LIST_TIME3}></th>
     <th><{$smarty.const._AM_TV_LIST_SITUATION}></th>
     <th><{$smarty.const._AM_TV_LIST_STATUS}></th>
     <th><{$smarty.const._AM_TV_LIST_ACTION}></th>
@@ -18,6 +20,8 @@
         <td class="txtcenter width35 bold"><a title="<{$list.list_title}>" href="<{$xoops_url}>/modules/tv/program.php?id=<{$list.list_item}>"><{$list.list_title}></a></td>
         <td class="txtcenter width10 bold"><a title="<{$list.list_dayname}>" href="list.php?day=<{$list.list_day}>"><{$list.list_dayname}></a></td>
         <td class="txtcenter width10 bold"><{$list.list_time}></td>
+        <td class="txtcenter width10 bold"><{$list.list_time2}></td>
+        <td class="txtcenter width10 bold"><{$list.list_time3}></td>
         <td class="txtcenter width10 bold"><{$list.list_situation}></td>
         <td class="txtcenter width5 bold">
             <img class="cursorpointer" id="list_status<{$list.list_id}>" onclick="setStatus( { op: 'list_status', list_id: <{$list.list_id}> }, 'list_status<{$list.list_id}>', 'backend.php' )" src="<{if $list.list_status}>../images/ok.png<{else}>../images/cancel.png<{/if}>" alt=""/>

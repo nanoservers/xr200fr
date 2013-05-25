@@ -10,6 +10,8 @@ define("_MD_TV_LIST_DAY7","الأحد");
 
 define("_MD_TV_LIST_TITLE","اسم البرنامج");
 define("_MD_TV_LIST_TIME","مرة");
+define("_MD_TV_LIST_TIME2","مرة");
+define("_MD_TV_LIST_TIME3","مرة");
 define("_MD_TV_LIST_SITUATION","النوع من البرامج");
 
 define("_MD_TV_ITEM_BACK","Back to list");

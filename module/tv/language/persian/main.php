@@ -10,6 +10,8 @@ define("_MD_TV_LIST_DAY7","یکشنبه");
 
 define("_MD_TV_LIST_TITLE","عنوان");
 define("_MD_TV_LIST_TIME","زمان پخش");
+define("_MD_TV_LIST_TIME2","زمان پخش");
+define("_MD_TV_LIST_TIME3","زمان پخش");
 define("_MD_TV_LIST_SITUATION","نوع برنامه");
 
 define("_MD_TV_ITEM_BACK","بازگشت به فهرست");

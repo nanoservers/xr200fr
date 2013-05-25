@@ -15,6 +15,8 @@ define("_AM_TV_LIST_ORDER","Order");
 define("_AM_TV_LIST_TITLE","Title"); 	
 define("_AM_TV_LIST_DAY","Day"); 	
 define("_AM_TV_LIST_TIME","Time");
+define("_AM_TV_LIST_TIME2","Time");
+define("_AM_TV_LIST_TIME3","Time");
 define("_AM_TV_LIST_HOUR","Hour");
 define("_AM_TV_LIST_MINUTE","Minute"); 	
 define("_AM_TV_LIST_SITUATION","Situation"); 	

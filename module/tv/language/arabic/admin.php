@@ -15,6 +15,8 @@ define("_AM_TV_LIST_ORDER","Order");
 define("_AM_TV_LIST_TITLE","اسم البرنامج"); 	
 define("_AM_TV_LIST_DAY","Day"); 	
 define("_AM_TV_LIST_TIME","مرة");
+define("_AM_TV_LIST_TIME2","مرة");
+define("_AM_TV_LIST_TIME3","مرة");
 define("_AM_TV_LIST_HOUR","Hour");
 define("_AM_TV_LIST_MINUTE","Minute"); 	
 define("_AM_TV_LIST_SITUATION","النوع من البرامج"); 	

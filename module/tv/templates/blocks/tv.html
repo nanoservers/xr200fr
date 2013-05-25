@@ -1,12 +1,16 @@
 <table class="outer">
 	<thead>
 		<th class="txtcenter"><{$smarty.const._MB_TV_LIST_TIME}></th>
+		<th class="txtcenter"><{$smarty.const._MB_TV_LIST_TIME2}></th>
+		<th class="txtcenter"><{$smarty.const._MB_TV_LIST_TIME3}></th>
 		<th class="txtcenter"><{$smarty.const._MB_TV_LIST_TITLE}></th>
 	</thead>
 	<tbody class="xo-list">
 		<{foreach item=list from=$block.lists}>
 		<tr class="odd">
 			<td class="txtcenter width10 bold"><{$list.list_time}></td>
+			<td class="txtcenter width10 bold"><{$list.list_time2}></td>
+			<td class="txtcenter width10 bold"><{$list.list_time3}></td>
 			<td class="txtcenter bold"><a title="<{$list.list_title}>" href="<{$xoops_url}>/modules/tv/program.php?id=<{$list.list_item}>"><{$list.list_title}></a></td>
 		</tr>
 		<{/foreach}>

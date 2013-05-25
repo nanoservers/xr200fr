@@ -16,6 +16,8 @@
 			<table id="xo-sort" class="outer" cellspacing="1" width="100%">
 			    <thead>
 				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TIME}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TIME2}></th>
+				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TIME3}></th>
 				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_TITLE}></th>
 				    <th class="txtcenter"><{$smarty.const._MD_TV_LIST_SITUATION}></th>
 			    </thead>
@@ -24,6 +26,8 @@
 				    <{if $list.list_day == 1}>
 				    <tr class="odd" id="mod_<{$list.list_id}>">
 				        <td class="txtcenter width10 bold"><{$list.list_time}></td>
+				        <td class="txtcenter width10 bold"><{$list.list_time2}></td>
+				        <td class="txtcenter width10 bold"><{$list.list_time3}></td>
 				        <td class="txtcenter width35 bold"><a title="<{$list.list_title}>" href="<{$xoops_url}>/modules/tv/program.php?id=<{$list.list_item}>"><{$list.list_title}></a></td>
 				        <td class="txtcenter bold"><{$list.list_situation}></td>
 				    </tr>

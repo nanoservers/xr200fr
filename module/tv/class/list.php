@@ -9,6 +9,10 @@ class tv_list extends XoopsObject {
 		$this->initVar ( 'list_item', XOBJ_DTYPE_INT );
       $this->initVar ( 'list_minute', XOBJ_DTYPE_TXTBOX );
       $this->initVar ( 'list_hour', XOBJ_DTYPE_TXTBOX );
+      $this->initVar ( 'list_minute2', XOBJ_DTYPE_TXTBOX );
+      $this->initVar ( 'list_hour2', XOBJ_DTYPE_TXTBOX );
+      $this->initVar ( 'list_minute3', XOBJ_DTYPE_TXTBOX );
+      $this->initVar ( 'list_hour3', XOBJ_DTYPE_TXTBOX );
 		$this->initVar ( 'list_situation', XOBJ_DTYPE_TXTBOX );
 		$this->initVar ( 'list_status', XOBJ_DTYPE_INT , '1');
 		$this->initVar ( 'list_order', XOBJ_DTYPE_INT );
@@ -39,7 +43,7 @@ class tv_list extends XoopsObject {
 		$day->addOption("7", _AM_TV_LIST_DAY7);
 		$form->addElement($day);
 		
-		// time
+		// time 1
 		$time = new XoopsFormElementTray(_AM_TV_LIST_TIME,' ');
 		$hour = new XoopsFormSelect(_AM_TV_LIST_HOUR, 'list_hour',$this->getVar ( 'list_hour', 'e' ));
 		$hour->addOption('00');
@@ -76,7 +80,83 @@ class tv_list extends XoopsObject {
 		$time->addElement($minute);
 		
 		$form->addElement($time);
+
+      // time 2
+		$time = new XoopsFormElementTray(_AM_TV_LIST_TIME2,' ');
+		$hour = new XoopsFormSelect(_AM_TV_LIST_HOUR, 'list_hour2',$this->getVar ( 'list_hour2', 'e' ));
+		$hour->addOption('00');
+		$hour->addOption('01');
+		$hour->addOption('02');
+		$hour->addOption('03');
+		$hour->addOption('04');
+		$hour->addOption('05');
+		$hour->addOption('06');
+		$hour->addOption('07');
+		$hour->addOption('08');
+      $hour->addOption('09');
+      $i = 10;
+		while($i < 25) {
+			$hour->addOption($i++);
+		}	
+		$time->addElement($hour);
 		
+		$minute = new XoopsFormSelect(_AM_TV_LIST_MINUTE, 'list_minute2',$this->getVar ( 'list_minute2', 'e' ));
+		$minute->addOption('00');
+		$minute->addOption('01');
+		$minute->addOption('02');
+		$minute->addOption('03');
+		$minute->addOption('04');
+		$minute->addOption('05');
+      $minute->addOption('06');
+		$minute->addOption('07');
+		$minute->addOption('08');
+		$minute->addOption('09');
+		$i = 10;
+		while($i < 60) {
+			$minute->addOption($i++);
+		}	
+		$time->addElement($minute);
+		
+		$form->addElement($time);
+		
+      // time 3
+		$time = new XoopsFormElementTray(_AM_TV_LIST_TIME3,' ');
+		$hour = new XoopsFormSelect(_AM_TV_LIST_HOUR, 'list_hour3',$this->getVar ( 'list_hour3', 'e' ));
+		$hour->addOption('00');
+		$hour->addOption('01');
+		$hour->addOption('02');
+		$hour->addOption('03');
+		$hour->addOption('04');
+		$hour->addOption('05');
+		$hour->addOption('06');
+		$hour->addOption('07');
+		$hour->addOption('08');
+      $hour->addOption('09');
+      $i = 10;
+		while($i < 25) {
+			$hour->addOption($i++);
+		}	
+		$time->addElement($hour);
+		
+		$minute = new XoopsFormSelect(_AM_TV_LIST_MINUTE, 'list_minute3',$this->getVar ( 'list_minute3', 'e' ));
+		$minute->addOption('00');
+		$minute->addOption('01');
+		$minute->addOption('02');
+		$minute->addOption('03');
+		$minute->addOption('04');
+		$minute->addOption('05');
+      $minute->addOption('06');
+		$minute->addOption('07');
+		$minute->addOption('08');
+		$minute->addOption('09');
+		$i = 10;
+		while($i < 60) {
+			$minute->addOption($i++);
+		}	
+		$time->addElement($minute);
+		
+		$form->addElement($time);
+
       // item
 		$item_handler = xoops_getmodulehandler('item', 'tv');
 		$criteria = new CriteriaCompo ();
@@ -160,6 +240,8 @@ class tvListHandler extends XoopsPersistableObjectHandler {
 				$tab = array ();
 				$tab = $root->toArray ();
 				$tab ['list_time'] = $root->getVar ( 'list_hour' ) . ':' . $root->getVar ( 'list_minute' );
+				$tab ['list_time2'] = $root->getVar ( 'list_hour2' ) . ':' . $root->getVar ( 'list_minute2' );
+				$tab ['list_time3'] = $root->getVar ( 'list_hour3' ) . ':' . $root->getVar ( 'list_minute3' );
 				$tab ['list_dayname'] = $this->dayname($root->getVar ( 'list_day' ));
 				$ret [] = $tab;
 			}	
@@ -181,6 +263,8 @@ class tvListHandler extends XoopsPersistableObjectHandler {
 				$tab = array ();
 				$tab = $root->toArray ();
 				$tab ['list_time'] = $root->getVar ( 'list_hour' ) . ':' . $root->getVar ( 'list_minute' );
+				$tab ['list_time2'] = $root->getVar ( 'list_hour2' ) . ':' . $root->getVar ( 'list_minute2' );
+				$tab ['list_time3'] = $root->getVar ( 'list_hour3' ) . ':' . $root->getVar ( 'list_minute3' );
 				$ret [] = $tab;
 			}	
 		}
@@ -202,6 +286,8 @@ class tvListHandler extends XoopsPersistableObjectHandler {
 				$tab = array ();
 				$tab = $root->toArray ();
 				$tab ['list_time'] = $root->getVar ( 'list_hour' ) . ':' . $root->getVar ( 'list_minute' );
+				$tab ['list_time2'] = $root->getVar ( 'list_hour2' ) . ':' . $root->getVar ( 'list_minute2' );
+				$tab ['list_time3'] = $root->getVar ( 'list_hour3' ) . ':' . $root->getVar ( 'list_minute3' );
 				$ret [] = $tab;
 			}	
 		}

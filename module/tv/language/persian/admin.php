@@ -15,6 +15,8 @@ define("_AM_TV_LIST_ORDER","وزن");
 define("_AM_TV_LIST_TITLE","عنوان"); 	
 define("_AM_TV_LIST_DAY","روز"); 	
 define("_AM_TV_LIST_TIME","زمان");
+define("_AM_TV_LIST_TIME2","زمان");
+define("_AM_TV_LIST_TIME3","زمان");
 define("_AM_TV_LIST_HOUR","ساعت");
 define("_AM_TV_LIST_MINUTE","دقیقه"); 	
 define("_AM_TV_LIST_SITUATION","نوع برنامه"); 	
