@@ -44,118 +44,118 @@ class tv_list extends XoopsObject {
 		$form->addElement($day);
 		
 		// time 1
-		$time = new XoopsFormElementTray(_AM_TV_LIST_TIME,' ');
-		$hour = new XoopsFormSelect(_AM_TV_LIST_HOUR, 'list_hour',$this->getVar ( 'list_hour', 'e' ));
-		$hour->addOption('00');
-		$hour->addOption('01');
-		$hour->addOption('02');
-		$hour->addOption('03');
-		$hour->addOption('04');
-		$hour->addOption('05');
-		$hour->addOption('06');
-		$hour->addOption('07');
-		$hour->addOption('08');
-      $hour->addOption('09');
+		$time1 = new XoopsFormElementTray(_AM_TV_LIST_TIME,' ');
+		$hour1 = new XoopsFormSelect(_AM_TV_LIST_HOUR, 'list_hour',$this->getVar ( 'list_hour', 'e' ));
+		$hour1->addOption('00');
+		$hour1->addOption('01');
+		$hour1->addOption('02');
+		$hour1->addOption('03');
+		$hour1->addOption('04');
+		$hour1->addOption('05');
+		$hour1->addOption('06');
+		$hour1->addOption('07');
+		$hour1->addOption('08');
+      $hour1->addOption('09');
       $i = 10;
 		while($i < 25) {
-			$hour->addOption($i++);
+			$hour1->addOption($i++);
 		}	
-		$time->addElement($hour);
+		$time1->addElement($hour1);
 		
-		$minute = new XoopsFormSelect(_AM_TV_LIST_MINUTE, 'list_minute',$this->getVar ( 'list_minute', 'e' ));
-		$minute->addOption('00');
-		$minute->addOption('01');
-		$minute->addOption('02');
-		$minute->addOption('03');
-		$minute->addOption('04');
-		$minute->addOption('05');
-      $minute->addOption('06');
-		$minute->addOption('07');
-		$minute->addOption('08');
-		$minute->addOption('09');
+		$minute1 = new XoopsFormSelect(_AM_TV_LIST_MINUTE, 'list_minute',$this->getVar ( 'list_minute', 'e' ));
+		$minute1->addOption('00');
+		$minute1->addOption('01');
+		$minute1->addOption('02');
+		$minute1->addOption('03');
+		$minute1->addOption('04');
+		$minute1->addOption('05');
+      $minute1->addOption('06');
+		$minute1->addOption('07');
+		$minute1->addOption('08');
+		$minute1->addOption('09');
 		$i = 10;
 		while($i < 60) {
-			$minute->addOption($i++);
+			$minute1->addOption($i++);
 		}	
-		$time->addElement($minute);
+		$time1->addElement($minute1);
 		
-		$form->addElement($time);
+		$form->addElement($time1);
 
       // time 2
-		$time = new XoopsFormElementTray(_AM_TV_LIST_TIME2,' ');
-		$hour = new XoopsFormSelect(_AM_TV_LIST_HOUR, 'list_hour2',$this->getVar ( 'list_hour2', 'e' ));
-		$hour->addOption('00');
-		$hour->addOption('01');
-		$hour->addOption('02');
-		$hour->addOption('03');
-		$hour->addOption('04');
-		$hour->addOption('05');
-		$hour->addOption('06');
-		$hour->addOption('07');
-		$hour->addOption('08');
-      $hour->addOption('09');
+		$time2 = new XoopsFormElementTray(_AM_TV_LIST_TIME2,' ');
+		$hour2 = new XoopsFormSelect(_AM_TV_LIST_HOUR, 'list_hour2',$this->getVar ( 'list_hour2', 'e' ));
+		$hour2->addOption('00');
+		$hour2->addOption('01');
+		$hour2->addOption('02');
+		$hour2->addOption('03');
+		$hour2->addOption('04');
+		$hour2->addOption('05');
+		$hour2->addOption('06');
+		$hour2->addOption('07');
+		$hour2->addOption('08');
+      $hour2->addOption('09');
       $i = 10;
 		while($i < 25) {
-			$hour->addOption($i++);
+			$hour2->addOption($i++);
 		}	
-		$time->addElement($hour);
+		$time2->addElement($hour2);
 		
-		$minute = new XoopsFormSelect(_AM_TV_LIST_MINUTE, 'list_minute2',$this->getVar ( 'list_minute2', 'e' ));
-		$minute->addOption('00');
-		$minute->addOption('01');
-		$minute->addOption('02');
-		$minute->addOption('03');
-		$minute->addOption('04');
-		$minute->addOption('05');
-      $minute->addOption('06');
-		$minute->addOption('07');
-		$minute->addOption('08');
-		$minute->addOption('09');
+		$minute2 = new XoopsFormSelect(_AM_TV_LIST_MINUTE, 'list_minute2',$this->getVar ( 'list_minute2', 'e' ));
+		$minute2->addOption('00');
+		$minute2->addOption('01');
+		$minute2->addOption('02');
+		$minute2->addOption('03');
+		$minute2->addOption('04');
+		$minute2->addOption('05');
+      $minute2->addOption('06');
+		$minute2->addOption('07');
+		$minute2->addOption('08');
+		$minute2->addOption('09');
 		$i = 10;
 		while($i < 60) {
-			$minute->addOption($i++);
+			$minute2->addOption($i++);
 		}	
-		$time->addElement($minute);
+		$time2->addElement($minute2);
 		
-		$form->addElement($time);
+		$form->addElement($time2);
 		
       // time 3
-		$time = new XoopsFormElementTray(_AM_TV_LIST_TIME3,' ');
-		$hour = new XoopsFormSelect(_AM_TV_LIST_HOUR, 'list_hour3',$this->getVar ( 'list_hour3', 'e' ));
-		$hour->addOption('00');
-		$hour->addOption('01');
-		$hour->addOption('02');
-		$hour->addOption('03');
-		$hour->addOption('04');
-		$hour->addOption('05');
-		$hour->addOption('06');
-		$hour->addOption('07');
-		$hour->addOption('08');
-      $hour->addOption('09');
+		$time3 = new XoopsFormElementTray(_AM_TV_LIST_TIME3,' ');
+		$hour3 = new XoopsFormSelect(_AM_TV_LIST_HOUR, 'list_hour3',$this->getVar ( 'list_hour3', 'e' ));
+		$hour3->addOption('00');
+		$hour3->addOption('01');
+		$hour3->addOption('02');
+		$hour3->addOption('03');
+		$hour3->addOption('04');
+		$hour3->addOption('05');
+		$hour3->addOption('06');
+		$hour3->addOption('07');
+		$hour3->addOption('08');
+      $hour3->addOption('09');
       $i = 10;
 		while($i < 25) {
-			$hour->addOption($i++);
+			$hour3->addOption($i++);
 		}	
-		$time->addElement($hour);
+		$time3->addElement($hour3);
 		
-		$minute = new XoopsFormSelect(_AM_TV_LIST_MINUTE, 'list_minute3',$this->getVar ( 'list_minute3', 'e' ));
-		$minute->addOption('00');
-		$minute->addOption('01');
-		$minute->addOption('02');
-		$minute->addOption('03');
-		$minute->addOption('04');
-		$minute->addOption('05');
-      $minute->addOption('06');
-		$minute->addOption('07');
-		$minute->addOption('08');
-		$minute->addOption('09');
+		$minute3 = new XoopsFormSelect(_AM_TV_LIST_MINUTE, 'list_minute3',$this->getVar ( 'list_minute3', 'e' ));
+		$minute3->addOption('00');
+		$minute3->addOption('01');
+		$minute3->addOption('02');
+		$minute3->addOption('03');
+		$minute3->addOption('04');
+		$minute3->addOption('05');
+      $minute3->addOption('06');
+		$minute3->addOption('07');
+		$minute3->addOption('08');
+		$minute3->addOption('09');
 		$i = 10;
 		while($i < 60) {
-			$minute->addOption($i++);
+			$minute3->addOption($i++);
 		}	
-		$time->addElement($minute);
+		$time3->addElement($minute3);
 		
-		$form->addElement($time);
+		$form->addElement($time3);
 
       // item
 		$item_handler = xoops_getmodulehandler('item', 'tv');
