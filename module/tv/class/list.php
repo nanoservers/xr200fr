@@ -280,11 +280,21 @@ class tvListHandler extends XoopsPersistableObjectHandler {
 		$criteria->setSort ( 'list_order' );
 		$criteria->setOrder ( 'ASC' );
 		
+		$item_handler = xoops_getmodulehandler('item', 'tv');
+		
 		$obj = $this->getObjects ( $criteria, false );
 		if ($obj) {
 			foreach ( $obj as $root ) {
 				$tab = array ();
 				$tab = $root->toArray ();
+				
+				$item_obj = $item_handler->get($tab ['list_id']);
+            $program = $item_obj->toArray ();
+				
+				$tab ['list_item_title'] = $program['item_title'];
+				$tab ['list_item_text'] = $program['item_text'];
+				$tab ['list_item_img'] = XOOPS_URL . '/uploads/tv/' . $program ['item_img'];
+				
 				$tab ['list_time'] = $root->getVar ( 'list_hour' ) . ':' . $root->getVar ( 'list_minute' );
 				$tab ['list_time2'] = $root->getVar ( 'list_hour2' ) . ':' . $root->getVar ( 'list_minute2' );
 				$tab ['list_time3'] = $root->getVar ( 'list_hour3' ) . ':' . $root->getVar ( 'list_minute3' );

@@ -11,9 +11,15 @@
 			<td class="txtcenter width10 bold"><{$list.list_time}></td>
 			<td class="txtcenter width10 bold"><{$list.list_time2}></td>
 			<td class="txtcenter width10 bold"><{$list.list_time3}></td>
-			<td class="txtcenter bold"><a title="<{$list.list_title}>" href="<{$xoops_url}>/modules/tv/program.php?id=<{$list.list_item}>"><{$list.list_title}></a></td>
+			<td class="txtcenter bold">
+			   <img width="60" height="60" class="right" src="<{$list.list_item_img}>" alt="<{$list.list_title}>" />
+			   <div class="pad2"><a title="<{$list.list_title}>" href="<{$xoops_url}>/modules/tv/program.php?id=<{$list.list_item}>"><{$list.list_title}></a></div>
+			   <div class="pad2"><{$list.list_item_text}></div>
+			   <div class="clear"></div>
+			</td>
 		</tr>
 		<{/foreach}>
 	</tbody>
 </table>
+<div class="clear"></div>
 <div class="tvblocklist"><a title="<{$smarty.const._MB_TV_ALL}>" href="<{$xoops_url}>/modules/tv/index.php?day=<{$block.today}>"><{$smarty.const._MB_TV_ALL}></a></div>
