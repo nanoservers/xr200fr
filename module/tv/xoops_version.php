@@ -4,7 +4,7 @@ $modversion = array(
     // Main setting
     'name' => _MI_TV_TITLE,
     'description' => _MI_TV_DESC,
-    'version' => 1,
+    'version' => 1.1,
     'author' => 'Hossein Azizabadi',
     'credits' => 'MOHTAVA',
     'license' => 'GNU GPL 2.0',
@@ -23,6 +23,7 @@ $modversion = array(
     'adminmenu' => 'admin/menu.php',
     // Modules scripts
     'onInstall' => 'include/install.php',
+    'onUpdate' => 'include/update.php',
     // Main menu
     'hasMain' => 1,
     // Recherche
