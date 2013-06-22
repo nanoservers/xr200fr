@@ -7,6 +7,8 @@ define('_AM_CV_ADD_THESIS','Add Thesis');
 define('_AM_CV_ADD_PAPER','Add Paper');
 define('_AM_CV_ADD_PROJECT','Add Project');
 define('_AM_CV_ADD_PROFILE','Add Profile');
+define('_AM_CV_ADD_JOURNAL','Add Journal');
+define('_AM_CV_ADD_ARBITRATION','Add Arbitration');
 
 define('_AM_CV_FORM','Form');
 define('_AM_CV_ACTION','Action');

@@ -68,6 +68,7 @@ class CvCv_profileHandler extends XoopsPersistableObjectHandler
 			foreach ($list as $root) {
 				$tab = array();
 				$tab = $root->toArray();
+				$tab['profile_create'] = formatTimestamp($root->getVar('profile_create'), _MEDIUMDATESTRING);
 				$ret[] = $tab;
 			}	
 		}

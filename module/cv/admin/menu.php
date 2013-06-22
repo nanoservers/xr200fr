@@ -18,7 +18,7 @@ $adminmenu[$i]["title"] = _MI_CV_MENU_PROFILE;
 $adminmenu[$i]["link"]  = "admin/profile.php";
 $adminmenu[$i]["desc"] = '';
 $adminmenu[$i]["icon"] = $pathIcon32.'/content.png';
-$i++;
+/* $i++;
 $adminmenu[$i]["title"] = _MI_CV_MENU_PROJECT;
 $adminmenu[$i]["link"]  = "admin/project.php";
 $adminmenu[$i]["desc"] = '';
@@ -37,4 +37,4 @@ $i++;
 $adminmenu[$i]["title"] = _MI_CV_MENU_CONGRESS;
 $adminmenu[$i]["link"]  = "admin/congress.php";
 $adminmenu[$i]["desc"] = '';
-$adminmenu[$i]["icon"] = $pathIcon32.'/content.png';
+$adminmenu[$i]["icon"] = $pathIcon32.'/content.png'; */
