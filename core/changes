@@ -4,9 +4,9 @@
 2-  change user and admin themes
 3-  change images
 4-  remove favicon.ico
-5-  remove xoops.css from codea and add class.css in themes
+5-  remove xoops.css from include/functions.php and add class.css in themes
 6-  remove images/banners
 7-  change install/sql
 8-  change install/include/makedate.php
 9-  xoops_lib/modules/protector/admin/advisory.php
-10- change class/theme.php $this->addScript('include/xoops.js'); and change xoops.js file name
+10- change class/theme.php $this->addScript('include/xoops.js'); and change include/xoops.js file name to include/mohtava.js

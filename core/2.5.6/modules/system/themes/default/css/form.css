@@ -1,0 +1,240 @@
+/*======= forms ========*/
+input,button,select {
+	vertical-align: middle;
+}
+
+fieldset {
+	margin: .5em;
+	padding: 1em;
+	border: 1px solid #f1f1f1 !important;
+	background-color: #fdfdfd;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+fieldset fieldset {
+	border: 1px solid #ddd !important;
+	background-color: #f7f7f7 !important;
+}
+
+legend {
+	padding: .5em;
+	font-size: 1.1em;
+	font-weight: normal !important;
+}
+
+label,.caption-text {
+	margin-bottom: .5em;
+	padding-right: .5em;
+	font-weight: bold;
+}
+
+select {
+	background-color: #fff;
+	color: #333;
+	font-size: 1em;
+	border: 2px inset #f1f3f8 !important;
+}
+
+select[name=timezone_offset] {
+	font-size: 1em;
+}
+
+textarea {
+	width: 95%;
+	max-height: 300px;
+	overflow: auto;
+}
+
+input[type=submit],input[type=reset],input[type=button],.xo-formbuttons,.formButton,button
+	{
+	display: inline-block;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+input[type=submit],input[type=reset],input[type=button],.xo-formbuttons,.formButton,button
+	{
+	white-space: nowrap;
+	line-height: 1em;
+	position: relative;
+	outline: none;
+	overflow: visible; /* removes extra side padding in IE */
+	cursor: pointer;
+	border: 1px solid #999; /* IE */
+	border: rgba(0, 0, 0, .2) 1px solid; /* Saf4+, Chrome, FF3.6 */
+	border-bottom: rgba(0, 0, 0, .4) 1px solid;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+	background: -moz-linear-gradient(center top, rgba(255, 255, 255, .1) 0%,
+		rgba(0, 0, 0, .1) 100% ); /* FF3.6 */
+	background: -webkit-gradient(linear, center bottom, center top, from(rgba(0, 0, 0,
+		.1) ), to(rgba(255, 255, 255, .1) ) ); /* Saf4+, Chrome */
+	filter: progid :     DXImageTransform.Microsoft.gradient (    
+		startColorStr =  
+		  '#19FFFFFF', EndColorStr =     '#19000000' ); /* IE6,IE7 */
+	-ms-filter:
+		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#19FFFFFF', EndColorStr='#19000000')";
+	/* IE8 */
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	margin-bottom: 10px;
+	background-color: #00ADEE !important;
+	color: #fff !important;
+}
+
+input[type=submit].full,input[type=reset].full,input[type=button].full,.xo-formbuttons.full,.formButton.full,button.full
+	{
+	display: block;
+}
+
+input[type=submit]:hover,input[type=reset]:hover,input[type=button]:hover,.xo-formbuttons:hover,.formButton:hover,button:hover
+	{
+	background: -moz-linear-gradient(center top, rgba(255, 255, 255, .2) 0%,
+		rgba(255, 255, 255, .1) 100% ); /* FF3.6 */
+	background: -webkit-gradient(linear, center bottom, center top, from(rgba(255, 255,
+		255, .1) ), to(rgba(255, 255, 255, .2) ) ); /* Saf4+, Chrome */
+	filter: progid :     DXImageTransform.Microsoft.gradient (    
+		startColorStr =  
+		  '#33FFFFFF', EndColorStr =     '#19FFFFFF' ); /* IE6,IE7 */
+	-ms-filter:
+		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#33FFFFFF', EndColorStr='#19FFFFFF')";
+	/* IE8 */
+	background-color: #00ADEE !important;
+}
+
+input[type=submit]:active,input[type=reset]:active,input[type=button]:active,.xo-formbuttons:active,.formButton:active
+	{
+	top: 1px;
+	background-color: #00ADEE !important;
+}
+
+input[type=submit],input[type=reset],input[type=button],.xo-formbuttons,.formButton,button
+	{
+	position: relative;
+	color: #fff;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+	border-top: rgba(255, 255, 255, .2) 1px solid;
+	padding: 0.4em 1.2em;
+	margin: 2px 5px;
+	line-height: 1em;
+	text-decoration: none;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.button.small span {
+	font-size: 8px;
+}
+
+.button.medium span {
+	font-size: 10px;
+}
+
+.button.large span {
+	font-size: 12px;
+}
+
+.button.black {
+	background-color: #333333;
+}
+
+.button.gray {
+	background-color: #666666;
+}
+
+.button.white {
+	background-color: #FFFFFF;
+}
+
+.button.white span {
+	color: #666666;
+}
+
+.button.red {
+	background-color: #e62727;
+}
+
+.button.orange {
+	background-color: #ff5c00;
+}
+
+.button.magenta {
+	background-color: #A9014B;
+}
+
+.button.yellow {
+	background-color: #ffb515;
+}
+
+.button.blue {
+	background-color: #00ADEE;
+}
+
+.button.pink {
+	background-color: #e22092;
+}
+
+.button.green {
+	background-color: #91bd09;
+}
+
+.button.rosy {
+	background-color: #F16C7C;
+}
+
+.button.brown {
+	background-color: #804000;
+}
+
+.button.purple {
+	background-color: #800080;
+}
+
+.button.cyan {
+	background-color: #46C7C7;
+}
+
+.button.gold {
+	background-color: #D4A017;
+}
+
+input[type=text],input[type=password],input[type=checkbox],input[type=file],textarea
+	{
+	border: 1px solid #ccc;
+	margin: 2px 5px 2px 0;
+	background-color: #fff;
+	padding-left: .2em;
+	color: inherit;
+	border: #ccc solid 1px;
+}
+
+input[type=text],input[type=password],input[type=file] {
+	background-color: #fff;
+	color: #333;
+}
+
+input[type=text]:hover,input[type=password]:hover,input[type=file]:hover,input[type=checkbox]:hover,textarea:hover
+	{
+	background-color: #EFEFEF;
+	color: inherit;
+	border: 1px solid #E9CB38;
+}
+
+input[type=text]:focus,input[type=password]:focus,input[type=file]:focus,input[type=checkbox]:focus,textarea:focus
+	{
+	background-color: #F4FAFF;
+	color: #333;
+	border: #139EE8 solid 1px;
+	outline: 1px solid #139EE8;
+}
+
+input[type=checkbox],input[type=radio] {
+	margin: 3px;
+	padding: 2px;
+}

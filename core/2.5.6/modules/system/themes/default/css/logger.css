@@ -1,0 +1,42 @@
+#xo-logger-errors,#xo-logger-deprecated,#xo-logger-queries,#xo-logger-blocks,#xo-logger-extra,#xo-logger-timers
+	{
+	max-width: 95% !important;
+}
+
+#xo-logger-output {
+	margin: 0 auto !important;
+}
+
+#xo-logger-tabs {
+	background-color: #f1f1f1;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-top: -2px;
+	padding-left: 2%;
+	padding-right: 2%;
+	width: 96% !important;
+}
+
+#xo-logger-errors {
+	
+}
+
+#xo-logger-deprecated {
+	
+}
+
+#xo-logger-queries {
+	
+}
+
+#xo-logger-blocks {
+	
+}
+
+#xo-logger-extra {
+	
+}
+
+#xo-logger-timers {
+	
+}

@@ -1,0 +1,436 @@
+/*=== FORMAT BASIC ELEMENTS, can be overwritten in theme styles ===*/
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+strong,b,dfn {
+	font-weight: bold;
+}
+
+u {
+	text-decoration: underline;
+}
+
+i,em {
+	font-style: italic;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+sup {
+	vertical-align: text-top;
+}
+
+sub {
+	vertical-align: text-bottom;
+}
+
+ins {
+	text-decoration: none;
+}
+
+img {
+	border: 0;
+}
+
+img.center {
+	text-align: center;
+	margin: 6px auto;
+	display: block;
+	margin-bottom: 4px;
+}
+
+img.left {
+	text-align: left;
+	float: left;
+	margin: 2px 6px 2px 0;
+	clear: left;
+}
+
+img.right {
+	float: right;
+	text-align: right;
+	margin: 2px 0 2px 6px;
+	clear: right;
+}
+
+acronym,abbr,dfn {
+	cursor: help;
+}
+
+pre {
+	overflow: auto;
+}
+
+#xoopsHiddenText {
+	visibility: hidden;
+	background-color: transparent;
+	color: #000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+}
+
+/* for pagenav, can be overwritten in theme styles */
+.pagneutral {
+	font-size: 10px;
+	width: 16px;
+	height: 19px;
+	text-align: center;
+	background-image: url(./images/pagneutral.gif);
+}
+
+.pagact {
+	font-size: 10px;
+	width: 16px;
+	height: 19px;
+	text-align: center;
+	background-image: url(./images/pagact.gif);
+}
+
+.paginact {
+	font-size: 10px;
+	width: 16px;
+	height: 19px;
+	text-align: center;
+	background-image: url(./images/paginact.gif);
+}
+
+/* For required elements in XOOPS form */
+.xoops-form-element-caption .caption-marker {
+	display: none;
+}
+
+.xoops-form-element-caption-required .caption-marker {
+	background-color: inherit;
+	padding-left: 2px;
+	color: #ff0000;
+}
+
+.xoops-form-element-help {
+	font-size: .9em;
+	padding-top: 5px;
+	font-weight: normal;
+}
+
+/* forms basic style */
+fieldset {
+	border: 0;
+}
+
+input,textarea,select {
+	background-color: #fff;
+	color: #000;
+}
+
+input[type=submit],input[type=reset],input[type=button],.xo-formbuttons,.formButton,button
+	{
+	background-color: #D3D2D6;
+	color: #405A80;
+	padding: 3px;
+}
+
+/* fix for swf banner */
+#xo-fixbanner a {
+	display: block;
+	position: absolute;
+	z-index: 102;
+	width: 468px;
+	height: 60px;
+}
+
+/* jGrowl redirection */
+div.jGrowl {
+	padding: 1em;
+	z-index: 9999;
+}
+
+/* JGrowl Box position in the page */
+body>div.jGrowl {
+	position: fixed;
+}
+
+body>div.jGrowl.top-right {
+	right: 25%;
+	left: 25%;
+	top: 2px;
+}
+
+body>div.jGrowl.bottom-left {
+	left: 0;
+	bottom: 0;
+}
+
+body>div.jGrowl.bottom-right {
+	right: 0;
+	bottom: 0;
+}
+
+body>div.jGrowl.center {
+	top: 0;
+	left: 0;
+}
+
+body>div.jGrowl.top-left {
+	left: 0;
+	top: 0;
+}
+
+/* jGrowl Box style */
+div.center div.jGrowl-notification,div.center div.jGrowl-closer {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.jGrowl div.jGrowl-notification,div.jGrowl div.jGrowl-closer {
+	background-color: #EBFBFE;
+	color: #000080;
+	width: 100%;
+	padding: .5em;
+	margin-top: .5em;
+	margin-bottom: .5em;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 1.2em;
+	text-align: center;
+	border: 1px solid #6699FF;
+	display: none;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+}
+
+div.jGrowl div.jGrowl-notification {
+	min-height: 40px;
+}
+
+div.jGrowl div.jGrowl-notification div.header {
+	font-weight: bold;
+	font-size: 10px;
+}
+
+/* jGrowl Close button */
+div.jGrowl div.jGrowl-notification div.close {
+	float: right;
+	font-weight: bold;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+div.jGrowl div.jGrowl-closer {
+	height: 15px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	cursor: pointer;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*=== GENERIC CLASS, for use in themes, modules and contents ===*/
+/* Position */
+.floatleft {
+	float: left;
+	margin: 0;
+	padding-left: 4px;
+	border: 0;
+}
+
+.floatright {
+	float: right;
+	margin: 0;
+	padding: 2px;
+	border: 0;
+}
+
+.floatcenter0 {
+	margin: 0 auto;
+}
+
+.floatcenter1 {
+	margin: 1em auto;
+}
+
+.clear {
+	clear: both;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+}
+
+.clearleft {
+	clear: left;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+}
+
+.clearright {
+	clear: right;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+}
+
+.block {
+	display: block;
+}
+
+.inline {
+	display: inline;
+}
+
+.blockinline {
+	display: inline-block;
+}
+
+/* Texte */
+.left,.txtleft {
+	text-align: left;
+}
+
+.right,.txtright {
+	text-align: right;
+}
+
+.center,.txtcenter {
+	text-align: center;
+}
+
+.justify,.txtjustify {
+	text-align: justify;
+}
+
+/* Width */
+.widthauto {
+	width: auto;
+}
+
+.width100 {
+	width: 100%;
+}
+
+.width90 {
+	width: 90%
+}
+
+.width80 {
+	width: 80%;
+}
+
+.width75 {
+	width: 75%;
+}
+
+.width70 {
+	width: 70%
+}
+
+.width66 {
+	width: 66.6%
+}
+
+.width60 {
+	width: 60%
+}
+
+.width50 {
+	width: 49%;
+}
+
+.width45 {
+	width: 45%
+}
+
+.width40 {
+	width: 40%
+}
+
+.width33 {
+	width: 33.3%;
+}
+
+.width30 {
+	width: 30%;
+}
+
+.width25 {
+	width: 25%;
+}
+
+.width20 {
+	width: 20%;
+}
+
+.width15 {
+	width: 15%;
+}
+
+.width10 {
+	width: 10%;
+}
+
+.width5 {
+	width: 5%;
+}
+
+.width3 {
+	width: 3%;
+}
+
+.width2 {
+	width: 2%;
+}
+
+.width1 {
+	width: 1%;
+}
+
+/* Padding */
+.pad2 {
+	padding: 2px;
+}
+
+.pad3 {
+	padding: 3px;
+}
+
+.pad5 {
+	padding: 5px;
+}
+
+.pad7 {
+	padding: 7px;
+}
+
+.pad10 {
+	padding: 10px;
+}
+
+/* Margin */
+.marg2 {
+	margin: 2px;
+}
+
+.marg3 {
+	margin: 3px;
+}
+
+.marg5 {
+	margin: 5px;
+}
+
+.marg7 {
+	margin: 8px;
+}
+
+.marg10 {
+	margin: 10px;
+}
+
+.hide{ display:none; }
+.hidden{ visibility:hidden; position:absolute; top:0; left:0; }
