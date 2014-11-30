@@ -7,6 +7,7 @@ include_once XOOPS_ROOT_PATH . "/class/tree.php";
 include_once XOOPS_ROOT_PATH . '/class/xoopsform/grouppermform.php';
 include_once XOOPS_ROOT_PATH . '/modules/video/include/functions.php';
 include_once XOOPS_ROOT_PATH . '/modules/video/class/flv.php';
+include_once XOOPS_ROOT_PATH . '/modules/video/class/mp4.php';
 include_once XOOPS_ROOT_PATH . '/modules/video/class/3gp.php';
 include_once XOOPS_ROOT_PATH . '/modules/video/class/frame.php';
 
@@ -38,6 +39,10 @@ $uploadpach_downloads = '/uploads/video/downloads/';
 $uploaddir_flv = XOOPS_ROOT_PATH . '/uploads/video/flv/';
 $uploadurl_flv = XOOPS_URL . '/uploads/video/flv/';
 $uploadpach_flv = '/uploads/video/flv/';
+// pour les fichiers
+$uploaddir_mp4 = XOOPS_ROOT_PATH . '/uploads/video/mp4/';
+$uploadurl_mp4 = XOOPS_URL . '/uploads/video/mp4/';
+$uploadpach_mp4 = '/uploads/video/mp4/';
 // pour les logos
 $uploaddir_shots = XOOPS_ROOT_PATH . '/uploads/video/images/shots/';
 $uploadurl_shots = XOOPS_URL . '/uploads/video/images/shots/';

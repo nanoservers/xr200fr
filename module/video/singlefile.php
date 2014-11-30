@@ -13,7 +13,6 @@ $xoTheme->addStylesheet ( XOOPS_URL . '/modules/' . $xoopsModule->getVar ( 'dirn
 $xoTheme->addStylesheet ( XOOPS_URL . '/modules/system/css/ui/' . xoops_getModuleOption ( 'jquery_theme', 'system' ) . '/ui.all.css' );
 $xoTheme->addScript ( "browse.php?Frameworks/jquery/jquery.js" );
 $xoTheme->addScript ( "browse.php?Frameworks/jquery/plugins/jquery.ui.js" );
-$xoTheme->addScript ( XOOPS_URL . '/modules/' . $xoopsModule->getVar ( 'dirname', 'n' ) . '/js/jwplayer/jwplayer.js' );
 //$xoTheme->addScript ( XOOPS_URL . '/modules/' . $xoopsModule->getVar ( 'dirname', 'n' ) . '/js/ui.js' );
 
 // Get video
@@ -95,6 +94,25 @@ $new = video_Thumbnail ( $view_downloads->getVar ( 'date' ), $view_downloads->ge
 $pop = video_Popular ( $view_downloads->getVar ( 'hits' ) );
 $description = $view_downloads->getVar ( 'description' );
 
+// Set file link
+if ($view_downloads->getVar('type') == 'flv') {
+	$flashFile = $view_downloads->getVar('url') . $uploadpach_flv . $view_downloads->getVar('filename') . '.flv';
+	$xoTheme->addScript ( XOOPS_URL . '/modules/' . $xoopsModule->getVar ( 'dirname', 'n' ) . '/js/jwplayer/jwplayer.js' );
+} elseif ($view_downloads->getVar('type') == 'mp4') {
+	$flashFile = $view_downloads->getVar('url') . $uploadpach_mp4 . $view_downloads->getVar('filename') . '.mp4';
+	$xoTheme->addScript ( XOOPS_URL . '/modules/' . $xoopsModule->getVar ( 'dirname', 'n' ) . '/js/jwplayer/jwplayer.js' );
+    //$xoTheme->addScript ( XOOPS_URL . '/modules/' . $xoopsModule->getVar ( 'dirname', 'n' ) . '/player/jwplayer/jwplayer.js' );
+    //$xoTheme->addScript ( XOOPS_URL . '/modules/' . $xoopsModule->getVar ( 'dirname', 'n' ) . '/player/jwplayer/jwplayer.html5.js' );
+
+    //$xoTheme->addScript ( XOOPS_URL . '/modules/video/player/flowplayer/flowplayer.min.js' );
+    //$xoTheme->addStylesheet ( XOOPS_URL . '/modules/video/player/flowplayer/skin/minimalist.css' );
+    
+    //if (!empty($xoopsModuleConfig ['jwplayerKey'])) {
+    //	$jwplayerKey = "jwplayer.key='" . $xoopsModuleConfig ['jwplayerKey'] . "';";
+    //	$xoTheme->addScript ( null, array ('type' => 'text/javascript', 'charset' => _CHARSET ), $jwplayerKey); 
+    //}
+}
+
 // Set information for template
 $xoopsTpl->assign ( 'description', str_replace ( '[pagebreak]', '', $description ) );
 $xoopsTpl->assign ( 'lid', $lid );
@@ -107,7 +125,7 @@ $xoopsTpl->assign ( 'imageStr', 'image' );
 $xoopsTpl->assign ( 'fulltitle', $view_downloads->getVar ( 'title' ) . $new . $pop );
 $xoopsTpl->assign ( 'title', $view_downloads->getVar ( 'title' ) );
 $xoopsTpl->assign ( 'adminlink', $adminlink );
-$xoopsTpl->assign ( 'flashFile', $view_downloads->getVar ( 'url' ) . $uploadpach_flv . $view_downloads->getVar ( 'filename' ) . '.flv' );
+$xoopsTpl->assign ( 'flashFile', $flashFile);
 $xoopsTpl->assign ( 'date', formatTimestamp ( $view_downloads->getVar ( 'date' ), 's' ) );
 $xoopsTpl->assign ( 'author', XoopsUser::getUnameFromId ( $view_downloads->getVar ( 'submitter' ) ) );
 $xoopsTpl->assign ( 'uid', $view_downloads->getVar ( 'submitter' ) );
@@ -119,6 +137,7 @@ $xoopsTpl->assign ( 'nb_comments', sprintf ( _MD_VIDEO_SINGLEFILE_COMMENTS, $vie
 $xoopsTpl->assign ( 'shwo_bookmark', $xoopsModuleConfig ['shwo_bookmark'] );
 $xoopsTpl->assign ( 'show_social', $xoopsModuleConfig ['show_social'] );
 $xoopsTpl->assign ( 'extra', $view_downloads->getVar ( 'extra' ) );
+$xoopsTpl->assign ( 'type', $view_downloads->getVar('type'));
 
 // pour les champs supplémentaires
 $criteria = new CriteriaCompo ();

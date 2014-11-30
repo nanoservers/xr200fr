@@ -446,13 +446,29 @@ switch ($op)
 				//$imgurl = $uploadurl_shots . $imgurl;
 				$imgurl = $view_downloads->getVar ( 'url' ) . $uploadpach_shots . $view_downloads->getVar ( 'logourl' );
 			}
-			echo "<td>
 			
-			
-			<embed flashvars='file=".$view_downloads->getVar('url').$uploadpach_flv.$view_downloads->getVar('filename').'.flv'."&logo=".XOOPS_URL.'/'.$xoopsModuleConfig['overlogo']."&image=".$imgurl."' allowfullscreen='true' allowscripaccess='always' id='player1' name='player1' src='".XOOPS_URL."/modules/video/js/jwplayer/player.swf' width='".$xoopsModuleConfig['playerWidth']."' height='".$xoopsModuleConfig['playerHeight']."' />
-			
-			</td>";
-			echo '</tr>';
+            if ($view_downloads->getVar('type') == 'flv') {
+			    echo "<td>
+			    <embed flashvars='file=".$view_downloads->getVar('url').$uploadpach_flv.$view_downloads->getVar('filename').'.flv'."&logo=".XOOPS_URL.'/'.$xoopsModuleConfig['overlogo']."&image=".$imgurl."' allowfullscreen='true' allowscripaccess='always' id='player1' name='player1' src='".XOOPS_URL."/modules/video/js/jwplayer/player.swf' width='".$xoopsModuleConfig['playerWidth']."' height='".$xoopsModuleConfig['playerHeight']."' />
+			    </td>";
+            } elseif ($view_downloads->getVar('type') == 'mp4') {
+            	$flashFile = $view_downloads->getVar('url') . $uploadpach_mp4 . $view_downloads->getVar('filename') . '.mp4';
+            	$xoTheme->addScript ( XOOPS_URL . '/modules/' . $xoopsModule->getVar ( 'dirname', 'n' ) . '/player/jwplayer/jwplayer.js' );
+            	
+            	if (!empty($xoopsModuleConfig ['jwplayerKey'])) {
+    				$jwplayerKey = "jwplayer.key='" . $xoopsModuleConfig ['jwplayerKey'] . "';";
+    				$xoTheme->addScript ( null, array ('type' => 'text/javascript', 'charset' => _CHARSET ), $jwplayerKey); 
+    			}
+
+            	echo "<td><div id='mp4Player'></div>
+					<script type='text/javascript'>jwplayer('mp4Player').setup({
+        			file: '" . $flashFile . "',
+        			image: '" . $imgurl . "',
+					width: '" . $xoopsModuleConfig ['playerWidth'] . "',
+					height: '" . $xoopsModuleConfig ['playerHeight'] . "',
+    			});</script></td>";
+            }
+            echo '</tr>';
 		}
 		$class = ($class == 'even') ? 'odd' : 'even';
 		echo '<tr class="' . $class . '">';
@@ -690,26 +706,26 @@ switch ($op)
 			echo '<div class="errorMsg" style="text-align: left;">' . $message_erreur . '</div>';
 		} else {
          
-         $fileName = $_POST['flvUrl'];
+         $fileName = $_POST['mp4Url'];
          // Work on video
 			switch($_POST['video_type']) {
 				case 'convert':
-				   $objFlv = new flv ( $xoopsModuleConfig['ffmpeg'] , $uploaddir_downloads, $uploaddir_flv, $xoopsModuleConfig['flvWidth'],$xoopsModuleConfig['flvHeight'], $xoopsModuleConfig['asamplerate'], $xoopsModuleConfig['abitrate'], $xoopsModuleConfig['acodec'], $xoopsModuleConfig['vcodec'], $xoopsModuleConfig['vrate'], $xoopsModuleConfig['vmaxrate'], XOOPS_ROOT_PATH . '/' . $xoopsModuleConfig['vlogo'], $xoopsModuleConfig['overlayh'], $xoopsModuleConfig['overlayw']);
-					$objFlv->convert ( $fileName, $fileName.".flv" ,$xoopsModuleConfig['convert_type']);
-                                        $duration = $objFlv->duration($fileName);
+				   $objmp4 = new mp4 ( $xoopsModuleConfig['ffmpeg'] , $uploaddir_downloads, $uploaddir_mp4, $xoopsModuleConfig['flvWidth'],$xoopsModuleConfig['flvHeight'], $xoopsModuleConfig['asamplerate'], $xoopsModuleConfig['abitrate'], $xoopsModuleConfig['acodec'], $xoopsModuleConfig['vcodec'], $xoopsModuleConfig['vrate'], $xoopsModuleConfig['vmaxrate'], XOOPS_ROOT_PATH . '/' . $xoopsModuleConfig['vlogo'], $xoopsModuleConfig['overlayh'], $xoopsModuleConfig['overlayw']);
+					$objmp4->convert ( $fileName, $fileName.".mp4" ,$xoopsModuleConfig['convert_type']);
+                                        $duration = $objmp4->duration($fileName);
                                         $obj->setVar('duration', $duration);
 					
                                         /*
 					 * Get ffmpeg comand
 					 */
-					//$convertinfo = $objFlv->convert ( $fileName, $fileName.".flv" ,$xoopsModuleConfig['convert_type']);
+					//$convertinfo = $objmp4->convert ( $fileName, $fileName.".mp4" ,$xoopsModuleConfig['convert_type']);
 					//$obj->setVar('description', $convertinfo);
 					
 					$obj->setVar('filename', $fileName);
 				        $obj->setVar('url', XOOPS_URL);
    
 					// Set size
-					$obj->setVar('size', filesize($uploaddir_flv.$fileName.".flv"));
+					$obj->setVar('size', filesize($uploaddir_mp4.$fileName.".mp4"));
 					break;
 				
 				case 'upload':
@@ -724,10 +740,10 @@ switch ($op)
 								redirect_header("javascript:history.go(-1)",3, $errors);
 							} else {
 								$fileName = $uploader->getSavedFileName();
-								$objFlv = new flv ( $xoopsModuleConfig['ffmpeg'] , $uploaddir_downloads, $uploaddir_flv, $xoopsModuleConfig['flvWidth'],$xoopsModuleConfig['flvHeight'], $xoopsModuleConfig['asamplerate'], $xoopsModuleConfig['abitrate'], $xoopsModuleConfig['acodec'], $xoopsModuleConfig['vcodec'], $xoopsModuleConfig['vrate'], $xoopsModuleConfig['vmaxrate'], XOOPS_ROOT_PATH . '/' . $xoopsModuleConfig['vlogo'], $xoopsModuleConfig['overlayh'], $xoopsModuleConfig['overlayw']);
-								$objFlv->convert ( $fileName, $fileName.".flv" ,$xoopsModuleConfig['convert_type']);
-                                                                $duration = $objFlv->duration($fileName);
-                                                                $obj->setVar('duration', $duration);
+								$objmp4 = new mp4 ( $xoopsModuleConfig['ffmpeg'] , $uploaddir_downloads, $uploaddir_mp4, $xoopsModuleConfig['flvWidth'],$xoopsModuleConfig['flvHeight'], $xoopsModuleConfig['asamplerate'], $xoopsModuleConfig['abitrate'], $xoopsModuleConfig['acodec'], $xoopsModuleConfig['vcodec'], $xoopsModuleConfig['vrate'], $xoopsModuleConfig['vmaxrate'], XOOPS_ROOT_PATH . '/' . $xoopsModuleConfig['vlogo'], $xoopsModuleConfig['overlayh'], $xoopsModuleConfig['overlayw']);
+								$objmp4->convert ( $fileName, $fileName.".mp4" ,$xoopsModuleConfig['convert_type']);
+                                $duration = $objmp4->duration($fileName);
+                                $obj->setVar('duration', $duration);
 								$obj->setVar('filename', $fileName);
 								$obj->setVar('url', XOOPS_URL);
 							}
@@ -740,12 +756,12 @@ switch ($op)
 						redirect_header("javascript:history.go(-1)",3, $errors);
 					}
 					// Set size
-					$obj->setVar('size', filesize($uploaddir_flv.$fileName.".flv"));
+					$obj->setVar('size', filesize($uploaddir_mp4.$fileName.".mp4"));
 					break;
 				
 				case 'copy':
 				   // Set video information
-				   $obj->setVar('filename', $_POST['flvUrl']);
+				   $obj->setVar('filename', $_POST['mp4Url']);
 					$obj->setVar('url', $_POST['url']);
 					// Set duration
 					if(isset($_POST['duration'])) {
@@ -759,7 +775,7 @@ switch ($op)
 				
 				case 'edit':
 				   // Set video information
-				   $obj->setVar('filename', $_POST['flvUrl']);
+				   $obj->setVar('filename', $_POST['mp4Url']);
 					$obj->setVar('url', $_POST['url']);
 					// Set duration
 					if(isset($_POST['duration'])) {
@@ -771,6 +787,14 @@ switch ($op)
 			      }
 					break;
 			}	
+
+			// Set type
+			if ($obj->getVar('type') == 'flv') {
+				$obj->setVar('type', 'flv');
+			} else {
+				$obj->setVar('type', 'mp4');
+			}
+
 			// Work on image
 			if($_POST['newimg'] == 1) {
 				// Pour l'image

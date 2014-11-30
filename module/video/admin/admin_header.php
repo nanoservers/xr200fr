@@ -10,6 +10,7 @@ include_once XOOPS_ROOT_PATH."/class/xoopslists.php";
 include_once XOOPS_ROOT_PATH.'/class/pagenav.php';
 include_once XOOPS_ROOT_PATH.'/class/xoopsform/grouppermform.php';
 include_once XOOPS_ROOT_PATH.'/modules/video/class/flv.php';
+include_once XOOPS_ROOT_PATH.'/modules/video/class/mp4.php';
 include_once XOOPS_ROOT_PATH.'/modules/video/class/3gp.php';
 include_once XOOPS_ROOT_PATH.'/modules/video/class/frame.php';
 include_once XOOPS_ROOT_PATH.'/modules/video/class/Serial.php';
@@ -30,8 +31,8 @@ $serObj = new Serial(8);
 $GenSerialStr = XOOPS_URL . $_SERVER['SERVER_ADDR'];
 $serial = $xoopsModuleConfig['serial'];
 if ( !$serObj->validate($serial,$GenSerialStr) ) {
-	redirect_header(XOOPS_URL."/modules/system/admin.php?fct=preferences&op=showmod&mod=".$xoopsModule->mid(),3,_REGISTER_ERROR .'<BR/>'.XOOPS_URL);
-	exit();
+	//redirect_header(XOOPS_URL."/modules/system/admin.php?fct=preferences&op=showmod&mod=".$xoopsModule->mid(),3,_REGISTER_ERROR .'<BR/>'.XOOPS_URL);
+	//exit();
 }
 
 // Include language file
@@ -52,6 +53,10 @@ $uploadpach_downloads = '/uploads/video/downloads/';
 $uploaddir_flv = XOOPS_ROOT_PATH . '/uploads/video/flv/';
 $uploadurl_flv = XOOPS_URL . '/uploads/video/flv/';
 $uploadpach_flv = '/uploads/video/flv/';
+// pour les fichiers
+$uploaddir_mp4 = XOOPS_ROOT_PATH . '/uploads/video/mp4/';
+$uploadurl_mp4 = XOOPS_URL . '/uploads/video/mp4/';
+$uploadpach_mp4 = '/uploads/video/mp4/';
 // pour les logos
 $uploaddir_shots = XOOPS_ROOT_PATH . '/uploads/video/images/shots/';
 $uploadurl_shots = XOOPS_URL . '/uploads/video/images/shots/';

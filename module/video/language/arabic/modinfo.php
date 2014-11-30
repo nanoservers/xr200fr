@@ -211,4 +211,8 @@ define('_MI_VIDEO_SHOW_EXTRA', 'معلومات اضافية');
 define('_MI_VIDEO_SHOW_EXTRA_DSC', 'عرض حقل معلومات اضافية لشريط الفيدي');
 define('_MI_VIDEO_RELATED', 'أشرطة فيديو مشابهة');
 define('_MI_VIDEO_RELATED_DSC', ' امكانية اختيار أشرطة الفيديو المشابهة في الاطار');
+
+// version 1.30
+define('_MI_VIDEO_JWPKEY', 'Jwplayer key');
+define('_MI_VIDEO_JWPKEYDSC', '');
 ?>

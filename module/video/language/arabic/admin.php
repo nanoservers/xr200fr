@@ -149,4 +149,7 @@ define("_AM_VIDEO_MAIL_URL","يمكن لمتصفحي الموقع الحصول �
 //version 1.25
 define("_AM_VIDEO_FORMEXTRATEXT","المعلومات الاضافية");
 define("_AM_VIDEO_FORMRELATED","أشرطة فيديو مشابهة");
+
+// version 1.30
+define('_AM_VIDEO_FORM_MP4URL', 'اسم شريط الفيديو');
 ?>

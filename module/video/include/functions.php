@@ -25,9 +25,7 @@ function video_MygetItemIds($permtype,$dirname)
 	return $categories;
 }
 /**
-
 * retourne le nombre de t�l�chargements dans le cat�gories enfants d'une cat�gorie
-
 **/
 function video_NumbersOfEntries($mytree, $categories, $entries,$cid)
 {

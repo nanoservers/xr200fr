@@ -55,11 +55,15 @@ $xoopsDB->queryF ( $sql );
 
 switch($quality) {
 	case 'high':
-	   $url = $view_downloads->getVar ( 'url', 'n' ) . "/uploads/video/downloads/" . $view_downloads->getVar ( 'filename', 'n' );
+	    $url = $view_downloads->getVar ( 'url', 'n' ) . "/uploads/video/downloads/" . $view_downloads->getVar ( 'filename', 'n' );
 		break;
 		
 	case 'low':
-	   $url = $view_downloads->getVar ( 'url', 'n' ) . "/uploads/video/flv/" . $view_downloads->getVar ( 'filename', 'n' ) .".flv";
+	    if ($view_downloads->getVar('type') == 'flv') {
+	    	$url = $view_downloads->getVar('url', 'n') . "/uploads/video/flv/" . $view_downloads->getVar('filename', 'n') .".flv";
+	    } elseif ($view_downloads->getVar('type') == 'mp4') {
+	    	$url = $view_downloads->getVar('url', 'n') . "/uploads/video/mp4/" . $view_downloads->getVar('filename', 'n') .".mp4";
+	    }
 		break;
 }	
 

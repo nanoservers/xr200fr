@@ -34,6 +34,7 @@ class video_downloads extends XoopsObject
 		$this->initVar("paypal",XOBJ_DTYPE_TXTBOX, null, false);
 		$this->initVar("extra",XOBJ_DTYPE_TXTAREA, null, false);
 		$this->initVar("related",XOBJ_DTYPE_TXTBOX, null, false);
+		$this->initVar("type",XOBJ_DTYPE_TXTBOX, null, false);
 		 
 		//pour les jointures:
 		$this->initVar("cat_title",XOBJ_DTYPE_TXTBOX, null, false);
@@ -84,8 +85,8 @@ class video_downloads extends XoopsObject
 	      switch($form_type) {
 		      case 'copy':
 			      $url = $this->isNew() ? '' : $this->getVar('url');
-					$formflv = new XoopsFormText(_AM_VIDEO_FORM_FLVURL, 'flvUrl', 75, 255, $this->getVar('filename'));
-					$fichier->addElement($formflv,true);
+					$formmp4 = new XoopsFormText(_AM_VIDEO_FORM_MP4URL, 'mp4Url', 75, 255, $this->getVar('filename'));
+					$fichier->addElement($formmp4,true);
 					$formurl = new XoopsFormText(_AM_VIDEO_FORMURL, 'url', 75, 255, $url);
 					$fichier->addElement($formurl,true);
 	      		$video_type = 'copy';
@@ -97,16 +98,16 @@ class video_downloads extends XoopsObject
 		      break;
 		      
 		      case 'convert':
-			      $formflv = new XoopsFormText(_AM_VIDEO_FORM_FLVURL, 'flvUrl', 75, 255, $this->getVar('filename'));
-					$fichier->addElement($formflv,true);
+			      $formmp4 = new XoopsFormText(_AM_VIDEO_FORM_MP4URL, 'mp4Url', 75, 255, $this->getVar('filename'));
+					$fichier->addElement($formmp4,true);
 	      		$video_type = 'convert';
 		      break;	
 	      }			
       } else {
       	if ( $xoopsUser->isAdmin($xoopsModule->mid()) ) {
 				$url = $this->isNew() ? '' : $this->getVar('url');
-				$formflv = new XoopsFormText(_AM_VIDEO_FORM_FLVURL, 'flvUrl', 75, 255, $this->getVar('filename'));
-				$fichier->addElement($formflv,true);
+				$formmp4 = new XoopsFormText(_AM_VIDEO_FORM_MP4URL, 'mp4Url', 75, 255, $this->getVar('filename'));
+				$fichier->addElement($formmp4,true);
 				$formurl = new XoopsFormText(_AM_VIDEO_FORMURL, 'url', 75, 255, $url);
 				$fichier->addElement($formurl,true);
 				$video_type = 'edit';
@@ -382,6 +383,8 @@ class video_downloads extends XoopsObject
 			$form->addElement(new XoopsFormHidden('lid', $this->getVar('lid')));
 			$form->addElement(new XoopsFormHidden('downloads_modified', true));
 		}
+		// Set type
+		$form->addElement(new XoopsFormHidden('type', 'mp4'));
 		//pour enregistrer le formulaire
 		$form->addElement(new XoopsFormHidden('op', 'save_downloads'));
 		//bouton d'envoi du formulaire
@@ -423,6 +426,8 @@ class video_downloads extends XoopsObject
 		$form->addElement(new XoopsFormHidden('progress_key', $uuid));
 		//pour enregistrer le formulaire
 		$form->addElement(new XoopsFormHidden('op', 'upload'));
+		// Set type
+		$form->addElement(new XoopsFormHidden('type', 'mp4'));
 		//pour enregistrer le formulaire
 		$form->addElement(new XoopsFormHiddenToken());
 		//bouton d'envoi du formulaire

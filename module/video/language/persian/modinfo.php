@@ -211,4 +211,8 @@ define('_MI_VIDEO_SHOW_EXTRA', 'اطلاعات اضافی');
 define('_MI_VIDEO_SHOW_EXTRA_DSC', 'نمایش فیلد اطلاعات اضافی برای ویدیو');
 define('_MI_VIDEO_RELATED', 'ویدیو های مشابه');
 define('_MI_VIDEO_RELATED_DSC', 'امکان انتخاب ویدیو های مشابه در فرم');
+
+// version 1.30
+define('_MI_VIDEO_JWPKEY', 'Jwplayer key');
+define('_MI_VIDEO_JWPKEYDSC', '');
 ?>

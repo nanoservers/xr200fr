@@ -5,7 +5,7 @@ if (!defined('XOOPS_ROOT_PATH')) {
 }
 
 $modversion['name'] = _MI_VIDEO_NAME;
-$modversion['version'] = 1.27;
+$modversion['version'] = 1.30;
 $modversion['description'] = _MI_VIDEO_DESC;
 $modversion['credits'] = "MOHTAVA";
 $modversion['author'] = "MOHTAVA";
@@ -232,6 +232,13 @@ $modversion['config'][$i]['description'] = '_MI_VIDEO_THUMB_HEIGTDSC';
 $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'int';
 $modversion['config'][$i]['default'] = 240;
+$i++;
+$modversion['config'][$i]['name'] = 'jwplayerKey';
+$modversion['config'][$i]['title'] = '_MI_VIDEO_JWPKEY';
+$modversion['config'][$i]['description'] = '_MI_VIDEO_JWPKEYDSC';
+$modversion['config'][$i]['formtype'] = 'textbox';
+$modversion['config'][$i]['valuetype'] = 'text';
+$modversion['config'][$i]['default'] = '';
 $i++;
 $modversion['config'][$i]['name'] = 'acodec';
 $modversion['config'][$i]['title'] = '_MI_VIDEO_ACODEC';

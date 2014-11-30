@@ -150,4 +150,7 @@ define("_AM_VIDEO_MAIL_URL","Click on link below for see video");
 //version 1.25
 define("_AM_VIDEO_FORMEXTRATEXT","Extra information");
 define("_AM_VIDEO_FORMRELATED","Related video");
+
+// version 1.30
+define('_AM_VIDEO_FORM_MP4URL', 'Video name');
 ?>

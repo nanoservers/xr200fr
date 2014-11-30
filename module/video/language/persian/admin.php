@@ -149,4 +149,7 @@ define("_AM_VIDEO_MAIL_URL","برای مشاهده ویدیو به لینک رو
 //version 1.25
 define("_AM_VIDEO_FORMEXTRATEXT","اطلاعات اضافی");
 define("_AM_VIDEO_FORMRELATED","ویدیو های مشابه");
+
+// version 1.30
+define('_AM_VIDEO_FORM_MP4URL', 'نام ویدیو');
 ?>
