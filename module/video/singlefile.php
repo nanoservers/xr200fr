@@ -94,6 +94,8 @@ $new = video_Thumbnail ( $view_downloads->getVar ( 'date' ), $view_downloads->ge
 $pop = video_Popular ( $view_downloads->getVar ( 'hits' ) );
 $description = $view_downloads->getVar ( 'description' );
 
+$flashFile2 = '';
+$flashFile3 = '';
 // Set file link
 if ($view_downloads->getVar('type') == 'flv') {
 	$flashFile = $view_downloads->getVar('url') . $uploadpach_flv . $view_downloads->getVar('filename') . '.flv';
@@ -111,6 +113,14 @@ if ($view_downloads->getVar('type') == 'flv') {
     //	$jwplayerKey = "jwplayer.key='" . $xoopsModuleConfig ['jwplayerKey'] . "';";
     //	$xoTheme->addScript ( null, array ('type' => 'text/javascript', 'charset' => _CHARSET ), $jwplayerKey); 
     //}
+
+    if (!empty($view_downloads->getVar('filename2'))) {
+    	$flashFile2 = $view_downloads->getVar('url') . $uploadpach_mp4 . $view_downloads->getVar('filename2') . '.mp4';
+    }
+
+    if (!empty($view_downloads->getVar('filename3'))) {
+    	$flashFile3 = $view_downloads->getVar('url') . $uploadpach_mp4 . $view_downloads->getVar('filename3') . '.mp4';
+    }
 }
 
 // Set information for template
@@ -126,6 +136,8 @@ $xoopsTpl->assign ( 'fulltitle', $view_downloads->getVar ( 'title' ) . $new . $p
 $xoopsTpl->assign ( 'title', $view_downloads->getVar ( 'title' ) );
 $xoopsTpl->assign ( 'adminlink', $adminlink );
 $xoopsTpl->assign ( 'flashFile', $flashFile);
+$xoopsTpl->assign ( 'flashFile2', $flashFile2);
+$xoopsTpl->assign ( 'flashFile3', $flashFile3);
 $xoopsTpl->assign ( 'date', formatTimestamp ( $view_downloads->getVar ( 'date' ), 's' ) );
 $xoopsTpl->assign ( 'author', XoopsUser::getUnameFromId ( $view_downloads->getVar ( 'submitter' ) ) );
 $xoopsTpl->assign ( 'uid', $view_downloads->getVar ( 'submitter' ) );

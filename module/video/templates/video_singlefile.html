@@ -55,6 +55,50 @@
 				'logo.position' : 'top-left',
 			  });
 			</script>
+
+			<{if $flashFile2 != ''}>
+			<div id='mediaplayer2'></div>
+			<script type="text/javascript">
+			  jwplayer('mediaplayer2').setup({
+				'flashplayer': '<{$xoops_url}>/modules/video/js/jwplayer/player.swf',
+				'id': 'playerID',
+				'width': '<{$flvWidth}>',
+				'height': '<{$flvHeight}>',
+				'file': '<{$flashFile2}>',
+				'image': '<{$imgurl}>',
+				'skin': '<{$xoops_url}>/modules/video/js/jwplayer/glow.zip',
+            	'stretching': 'fill',
+				'controlbar': 'bottom',
+				'plugins': 'timeslidertooltipplugin-3',
+				'logo.file': '<{$logourl}>',
+				'logo.hide' : 'false',
+				'logo.position' : 'top-left',
+			  });
+			</script>
+			<{/if}>
+
+			<{if $flashFile3 != ''}>
+			<div id='mediaplayer3'></div>
+			<script type="text/javascript">
+			  jwplayer('mediaplayer3').setup({
+				'flashplayer': '<{$xoops_url}>/modules/video/js/jwplayer/player.swf',
+				'id': 'playerID',
+				'width': '<{$flvWidth}>',
+				'height': '<{$flvHeight}>',
+				'file': '<{$flashFile3}>',
+				'image': '<{$imgurl}>',
+				'skin': '<{$xoops_url}>/modules/video/js/jwplayer/glow.zip',
+            	'stretching': 'fill',
+				'controlbar': 'bottom',
+				'plugins': 'timeslidertooltipplugin-3',
+				'logo.file': '<{$logourl}>',
+				'logo.hide' : 'false',
+				'logo.position' : 'top-left',
+			  });
+			</script>
+			<{/if}>
+
+
 			<{/if}>
 		</div>
 	</div>

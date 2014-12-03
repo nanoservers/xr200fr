@@ -705,37 +705,33 @@ switch ($op)
 			xoops_cp_header();
 			echo '<div class="errorMsg" style="text-align: left;">' . $message_erreur . '</div>';
 		} else {
-         
-         $fileName = $_POST['mp4Url'];
-         // Work on video
-			switch($_POST['video_type']) {
-				case 'convert':
-				   $objmp4 = new mp4 ( $xoopsModuleConfig['ffmpeg'] , $uploaddir_downloads, $uploaddir_mp4, $xoopsModuleConfig['flvWidth'],$xoopsModuleConfig['flvHeight'], $xoopsModuleConfig['asamplerate'], $xoopsModuleConfig['abitrate'], $xoopsModuleConfig['acodec'], $xoopsModuleConfig['vcodec'], $xoopsModuleConfig['vrate'], $xoopsModuleConfig['vmaxrate'], XOOPS_ROOT_PATH . '/' . $xoopsModuleConfig['vlogo'], $xoopsModuleConfig['overlayh'], $xoopsModuleConfig['overlayw']);
-					$objmp4->convert ( $fileName, $fileName.".mp4" ,$xoopsModuleConfig['convert_type']);
-                                        $duration = $objmp4->duration($fileName);
-                                        $obj->setVar('duration', $duration);
-					
-                                        /*
+			$fileName = $_POST['mp4Url'];
+            // Work on video
+		    switch($_POST['video_type']) {
+			    case 'convert':
+				    $objmp4 = new mp4( $xoopsModuleConfig['ffmpeg'] , $uploaddir_downloads, $uploaddir_mp4, $xoopsModuleConfig['flvWidth'],$xoopsModuleConfig['flvHeight'], $xoopsModuleConfig['asamplerate'], $xoopsModuleConfig['abitrate'], $xoopsModuleConfig['acodec'], $xoopsModuleConfig['vcodec'], $xoopsModuleConfig['vrate'], $xoopsModuleConfig['vmaxrate'], XOOPS_ROOT_PATH . '/' . $xoopsModuleConfig['vlogo'], $xoopsModuleConfig['overlayh'], $xoopsModuleConfig['overlayw']);
+				    $objmp4->convert( $fileName, $fileName.".mp4" ,$xoopsModuleConfig['convert_type']);
+                    $duration = $objmp4->duration($fileName);
+                    $obj->setVar('duration', $duration);
+                    /*
 					 * Get ffmpeg comand
 					 */
 					//$convertinfo = $objmp4->convert ( $fileName, $fileName.".mp4" ,$xoopsModuleConfig['convert_type']);
 					//$obj->setVar('description', $convertinfo);
-					
-					$obj->setVar('filename', $fileName);
-				        $obj->setVar('url', XOOPS_URL);
-   
-					// Set size
+                    $obj->setVar('filename', $fileName);
+				    $obj->setVar('url', XOOPS_URL);
+                    // Set size
 					$obj->setVar('size', filesize($uploaddir_mp4.$fileName.".mp4"));
 					break;
 				
 				case 'upload':
-				   // Upload cna convert file
+				    // Upload cna convert file
 					if (isset($_POST['xoops_upload_file'][0])){
-						$uploader = new XoopsMediaUploader($uploaddir_downloads, explode('|',$xoopsModuleConfig['mimetype']), $xoopsModuleConfig['maxuploadsize'], null, null);
-					   if ($uploader->fetchMedia($_POST['xoops_upload_file'][0],0)) {
-							$uploader->setPrefix($xoopsModuleConfig['prefixdownloads']) ;
-	                  $uploader->fetchMedia($_POST['xoops_upload_file'][0],0);
-			            if (!$uploader->upload()) {
+					    $uploader = new XoopsMediaUploader($uploaddir_downloads, explode('|',$xoopsModuleConfig['mimetype']), $xoopsModuleConfig['maxuploadsize'], null, null);
+					    if ($uploader->fetchMedia($_POST['xoops_upload_file'][0],0)) {
+						    $uploader->setPrefix($xoopsModuleConfig['prefixdownloads']) ;
+	                        $uploader->fetchMedia($_POST['xoops_upload_file'][0],0);
+			                if (!$uploader->upload()) {
 								$errors = $uploader->getErrors();
 								redirect_header("javascript:history.go(-1)",3, $errors);
 							} else {
@@ -747,10 +743,10 @@ switch ($op)
 								$obj->setVar('filename', $fileName);
 								$obj->setVar('url', XOOPS_URL);
 							}
-					   } else {
-					   	$errors = $uploader->getErrors();
+					    } else {
+					        $errors = $uploader->getErrors();
 							redirect_header("javascript:history.go(-1)",3, $errors);
-					   }	
+					    }	
 					} else {
 						$errors = $uploader->getErrors();
 						redirect_header("javascript:history.go(-1)",3, $errors);
@@ -760,31 +756,47 @@ switch ($op)
 					break;
 				
 				case 'copy':
-				   // Set video information
-				   $obj->setVar('filename', $_POST['mp4Url']);
+				    // Set video information
+				    $obj->setVar('filename', $_POST['mp4Url']);
 					$obj->setVar('url', $_POST['url']);
+                    // Set filename2
+					if (isset($_POST['mp4Url2'])) {
+						$obj->setVar('filename2', $_POST['mp4Url2']);
+					}
+					// Set filename3
+					if (isset($_POST['mp4Url3'])) {
+						$obj->setVar('filename3', $_POST['mp4Url3']);
+					}
 					// Set duration
-					if(isset($_POST['duration'])) {
-			      	$obj->setVar('duration', $_POST['duration']);
-			      }
-			      // Set size
-					if(isset($_POST['size'])) {
-			      	$obj->setVar('size', $_POST['size']);
-			      }
+					if(isset($_POST['duration']) && !empty($_POST['duration'])) {
+			            $obj->setVar('duration', $_POST['duration']);
+			        }
+			        // Set size
+				    if(isset($_POST['size']) && !empty($_POST['size'])) {
+			            $obj->setVar('size', $_POST['size']);
+			        }
 					break;
 				
 				case 'edit':
-				   // Set video information
-				   $obj->setVar('filename', $_POST['mp4Url']);
+					// Set video information
+					$obj->setVar('filename', $_POST['mp4Url']);
 					$obj->setVar('url', $_POST['url']);
+					// Set filename2
+					if (isset($_POST['mp4Url2'])) {
+						$obj->setVar('filename2', $_POST['mp4Url2']);
+					}
+					// Set filename3
+					if (isset($_POST['mp4Url3'])) {
+						$obj->setVar('filename3', $_POST['mp4Url3']);
+					}
 					// Set duration
 					if(isset($_POST['duration'])) {
-			      	$obj->setVar('duration', $_POST['duration']);
-			      }
-			      // Set size
+			      		$obj->setVar('duration', $_POST['duration']);
+			    	}
+			    	// Set size
 					if(isset($_POST['size'])) {
-			      	$obj->setVar('size', $_POST['size']);
-			      }
+			      		$obj->setVar('size', $_POST['size']);
+			    	}
 					break;
 			}	
 

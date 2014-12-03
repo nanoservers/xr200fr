@@ -15,6 +15,8 @@ class video_downloads extends XoopsObject
 		$this->initVar("title",XOBJ_DTYPE_TXTBOX, null, false);
 		$this->initVar("url",XOBJ_DTYPE_TXTBOX, null, false);
 		$this->initVar("filename",XOBJ_DTYPE_TXTBOX, null, false);
+		$this->initVar("filename2",XOBJ_DTYPE_TXTBOX, null, false);
+		$this->initVar("filename3",XOBJ_DTYPE_TXTBOX, null, false);
 		$this->initVar("homepage",XOBJ_DTYPE_TXTBOX, null, false);
 		$this->initVar("version",XOBJ_DTYPE_TXTBOX, null, false);
 		$this->initVar("size",XOBJ_DTYPE_TXTBOX, null, false);
@@ -81,40 +83,48 @@ class video_downloads extends XoopsObject
 		$form->addElement(new XoopsFormText(_AM_VIDEO_FORMTITLE, 'title', 50, 255, $this->getVar('title')), true);
 		// fichier
 		$fichier = new XoopsFormElementTray(_AM_VIDEO_FORMFILE,'<br /><br />');
-      if($this->isNew()) {
-	      switch($form_type) {
-		      case 'copy':
-			      $url = $this->isNew() ? '' : $this->getVar('url');
-					$formmp4 = new XoopsFormText(_AM_VIDEO_FORM_MP4URL, 'mp4Url', 75, 255, $this->getVar('filename'));
-					$fichier->addElement($formmp4,true);
+    	if($this->isNew()) {
+	    	switch($form_type) {
+		    	case 'copy':
+			    	$url = $this->isNew() ? '' : $this->getVar('url');
+					$formmp41 = new XoopsFormText(_AM_VIDEO_FORM_MP4URL, 'mp4Url', 75, 255, $this->getVar('filename'));
+					$fichier->addElement($formmp41,true);
+					$formmp42 = new XoopsFormText(_AM_VIDEO_FORM_MP4URL2, 'mp4Url2', 75, 255, $this->getVar('filename2'));
+					$fichier->addElement($formmp42);
+					$formmp43 = new XoopsFormText(_AM_VIDEO_FORM_MP4URL3, 'mp4Url3', 75, 255, $this->getVar('filename3'));
+					$fichier->addElement($formmp43);
 					$formurl = new XoopsFormText(_AM_VIDEO_FORMURL, 'url', 75, 255, $url);
 					$fichier->addElement($formurl,true);
-	      		$video_type = 'copy';
-		      break;
+	      			$video_type = 'copy';
+		     		break;
 		      
-		      case 'upload':
+		    	case 'upload':
 					$fichier->addElement(new XoopsFormFile(_AM_VIDEO_FORMUPLOAD , 'attachedfile', $xoopsModuleConfig['maxuploadsize']), true);
-				   $video_type = 'upload';
-		      break;
+					$video_type = 'upload';
+		    		break;
 		      
-		      case 'convert':
-			      $formmp4 = new XoopsFormText(_AM_VIDEO_FORM_MP4URL, 'mp4Url', 75, 255, $this->getVar('filename'));
+		    	case 'convert':
+			    	$formmp4 = new XoopsFormText(_AM_VIDEO_FORM_MP4URL, 'mp4Url', 75, 255, $this->getVar('filename'));
 					$fichier->addElement($formmp4,true);
-	      		$video_type = 'convert';
-		      break;	
-	      }			
-      } else {
-      	if ( $xoopsUser->isAdmin($xoopsModule->mid()) ) {
+	      			$video_type = 'convert';
+		      	break;	
+	   		}			
+    	} else {
+      		if ($xoopsUser->isAdmin($xoopsModule->mid()) ) {
 				$url = $this->isNew() ? '' : $this->getVar('url');
-				$formmp4 = new XoopsFormText(_AM_VIDEO_FORM_MP4URL, 'mp4Url', 75, 255, $this->getVar('filename'));
-				$fichier->addElement($formmp4,true);
+				$formmp41 = new XoopsFormText(_AM_VIDEO_FORM_MP4URL, 'mp4Url', 75, 255, $this->getVar('filename'));
+				$fichier->addElement($formmp41,true);
+				$formmp42 = new XoopsFormText(_AM_VIDEO_FORM_MP4URL2, 'mp4Url2', 75, 255, $this->getVar('filename2'));
+				$fichier->addElement($formmp42);
+				$formmp43 = new XoopsFormText(_AM_VIDEO_FORM_MP4URL3, 'mp4Url3', 75, 255, $this->getVar('filename3'));
+				$fichier->addElement($formmp43);
 				$formurl = new XoopsFormText(_AM_VIDEO_FORMURL, 'url', 75, 255, $url);
 				$fichier->addElement($formurl,true);
 				$video_type = 'edit';
-	      }
-      }
-      $form->addElement($fichier);	
-      $form->addElement(new XoopsFormHidden('video_type', $video_type));
+	    	}
+      	}
+      	$form->addElement($fichier);	
+      	$form->addElement(new XoopsFormHidden('video_type', $video_type));
 		//cat�gorie
 		$downloadscat_Handler =& xoops_getModuleHandler('video_cat', 'video');
 		$categories = video_MygetItemIds('video_submit', 'video');
