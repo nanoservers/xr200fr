@@ -37,7 +37,7 @@
 			</script>
 			<{/if}>
 			<{if $type == mp4}>
-			<div id='mediaplayer'></div>
+			<!-- <div id='mediaplayer'></div>
 			<script type="text/javascript">
 			  jwplayer('mediaplayer').setup({
 				'flashplayer': '<{$xoops_url}>/modules/video/js/jwplayer/player.swf',
@@ -55,7 +55,6 @@
 				'logo.position' : 'top-left',
 			  });
 			</script>
-
 			<{if $flashFile2 != ''}>
 			<div id='mediaplayer2'></div>
 			<script type="text/javascript">
@@ -96,7 +95,30 @@
 				'logo.position' : 'top-left',
 			  });
 			</script>
-			<{/if}>
+			<{/if}> -->
+
+<div id='playerFQofXRALgCbh'></div>
+<script type='text/javascript'>
+    jwplayer('playerFQofXRALgCbh').setup({
+
+      sources: [{
+        file: "<{$flashFile}>",
+        label: "File 1",
+        "default": "true"
+      },{
+        file: "<{$flashFile2}>",
+        label: "File 2"
+      },{
+        file: "<{$flashFile3}>",
+        label: "File 3"
+      }],
+
+        image: '<{$imgurl}>',
+        title: '<{$title}>',
+        width: '100%',
+        aspectratio: '16:9'
+    });
+</script>
 
 
 			<{/if}>

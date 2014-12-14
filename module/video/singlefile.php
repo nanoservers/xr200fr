@@ -102,17 +102,17 @@ if ($view_downloads->getVar('type') == 'flv') {
 	$xoTheme->addScript ( XOOPS_URL . '/modules/' . $xoopsModule->getVar ( 'dirname', 'n' ) . '/js/jwplayer/jwplayer.js' );
 } elseif ($view_downloads->getVar('type') == 'mp4') {
 	$flashFile = $view_downloads->getVar('url') . $uploadpach_mp4 . $view_downloads->getVar('filename') . '.mp4';
-	$xoTheme->addScript ( XOOPS_URL . '/modules/' . $xoopsModule->getVar ( 'dirname', 'n' ) . '/js/jwplayer/jwplayer.js' );
-    //$xoTheme->addScript ( XOOPS_URL . '/modules/' . $xoopsModule->getVar ( 'dirname', 'n' ) . '/player/jwplayer/jwplayer.js' );
+	//$xoTheme->addScript ( XOOPS_URL . '/modules/' . $xoopsModule->getVar ( 'dirname', 'n' ) . '/js/jwplayer/jwplayer.js' );
+    $xoTheme->addScript ( XOOPS_URL . '/modules/' . $xoopsModule->getVar ( 'dirname', 'n' ) . '/player/jwplayer/jwplayer.js' );
     //$xoTheme->addScript ( XOOPS_URL . '/modules/' . $xoopsModule->getVar ( 'dirname', 'n' ) . '/player/jwplayer/jwplayer.html5.js' );
 
     //$xoTheme->addScript ( XOOPS_URL . '/modules/video/player/flowplayer/flowplayer.min.js' );
     //$xoTheme->addStylesheet ( XOOPS_URL . '/modules/video/player/flowplayer/skin/minimalist.css' );
     
-    //if (!empty($xoopsModuleConfig ['jwplayerKey'])) {
-    //	$jwplayerKey = "jwplayer.key='" . $xoopsModuleConfig ['jwplayerKey'] . "';";
-    //	$xoTheme->addScript ( null, array ('type' => 'text/javascript', 'charset' => _CHARSET ), $jwplayerKey); 
-    //}
+    if (!empty($xoopsModuleConfig ['jwplayerKey'])) {
+    	$jwplayerKey = "jwplayer.key='" . $xoopsModuleConfig ['jwplayerKey'] . "';";
+    	$xoTheme->addScript ( null, array ('type' => 'text/javascript', 'charset' => _CHARSET ), $jwplayerKey); 
+    }
 
     if (!empty($view_downloads->getVar('filename2'))) {
     	$flashFile2 = $view_downloads->getVar('url') . $uploadpach_mp4 . $view_downloads->getVar('filename2') . '.mp4';
