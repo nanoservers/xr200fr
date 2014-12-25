@@ -152,5 +152,7 @@ define("_AM_VIDEO_FORMEXTRATEXT","Extra information");
 define("_AM_VIDEO_FORMRELATED","Related video");
 
 // version 1.30
-define('_AM_VIDEO_FORM_MP4URL', 'Video name');
+define('_AM_VIDEO_FORM_MP4URL', 'Low quality');
+define('_AM_VIDEO_FORM_MP4URL2', 'Medium quality');
+define('_AM_VIDEO_FORM_MP4URL3', 'High quality');
 ?>

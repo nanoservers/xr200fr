@@ -151,5 +151,7 @@ define("_AM_VIDEO_FORMEXTRATEXT","اطلاعات اضافی");
 define("_AM_VIDEO_FORMRELATED","ویدیو های مشابه");
 
 // version 1.30
-define('_AM_VIDEO_FORM_MP4URL', 'نام ویدیو');
+define('_AM_VIDEO_FORM_MP4URL', 'کیفیت پایین');
+define('_AM_VIDEO_FORM_MP4URL2', 'کیفیت متوسط');
+define('_AM_VIDEO_FORM_MP4URL3', 'کیفیت بالا');
 ?>

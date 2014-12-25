@@ -151,5 +151,7 @@ define("_AM_VIDEO_FORMEXTRATEXT","المعلومات الاضافية");
 define("_AM_VIDEO_FORMRELATED","أشرطة فيديو مشابهة");
 
 // version 1.30
-define('_AM_VIDEO_FORM_MP4URL', 'اسم شريط الفيديو');
+define('_AM_VIDEO_FORM_MP4URL', 'Low quality');
+define('_AM_VIDEO_FORM_MP4URL2', 'Medium quality');
+define('_AM_VIDEO_FORM_MP4URL3', 'High quality');
 ?>
