@@ -1,0 +1,22 @@
+.xo-title {
+	border-bottom: 1px #333 solid;
+	padding: 5px;
+	font-size: 1.2em;
+	line-height: 2em;
+	height: 30px;
+	letter-spacing: -1px;
+	background-position: left top;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	font-weight: normal !important;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+#xo-title-modules {
+	background-image: url(../img/modules.png);
+}
+
+#xo-title-icons {
+	background-image: url(../img/cp.png);
+}

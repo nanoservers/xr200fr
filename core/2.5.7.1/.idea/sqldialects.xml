@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file:///var/www/html/local/x2/2.5.7.1/htdocs/install/sql/mysql.data.sql" dialect="MySQL" />
+    <file url="file:///var/www/html/local/x2/2.5.7.1/htdocs/install/sql/mysql.structure.sql" dialect="MySQL" />
+  </component>
+</project>
