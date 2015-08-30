@@ -49,22 +49,16 @@ class XoopsLocal extends XoopsLocalAbstract
      *
      * Setting $timeoffset to null (by default) will skip timezone calculation for user, using default timezone instead, which is a MUST for cached contents
      */
+        /**
+     * Function to display formatted times in user timezone
+     *
+     * Setting $timeoffset to null (by default) will skip timezone calculation for user, using default timezone instead, which is a MUST for cached contents
+     */
     static function formatTimestamp($time, $format = 'l', $timeoffset = null)
     {
         global $xoopsConfig, $xoopsUser;
 
-        if (class_exists('IntlDateFormatter')) {
-            $formatter = new IntlDateFormatter(
-                "fa_IR@calendar=persian", 
-                IntlDateFormatter::SHORT, 
-                IntlDateFormatter::SHORT, 
-                'Asia/Tehran', 
-                IntlDateFormatter::TRADITIONAL
-            );
-            return $formatter->format(intval($time));
-        }
-
-        /* $format_copy = $format;
+        $format_copy = $format;
         $format = strtolower($format);
 
         if ($format == 'rss' || $format == 'r') {
@@ -152,7 +146,18 @@ class XoopsLocal extends XoopsLocalAbstract
                 break;
         }
 
-        return ucfirst(date($datestring, $usertimestamp)); */
+        if (class_exists('IntlDateFormatter')) {
+            $formatter = new IntlDateFormatter(
+                "fa_IR@calendar=persian",
+                IntlDateFormatter::SHORT,
+                IntlDateFormatter::SHORT,
+                'Asia/Tehran',
+                IntlDateFormatter::TRADITIONAL
+            );
+            return $formatter->format(intval($time));
+        } else {
+            return ucfirst(date($datestring, $usertimestamp));
+        }
     }
 
     /**
