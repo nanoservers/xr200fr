@@ -1,7 +1,7 @@
 <div class="video video-singlefile">
    <div class="breadcrumb"><{$breadcrumb}></div>
 	<div class="bottomline"></div>
-	
+
 	<!-- Start Player -->
 	<div class="pad10 marg10 ui-widget ui-widget-content ui-corner-all">
 		<div class="pad5 marg5 ui-widget-header">
@@ -14,7 +14,7 @@
 			</div>
 			<div class="clear"></div>
 		</div>
-		
+
 		<div class="center ui-widget ui-widget-content ui-corner-all player">
 			<{if $type == flv}>
 			<div id='mediaplayer'></div>
@@ -37,95 +37,58 @@
 			</script>
 			<{/if}>
 			<{if $type == mp4}>
-			<!-- <div id='mediaplayer'></div>
-			<script type="text/javascript">
-			  jwplayer('mediaplayer').setup({
-				'flashplayer': '<{$xoops_url}>/modules/video/js/jwplayer/player.swf',
-				'id': 'playerID',
-				'width': '<{$flvWidth}>',
-				'height': '<{$flvHeight}>',
-				'file': '<{$flashFile}>',
-				'image': '<{$imgurl}>',
-				'skin': '<{$xoops_url}>/modules/video/js/jwplayer/glow.zip',
-            	'stretching': 'fill',
-				'controlbar': 'bottom',
-				'plugins': 'timeslidertooltipplugin-3',
-				'logo.file': '<{$logourl}>',
-				'logo.hide' : 'false',
-				'logo.position' : 'top-left',
-			  });
-			</script>
-			<{if $flashFile2 != ''}>
-			<div id='mediaplayer2'></div>
-			<script type="text/javascript">
-			  jwplayer('mediaplayer2').setup({
-				'flashplayer': '<{$xoops_url}>/modules/video/js/jwplayer/player.swf',
-				'id': 'playerID',
-				'width': '<{$flvWidth}>',
-				'height': '<{$flvHeight}>',
-				'file': '<{$flashFile2}>',
-				'image': '<{$imgurl}>',
-				'skin': '<{$xoops_url}>/modules/video/js/jwplayer/glow.zip',
-            	'stretching': 'fill',
-				'controlbar': 'bottom',
-				'plugins': 'timeslidertooltipplugin-3',
-				'logo.file': '<{$logourl}>',
-				'logo.hide' : 'false',
-				'logo.position' : 'top-left',
-			  });
+			<div id='playerFQofXRALgCbh'></div>
+			<script type='text/javascript'>
+				jwplayer('playerFQofXRALgCbh').setup({
+					sources: [{
+						file: "<{$flashFile}>",
+						label: "File 1",
+						"default": "true"
+					},{
+						file: "<{$flashFile2}>",
+						label: "File 2"
+					},{
+						file: "<{$flashFile3}>",
+						label: "File 3"
+					}],
+
+					image: '<{$imgurl}>',
+					title: '<{$title}>',
+					width: '100%',
+					aspectratio: '16:9'
+				});
 			</script>
 			<{/if}>
+			<{if $type == ntv}>
+			<div id='playerFQofXRALgCbh'></div>
+			<script type='text/javascript'>
+				jwplayer('playerFQofXRALgCbh').setup({
+					sources: [{
+						file: "<{$flashFile}>",
+						label: "File 1",
+						type: "video/mp4",
+						"default": "true"
+					},{
+						file: "<{$flashFile2}>",
+						type: "video/mp4",
+						label: "File 2"
+					},{
+						file: "<{$flashFile3}>",
+						type: "video/mp4",
+						label: "File 3"
+					}],
 
-			<{if $flashFile3 != ''}>
-			<div id='mediaplayer3'></div>
-			<script type="text/javascript">
-			  jwplayer('mediaplayer3').setup({
-				'flashplayer': '<{$xoops_url}>/modules/video/js/jwplayer/player.swf',
-				'id': 'playerID',
-				'width': '<{$flvWidth}>',
-				'height': '<{$flvHeight}>',
-				'file': '<{$flashFile3}>',
-				'image': '<{$imgurl}>',
-				'skin': '<{$xoops_url}>/modules/video/js/jwplayer/glow.zip',
-            	'stretching': 'fill',
-				'controlbar': 'bottom',
-				'plugins': 'timeslidertooltipplugin-3',
-				'logo.file': '<{$logourl}>',
-				'logo.hide' : 'false',
-				'logo.position' : 'top-left',
-			  });
+					image: '<{$imgurl}>',
+					title: '<{$title}>',
+					width: '100%',
+					aspectratio: '16:9'
+				});
 			</script>
-			<{/if}> -->
-
-<div id='playerFQofXRALgCbh'></div>
-<script type='text/javascript'>
-    jwplayer('playerFQofXRALgCbh').setup({
-
-      sources: [{
-        file: "<{$flashFile}>",
-        label: "File 1",
-        "default": "true"
-      },{
-        file: "<{$flashFile2}>",
-        label: "File 2"
-      },{
-        file: "<{$flashFile3}>",
-        label: "File 3"
-      }],
-
-        image: '<{$imgurl}>',
-        title: '<{$title}>',
-        width: '100%',
-        aspectratio: '16:9'
-    });
-</script>
-
-
 			<{/if}>
 		</div>
 	</div>
 	<!-- End Player -->
-	
+
 	<{if $show_social}>
    <div class="socialnetwork">
 		<ul>
@@ -135,7 +98,7 @@
 		</ul>
 	</div>
 	<{/if}>
-	
+
 	<{if $shwo_bookmark}>
 	<div class="bookmarkme">
 		<div class="bookmarkmeitems">
@@ -164,9 +127,9 @@
 		</div>
 	</div>
 	<{/if}>
-	
-	   
-		
+
+
+
 	<div class="pad10 marg10" id='info-tab'>
 		<ul>
 			<li><a href="#tabs-1"><{$smarty.const._MD_VIDEO_ACTION}></a></li>
@@ -175,7 +138,7 @@
 			<li><a href="#tabs-4"><{$smarty.const._MD_VIDEO_EMBED}></a></li>
 			<li><a href="#tabs-5"><{$smarty.const._MD_VIDEO_MORE}></a></li>
 		</ul>
-		
+
 		<!-- Tab 1-->
 		<div id="tabs-1">
 			<div style="min-height: 100px;">
@@ -206,10 +169,10 @@
 			   <div class="clear"></div>
 			</div>
 		</div>
-		
+
 		<!-- Tab 2-->
 		<div id="tabs-2">
-		
+
 			<div class="pad5 marg5 normal width100">
 				<div class="pad5 marg5 floatleft width45 normal">
 					<div class="marg3 iconbackground" style="background: url(<{$xoops_url}>/modules/video/images/icon/date.png);"> <{$smarty.const._MD_VIDEO_SINGLEFILE_DATEPROP}> : <{$date}></div>
@@ -227,8 +190,8 @@
 				<div class="clear"></div>
 			</div>
 		</div>
-		
-		<!-- Tab 3-->	
+
+		<!-- Tab 3-->
 		<div id="tabs-3">
 			<div class="pad5 marg5 normal">
 				<div class="pad5 marg5 justify"><{$description}></div>
@@ -237,15 +200,15 @@
 				<div class="pad20 marg20"><{include file="db:tag_bar.html"}></div>
 			<{/if}>
 		</div>
-		
-		<!-- Tab 4-->		
+
+		<!-- Tab 4-->
 		<div id="tabs-4">
-			<p>Input video code in your website:</p>				
+			<p>Input video code in your website:</p>
 			<textarea id="txtarea" style="text-align: left; direction: ltr;" rows="5" cols="80" class="textbox">
 				<embed flashvars="<{$imageStr}>=<{$imgurl}>&file=<{$flashFile}>&logo=<{$logourl}>&link=<{$link_page}>&linktarget=_self&displayclick=link" allowfullscreen="true" allowscripaccess="always" id="player1" name="player1" src="<{$xoops_url}>/modules/video/js/jwplayer/player.swf" width="<{$flvWidth}>" height="<{$flvHeight}>" />
 			</textarea>
 		</div>
-			
+
 		<div id="tabs-5">
 			<table>
 				<tr>
@@ -270,9 +233,9 @@
 				</tr>
 			</table>
 		</div>
-			
+
 	</div>
-	
+
 	<div class="pad5 marg5">
 		<div class="pad5 marg5 normal">
 			<{$commentsnav}>

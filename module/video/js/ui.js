@@ -1,5 +1,5 @@
-$(function() {
-	$('#info-tab').tabs({
-		collapsible: true
-	});
+$(function () {
+    $('#info-tab').tabs({
+        collapsible: true
+    });
 });

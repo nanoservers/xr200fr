@@ -1,11 +1,11 @@
 <?php
 
 if (!defined('XOOPS_ROOT_PATH')) {
-	die('XOOPS root path not defined');
+    die('XOOPS root path not defined');
 }
 
 $modversion['name'] = _MI_VIDEO_NAME;
-$modversion['version'] = 1.30;
+$modversion['version'] = 1.33;
 $modversion['description'] = _MI_VIDEO_DESC;
 $modversion['credits'] = "MOHTAVA";
 $modversion['author'] = "MOHTAVA";
@@ -21,10 +21,10 @@ $modversion['min_php'] = '5.2';
 $modversion['min_xoops'] = '2.5';
 
 //informations compémentaires
-$modversion["release"] = "08-06-2012";
+$modversion["release"] = "06-09-2015";
 $modversion["module_status"] = "Stable";
-$modversion['support_site_url']	= "http://www.mohtava.com";
-$modversion['support_site_name'] = "www.mohtava.com";
+$modversion['support_site_url'] = "http://www.mohtava.com";
+$modversion['support_site_name'] = "mohtava.com";
 
 // Tables crée depuis le fichier sql
 $modversion['tables'][0] = "video_broken";
@@ -48,7 +48,7 @@ $modversion['blocks'][1]['name'] = _MI_VIDEO_BNAME1;
 $modversion['blocks'][1]['description'] = _MI_VIDEO_BNAMEDSC1;
 $modversion['blocks'][1]['show_func'] = "b_VIDEO_top_show";
 $modversion['blocks'][1]['edit_func'] = "b_VIDEO_top_edit";
-$modversion['blocks'][1]['options'] = 'date|10|19|1|1|100|100|0|0|1';
+$modversion['blocks'][1]['options'] = 'date|10|19|1|1|100|100|0|0|0|1';
 $modversion['blocks'][1]['template'] = 'video_block_new.html';
 
 $modversion['blocks'][2]['file'] = "video_top.php";
@@ -56,7 +56,7 @@ $modversion['blocks'][2]['name'] = _MI_VIDEO_BNAME2;
 $modversion['blocks'][2]['description'] = _MI_VIDEO_BNAMEDSC2;
 $modversion['blocks'][2]['show_func'] = "b_VIDEO_top_show";
 $modversion['blocks'][2]['edit_func'] = "b_VIDEO_top_edit";
-$modversion['blocks'][2]['options'] = 'hits|10|19|1|1|100|100|0|0|1';
+$modversion['blocks'][2]['options'] = 'hits|10|19|1|1|100|100|0|0|0|1';
 $modversion['blocks'][2]['template'] = 'video_block_top.html';
 
 $modversion['blocks'][3]['file'] = "video_top.php";
@@ -64,7 +64,7 @@ $modversion['blocks'][3]['name'] = _MI_VIDEO_BNAME3;
 $modversion['blocks'][3]['description'] = _MI_VIDEO_BNAMEDSC3;
 $modversion['blocks'][3]['show_func'] = "b_VIDEO_top_show";
 $modversion['blocks'][3]['edit_func'] = "b_VIDEO_top_edit";
-$modversion['blocks'][3]['options'] = 'rating|10|19|1|1|100|100|0|0|1';
+$modversion['blocks'][3]['options'] = 'rating|10|19|1|1|100|100|0|0|0|1';
 $modversion['blocks'][3]['template'] = 'video_block_rating.html';
 
 $modversion['blocks'][4]['file'] = "video_top.php";
@@ -72,7 +72,7 @@ $modversion['blocks'][4]['name'] = _MI_VIDEO_BNAME4;
 $modversion['blocks'][4]['description'] = _MI_VIDEO_BNAMEDSC4;
 $modversion['blocks'][4]['show_func'] = "b_VIDEO_top_show";
 $modversion['blocks'][4]['edit_func'] = "b_VIDEO_top_edit";
-$modversion['blocks'][4]['options'] = 'random|10|19|1|1|100|100|0|0|1';
+$modversion['blocks'][4]['options'] = 'random|10|19|1|1|100|100|0|0|0|1';
 $modversion['blocks'][4]['template'] = 'video_block_random.html';
 
 $modversion['blocks'][5]['file'] = "video_sel.php";
@@ -96,7 +96,7 @@ $modversion['blocks'][7]['name'] = _MI_VIDEO_BNAME7;
 $modversion['blocks'][7]['description'] = _MI_VIDEO_BNAMEDSC7;
 $modversion['blocks'][7]['show_func'] = "b_VIDEO_top_show";
 $modversion['blocks'][7]['edit_func'] = "b_VIDEO_top_edit";
-$modversion['blocks'][7]['options'] = 'date|10|19|1|1|100|100|0|0|0|1';
+$modversion['blocks'][7]['options'] = 'date|10|19|1|1|100|100|0|0|0|0|1';
 $modversion['blocks'][7]['template'] = 'video_block_new_table.html';
 
 $modversion['blocks'][8]['file'] = "video_top.php";
@@ -104,7 +104,7 @@ $modversion['blocks'][8]['name'] = _MI_VIDEO_BNAME8;
 $modversion['blocks'][8]['description'] = _MI_VIDEO_BNAMEDSC8;
 $modversion['blocks'][8]['show_func'] = "b_VIDEO_top_show";
 $modversion['blocks'][8]['edit_func'] = "b_VIDEO_top_edit";
-$modversion['blocks'][8]['options'] = 'spotlight|10|19|1|1|100|100|0|1';
+$modversion['blocks'][8]['options'] = 'spotlight|10|19|1|1|100|100|0|0|1';
 $modversion['blocks'][8]['template'] = 'video_block_spotlight.html';
 
 // Menu
@@ -156,12 +156,12 @@ $modversion['templates'][11]['description'] = '';
 
 // Préférences
 $i = 1;
-$modversion['config'][$i]['name']        = 'break' . $i;
-$modversion['config'][$i]['title']       = '_MI_VIDEO_PREFERENCE_BREAK_SERIAL';
+$modversion['config'][$i]['name'] = 'break' . $i;
+$modversion['config'][$i]['title'] = '_MI_VIDEO_PREFERENCE_BREAK_SERIAL';
 $modversion['config'][$i]['description'] = '';
-$modversion['config'][$i]['formtype']    = 'line_break';
-$modversion['config'][$i]['valuetype']   = 'textbox';
-$modversion['config'][$i]['default']     = 'head';
+$modversion['config'][$i]['formtype'] = 'line_break';
+$modversion['config'][$i]['valuetype'] = 'textbox';
+$modversion['config'][$i]['default'] = 'head';
 $i++;
 $modversion['config'][$i]['name'] = 'serial';
 $modversion['config'][$i]['title'] = '_MI_VIDEO_SERIAL';
@@ -170,12 +170,12 @@ $modversion['config'][$i]['formtype'] = 'textbox';
 $modversion['config'][$i]['valuetype'] = 'text';
 $modversion['config'][$i]['default'] = 'Enter Your Serial Number';
 $i++;
-$modversion['config'][$i]['name']        = 'break' . $i;
-$modversion['config'][$i]['title']       = '_MI_VIDEO_PREFERENCE_BREAK_VIDEO';
+$modversion['config'][$i]['name'] = 'break' . $i;
+$modversion['config'][$i]['title'] = '_MI_VIDEO_PREFERENCE_BREAK_VIDEO';
 $modversion['config'][$i]['description'] = '';
-$modversion['config'][$i]['formtype']    = 'line_break';
-$modversion['config'][$i]['valuetype']   = 'textbox';
-$modversion['config'][$i]['default']     = 'head';
+$modversion['config'][$i]['formtype'] = 'line_break';
+$modversion['config'][$i]['valuetype'] = 'textbox';
+$modversion['config'][$i]['default'] = 'head';
 $i++;
 $modversion['config'][$i]['name'] = 'ffmpeg';
 $modversion['config'][$i]['title'] = '_MI_VIDEO_FFMPEG';
@@ -311,12 +311,12 @@ $modversion['config'][$i]['valuetype'] = 'text';
 $modversion['config'][$i]['default'] = 'normal';
 $modversion['config'][$i]['options'] = array('_MI_VIDEO_TYPE_SHORT' => 'short', '_MI_VIDEO_TYPE_NORMAL' => 'normal', '_MI_VIDEO_TYPE_LOGO' => 'logo', '_MI_VIDEO_TYPE_LOCAL' => 'local');
 $i++;
-$modversion['config'][$i]['name']        = 'break' . $i;
-$modversion['config'][$i]['title']       = '_MI_VIDEO_PREFERENCE_BREAK_DIS';
+$modversion['config'][$i]['name'] = 'break' . $i;
+$modversion['config'][$i]['title'] = '_MI_VIDEO_PREFERENCE_BREAK_DIS';
 $modversion['config'][$i]['description'] = '';
-$modversion['config'][$i]['formtype']    = 'line_break';
-$modversion['config'][$i]['valuetype']   = 'textbox';
-$modversion['config'][$i]['default']     = 'head';
+$modversion['config'][$i]['formtype'] = 'line_break';
+$modversion['config'][$i]['valuetype'] = 'textbox';
+$modversion['config'][$i]['default'] = 'head';
 $i++;
 $modversion['config'][$i]['name'] = 'popular';
 $modversion['config'][$i]['title'] = '_MI_VIDEO_POPULAR';
@@ -404,14 +404,14 @@ $modversion['config'][$i]['valuetype'] = 'int';
 $modversion['config'][$i]['default'] = 104857600;
 $i++;
 include_once XOOPS_ROOT_PATH . "/class/xoopslists.php";
-$modversion["config"][$i]["name"]           = "editor";
-$modversion["config"][$i]["title"]          = "_MI_VIDEO_FORM_OPTIONS";
-$modversion["config"][$i]["description"]    = "_MI_VIDEO_FORM_OPTIONSDSC";
-$modversion["config"][$i]["formtype"]       = "select";
-$modversion["config"][$i]["valuetype"]      = "text";
-$modversion["config"][$i]["default"]        = "dhtmltextarea";
-$modversion["config"][$i]["options"]        = XoopsLists::getDirListAsArray(XOOPS_ROOT_PATH . "/class/xoopseditor");
-$modversion["config"][$i]["category"]       = "global";
+$modversion["config"][$i]["name"] = "editor";
+$modversion["config"][$i]["title"] = "_MI_VIDEO_FORM_OPTIONS";
+$modversion["config"][$i]["description"] = "_MI_VIDEO_FORM_OPTIONSDSC";
+$modversion["config"][$i]["formtype"] = "select";
+$modversion["config"][$i]["valuetype"] = "text";
+$modversion["config"][$i]["default"] = "dhtmltextarea";
+$modversion["config"][$i]["options"] = XoopsLists::getDirListAsArray(XOOPS_ROOT_PATH . "/class/xoopseditor");
+$modversion["config"][$i]["category"] = "global";
 $i++;
 $modversion['config'][$i]['name'] = 'toporder';
 $modversion['config'][$i]['title'] = '_MI_VIDEO_TOPORDER';
@@ -514,8 +514,8 @@ $modversion['config'][$i]['formtype'] = 'select';
 $modversion['config'][$i]['valuetype'] = 'text';
 $modversion['config'][$i]['default'] = 'EUR';
 $modversion['config'][$i]['options'] = array('AUD' => 'AUD', 'BRL' => 'BRL', 'CAD' => 'CAD', 'CHF' => 'CHF', 'CZK' => 'CZK', 'DKK' => 'DKK', 'EUR' => 'EUR', 'GBP' => 'GBP',
-                                             'HKD' => 'HKD', 'HUF' => 'HUF', 'ILS' => 'ILS', 'JPY' => 'JPY', 'MXN' => 'MXN', 'NOK' => 'NOK', 'NZD' => 'NZD', 'PHP' => 'PHP',
-                                             'PLN' => 'PLN', 'SEK' => 'SEK', 'SGD' => 'SGD', 'THB' => 'THB', 'TWD' => 'TWD', 'USD' => 'USD');
+    'HKD' => 'HKD', 'HUF' => 'HUF', 'ILS' => 'ILS', 'JPY' => 'JPY', 'MXN' => 'MXN', 'NOK' => 'NOK', 'NZD' => 'NZD', 'PHP' => 'PHP',
+    'PLN' => 'PLN', 'SEK' => 'SEK', 'SGD' => 'SGD', 'THB' => 'THB', 'TWD' => 'TWD', 'USD' => 'USD');
 $i++;
 $modversion['config'][$i]['name'] = 'image_paypal';
 $modversion['config'][$i]['title'] = '_MI_VIDEO_IMAGEPAYPAL';
@@ -559,40 +559,40 @@ $modversion['config'][$i]['formtype'] = 'yesno';
 $modversion['config'][$i]['valuetype'] = 'int';
 $modversion['config'][$i]['default'] = 0;
 $i++;
-$modversion['config'][$i]['name']        = 'break' . $i;
-$modversion['config'][$i]['title']       = '_MI_VIDEO_PREFERENCE_BREAK_RSS';
+$modversion['config'][$i]['name'] = 'break' . $i;
+$modversion['config'][$i]['title'] = '_MI_VIDEO_PREFERENCE_BREAK_RSS';
 $modversion['config'][$i]['description'] = '';
-$modversion['config'][$i]['formtype']    = 'line_break';
-$modversion['config'][$i]['valuetype']   = 'textbox';
-$modversion['config'][$i]['default']     = 'head';
+$modversion['config'][$i]['formtype'] = 'line_break';
+$modversion['config'][$i]['valuetype'] = 'textbox';
+$modversion['config'][$i]['default'] = 'head';
 $i++;
-$modversion['config'][$i]['name']        = 'perpagerss';
-$modversion['config'][$i]['title']       = '_MI_VIDEO_PERPAGERSS';
+$modversion['config'][$i]['name'] = 'perpagerss';
+$modversion['config'][$i]['title'] = '_MI_VIDEO_PERPAGERSS';
 $modversion['config'][$i]['description'] = '_MI_VIDEO_PERPAGERSSDSC';
-$modversion['config'][$i]['formtype']    = 'textbox';
-$modversion['config'][$i]['valuetype']   = 'int';
-$modversion['config'][$i]['default']     = 10;
+$modversion['config'][$i]['formtype'] = 'textbox';
+$modversion['config'][$i]['valuetype'] = 'int';
+$modversion['config'][$i]['default'] = 10;
 $i++;
-$modversion['config'][$i]['name']        = 'timecacherss';
-$modversion['config'][$i]['title']       = '_MI_VIDEO_TIMECACHERSS';
+$modversion['config'][$i]['name'] = 'timecacherss';
+$modversion['config'][$i]['title'] = '_MI_VIDEO_TIMECACHERSS';
 $modversion['config'][$i]['description'] = '_MI_VIDEO_TIMECACHERSSDSC';
-$modversion['config'][$i]['formtype']    = 'textbox';
-$modversion['config'][$i]['valuetype']   = 'int';
-$modversion['config'][$i]['default']     = 60;
+$modversion['config'][$i]['formtype'] = 'textbox';
+$modversion['config'][$i]['valuetype'] = 'int';
+$modversion['config'][$i]['default'] = 60;
 $i++;
-$modversion['config'][$i]['name']        = 'logorss';
-$modversion['config'][$i]['title']       = '_MI_VIDEO_LOGORSS';
+$modversion['config'][$i]['name'] = 'logorss';
+$modversion['config'][$i]['title'] = '_MI_VIDEO_LOGORSS';
 $modversion['config'][$i]['description'] = '';
-$modversion['config'][$i]['formtype']    = 'textbox';
-$modversion['config'][$i]['valuetype']   = 'text';
-$modversion['config'][$i]['default']     = '/images/logo.png';
+$modversion['config'][$i]['formtype'] = 'textbox';
+$modversion['config'][$i]['valuetype'] = 'text';
+$modversion['config'][$i]['default'] = '/images/logo.png';
 $i++;
-$modversion['config'][$i]['name']        = 'break' . $i;
-$modversion['config'][$i]['title']       = '_MI_VIDEO_PREFERENCE_BREAK_COMNOTI';
+$modversion['config'][$i]['name'] = 'break' . $i;
+$modversion['config'][$i]['title'] = '_MI_VIDEO_PREFERENCE_BREAK_COMNOTI';
 $modversion['config'][$i]['description'] = '';
-$modversion['config'][$i]['formtype']    = 'line_break';
-$modversion['config'][$i]['valuetype']   = 'textbox';
-$modversion['config'][$i]['default']     = 'head';
+$modversion['config'][$i]['formtype'] = 'line_break';
+$modversion['config'][$i]['valuetype'] = 'textbox';
+$modversion['config'][$i]['default'] = 'head';
 
 
 // Notifications
@@ -603,7 +603,7 @@ $modversion['notification']['lookup_func'] = 'video_notify_iteminfo';
 $modversion['notification']['category'][1]['name'] = 'global';
 $modversion['notification']['category'][1]['title'] = _MI_VIDEO_GLOBAL_NOTIFY;
 $modversion['notification']['category'][1]['description'] = _MI_VIDEO_GLOBAL_NOTIFYDSC;
-$modversion['notification']['category'][1]['subscribe_from'] = array('index.php','viewcat.php','singlefile.php');
+$modversion['notification']['category'][1]['subscribe_from'] = array('index.php', 'viewcat.php', 'singlefile.php');
 
 $modversion['notification']['category'][2]['name'] = 'category';
 $modversion['notification']['category'][2]['title'] = _MI_VIDEO_CATEGORY_NOTIFY;
