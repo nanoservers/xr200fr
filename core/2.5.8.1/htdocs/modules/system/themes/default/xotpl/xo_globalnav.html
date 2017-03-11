@@ -1,0 +1,25 @@
+<div id="subglobalnav">
+<ul>
+  <{foreach item=item from=$navitems}>
+  <li>
+   <a href="<{$item.link}>" class="menulink"><{$item.text}></a>
+   <ul>
+       <{foreach item=sub from=$item.menu}>
+       <li>
+           <{if $sub.options != 0}>
+           <a href="<{$sub.link}>" title="<{$sub.title}>"><{$sub.title}></a>
+           <ul>
+               <{foreach item=option from=$sub.options}>
+               <li><a href="<{$sub.url}><{$option.link}>"><{$option.title}></a></li>
+               <{/foreach}>
+           </ul>
+           <{else}>
+           <a href="<{$sub.link}>" title="<{$sub.title}>"><{$sub.title}></a>
+           <{/if}>
+       </li>
+       <{/foreach}>
+   </ul>
+  </li>
+  <{/foreach}>
+</ul>
+</div>

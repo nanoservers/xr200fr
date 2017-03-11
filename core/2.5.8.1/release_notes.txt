@@ -1,0 +1,92 @@
+XOOPS 2.5.8
+
+The XOOPS Development Team is pleased to announce the release of XOOPS 2.5.8. This version includes
+fixes and enhancements, security updates, PHP 7 compatibility and introduces XMF, the XOOPS Module
+Framework library.
+
+See the Changelog for more details.
+
+System requirements
+-----------------------------------
+
+PHP:
+Any PHP version >= 5.3.7 (PHP 5.5+ is strongly recommended)
+
+MySQL:
+MySQL server 5.1+ (MySQL Server 5.5+ is strongly recommended)
+
+Web server:
+Any server supporting the required PHP version (Apache highly recommended)
+
+
+Downloading XOOPS
+-----------------------------------
+
+You can get the release package from GitHub: https://github.com/XOOPS/XoopsCore25/releases
+
+
+Installing XOOPS (new installation)
+-----------------------------------
+
+    1. Copy the content of the htdocs/ folder where it can be accessed by your server
+    2. Ensure that directories:
+        - uploads/,
+        - uploads/avatars/
+        - uploads/images/
+        - uploads/ranks/
+        - uploads/smilies/
+        - xoops_lib/modules/protector/configs/
+       and files:
+        - mainfile.php and
+        - include/license.php
+       are writable by the web server
+    3. For security considerations, you are encouraged to move directories "/xoops_lib" (for XOOPS libraries) and "/xoops_data" (for XOOPS data) out of Document Root, and change the folder names.
+    4. Make the directory xoops_data/ writable; Create (if not already present) and make the directories xoops_data/caches/, xoops_data/caches/xoops_cache/, xoops_data/caches/smarty_cache/ and  xoops_data/caches/smarty_compile/ writable.
+    5. Access the folder where you installed the htdocs/ files using your web browser to launch the installation wizard
+
+
+Installing Protector in XOOPS
+-----------------------------------
+We highly recommend installing the PROTECTOR module in your XOOPS system. It adds additional security protection
+and logging capabilities to your site.
+
+
+Upgrading from previous versions
+--------------------------------
+
+Upgrading from 2.5.x:
+---------------------
+ - Make a full backup of site files and database. (We've done lots of testing, but it is always best to be safe.)
+ - It may be helpful to enable debugging in System Options - Preferences - General Settings.
+ - It is wise to turn your site off in System Options - Preferences - General Settings.
+ - Copy the contents of the distribution htdocs directory into your web root directory.
+ - Copy the contents of htdocs/xoops_lib to your relocated/renamed xoops_lib as applicable.
+ - Copy the distribution upgrade directory into your web root directory.
+ - Point your browser to http://your-site-url/upgrade/ and follow the prompts.
+ - Log in and step through any needed updates.
+ - At the end, follow the link to upgrade the system module.
+ - Also update pm, profile and protector modules if installed.
+ - Don't forget to turn your site back on, if needed.
+
+Now the system should be upgraded and running. You may want to consider updating any modules you have
+installed to their latest versions.
+
+Upgrading from versions older than 2.5.0:
+------------------------------------------
+The same basic process as described above applies. The upgrade process for 2.5.8 has been testing against
+fresh installs of XOOPS 2.3 and 2.4. By 2.3, it becomes difficult to install the distribution on a modern
+system due to the number of changes in both PHP and MySQL. This means there may be issues we may not have
+encountered in testing.
+
+If you are upgrading a older system and need help, please visit our support forums at
+http://xoops.org/modules/newbb/
+
+How you can contribute to XOOPS
+-------------------------------
+Bug reports and feature requests: https://github.com/XOOPS/XoopsCore25/issues
+Patches and enhancements: https://github.com/XOOPS/XoopsCore25/blob/master/CONTRIBUTING.md
+Documentation: https://www.gitbook.com/book/xoops/xoops-documentation-process/details
+Support Forums: http://xoops.org/modules/newbb/
+
+XOOPS Development Team
+2016

@@ -1,0 +1,84 @@
+/* $Id: fa.css 3478 2009-08-21 07:32:55Z voltan1 $ */
+body {
+	font-family: Tahoma !important;
+}
+
+table,table td,table tr,ul,li,.content,#xo-body-contain {
+	direction: rtl !important;
+	text-align: right !important;
+}
+
+input,textarea,input.formTextBox,select {
+	font: 11px tahoma !important;
+}
+
+div.confirmMsg {
+	text-align: center !important;
+	direction: rtl !important;
+}
+
+#xo-icon a,#xo-icon a:hover,#xo-module-icons a,#xo-module-icons a:hover
+	{
+	direction: rtl !important;
+	text-align: center !important;
+	float: right !important;
+}
+
+#xo-modname {
+	float: right !important;
+}
+
+#xo-logger-output td,#xo-logger-output th,#xo-logger-tabs {
+	direction: ltr !important;
+	text-align: left !important;
+}
+
+.errorMsg {
+	direction: rtl !important;
+}
+
+.xo-title,.CPbigTitle,.navigation {
+	background-position: right top !important;
+	padding-right: 40px !important;
+}
+
+#xo-breadcrumb {
+	width: 99% !important;
+}
+
+#xo-breadcrumb li {
+	margin-left: 10px !important;
+}
+
+#xo-body-icons {
+	float: right !important;
+}
+
+table.tablesorter thead tr .header,table.tablesorter thead tr .headerSortUp,table.tablesorter thead tr .headerSortDown
+	{
+	background-position: center left !important;
+}
+
+#globalnav li {
+	float: right !important;
+}
+
+#subtopbar ul li {
+	float: right !important;
+}
+
+#list {
+	float: right !important;
+}
+
+#logo {
+	float: left !important;
+}
+
+.floatleft {
+	float: right !important;
+}
+
+.floatright {
+	float: left !important;
+}

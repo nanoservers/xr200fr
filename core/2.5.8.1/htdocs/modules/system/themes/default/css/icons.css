@@ -1,0 +1,100 @@
+#xo-module-icons,#xo-icon {
+	margin: 5px auto !important;
+	text-align: center !important;
+}
+
+#xo-module-icons {
+	
+}
+
+#xo-system-icons {
+	
+}
+
+#xo-icon a {
+	display: block;
+	float: left;
+	height: 75px !important;
+	width: 60px !important;
+	vertical-align: middle;
+	text-decoration: none;
+	background-color: #f1f1f1;
+	padding: 2px;
+	margin: 3px;
+	color: #666666;
+	font-size: 1em !important;
+	font-weight: normal !important;
+	border: 1px solid #ccc;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	border-radius: 2px;
+}
+
+#xo-module-icons a {
+	display: block;
+	float: left;
+	height: 80px !important;
+	width: 80px !important;
+	vertical-align: middle;
+	text-decoration: none;
+	background-color: #f1f1f1;
+	padding: 2px 5px 1px 5px;
+	margin: 3px;
+	color: #666666;
+	font-size: 1em !important;
+	font-weight: normal !important;
+	border: 1px solid #ccc;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	border-radius: 2px;
+}
+
+#xo-icon a:hover,#xo-module-icons a:hover {
+	color: #1E90FF;
+	border-left: 1px solid #eee;
+	border-top: 1px solid #eee;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background: #f9f9f9;
+	filter: alpha(opacity =                                     80);
+	-moz-opacity: 0.8;
+	-webkit-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+	box-shadow: 0 20px 10px -10px rgba(255, 255, 255, 0.3) inset;
+	-moz-box-shadow: 0 20px 10px -10px rgba(255, 255, 255, 0.3) inset;
+	-webkit-box-shadow: 0 20px 10px -10px rgba(255, 255, 255, 0.3) inset;
+	-khtml-box-shadow: 0 20px 10px -10px rgba(255, 255, 255, 0.3) inset;
+}
+
+#xo-icon img {
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+#xo-module-icons  img {
+	margin-top: 8px;
+	margin-bottom: 8px;
+	width: 70px !important;
+}
+
+#xo-icon span,#xo-module-icons span {
+	font-size: .9em !important;
+	font-weight: normal !important;
+	line-height: 1.1em;
+	display: block;
+}
+
+#xo-icon span.uno,#xo-module-icons span.uno {
+	font-size: .9em !important;
+	font-weight: normal !important;
+}
+
+#xo-icon span.unor,#xo-module-icons span.unor {
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: underline;
+	color: #CC0000;
+}

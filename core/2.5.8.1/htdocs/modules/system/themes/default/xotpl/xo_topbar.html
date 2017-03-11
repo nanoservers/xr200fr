@@ -1,0 +1,19 @@
+<div id="subtopbar">
+  <div id="list">
+    <ul>
+	    <li><{$smarty.const._OXYGEN_MOD_ADD}></li>
+	    <{foreach item=op from=$submits}>
+	    <{if $op.title == fmcontent}><li><a title="<{$smarty.const._OXYGEN_MOD_FMCONTENT_DESC}>" href="<{xoAppUrl modules/fmcontent/admin/content.php}>"><{$smarty.const._OXYGEN_MOD_FMCONTENT}></a></li><{/if}>
+	    <{if $op.title == extgallery}><li><a title="<{$smarty.const._OXYGEN_MOD_EXTGALLERY_DESC}>" href="<{xoAppUrl modules/extgallery/admin/photo.php}>"><{$smarty.const._OXYGEN_MOD_EXTGALLERY}></a></li><{/if}>
+	    <{if $op.title == news}><li><a title="<{$smarty.const._OXYGEN_MOD_NEWS_DESC}>" href="<{xoAppUrl modules/news/admin/index.php?op=newarticle}>"><{$smarty.const._OXYGEN_MOD_NEWS}></a></li><{/if}>
+	    <{if $op.title == oledrion}><li><a title="<{$smarty.const._OXYGEN_MOD_OLEDRION_DESC}>" href="<{xoAppUrl modules/oledrion/admin/index.php?op=products}>"><{$smarty.const._OXYGEN_MOD_OLEDRION}></a></li><{/if}>
+	    <{if $op.title == TDMDownloads}><li><a title="<{$smarty.const._OXYGEN_MOD_TDMDOWNLOADS_DESC}>" href="<{xoAppUrl modules/TDMDownloads/admin/downloads.php}>"><{$smarty.const._OXYGEN_MOD_TDMDOWNLOADS}></a></li><{/if}>
+	    <{if $op.title == TDMVids}><li><a title="<{$smarty.const._OXYGEN_MOD_TDMVIDEO_DESC}>" href="<{xoAppUrl modules/TDMVids/admin/downloads.php}>"><{$smarty.const._OXYGEN_MOD_TDMVIDEO}></a></li><{/if}>
+	    <{if $op.title == profile}><li><a title="<{$smarty.const._OXYGEN_MOD_PROFILE_DESC}>" href="<{xoAppUrl modules/profile/admin/user.php}>"><{$smarty.const._OXYGEN_MOD_PROFILE}></a></li><{/if}>
+	    <{/foreach}>
+    </ul>
+  </div>
+  <div id="logo">
+    <a title="" href="<{xoAppUrl admin.php}>"><img src="<{xoAppUrl modules/system/themes/default/img/logo.png}>" alt="" /></a>
+  </div>
+</div>

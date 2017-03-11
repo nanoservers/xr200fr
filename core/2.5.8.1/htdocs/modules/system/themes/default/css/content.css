@@ -1,0 +1,238 @@
+h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	line-height: 1.2;
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1 {
+	font-size: 1.7em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.4em;
+}
+
+h4 {
+	font-size: 1.2em;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: .8em;
+}
+
+h1 {
+	clear: both;
+	background-color: transparent;
+	padding-left: .25em;
+	margin-bottom: 1em;
+}
+
+h1 a,h2 a {
+	background-color: transparent;
+	text-decoration: none;
+}
+
+h1 a:hover,h2 a:hover,h1 a:focus,h2 a:focus,h1 a:active,h2 a:active {
+	background-color: transparent;
+	text-decoration: underline;
+	outline: none;
+}
+
+h2,h3 {
+	background-color: transparent;
+	margin-bottom: .5em;
+}
+
+/* ==================== Style for images ==================== */
+img {
+	border: 0 !important;
+}
+
+img.xo-icons {
+	margin-bottom: -3px;
+}
+
+p img {
+	margin-left: .5em;
+	margin-right: .5em;
+}
+
+a img:hover,a img:focus {
+	opacity: .5;
+	filter: alpha(opacity =                 50);
+}
+
+a img {
+	border: none;
+}
+
+.imgsmile {
+	padding: 0 !important;
+	border: 0 !important;
+	margin-bottom: -2px !important;
+}
+
+img.xo-icons {
+	margin-bottom: -3px;
+}
+
+img.ui-datepicker-trigger {
+	margin: 3px;
+}
+
+/*================ Style for Quotes ================*/
+blockquote {
+	display: block;
+	width: 95%;
+	margin-right: 2em;
+	background-color: #FAFAFA;
+	padding: .5em;
+	color: #444;
+	line-height: 125%;
+	font-size: 11px;
+	text-align: justify;
+	border: 1px dashed #c2cdd6;
+}
+
+.xoopsQuote {
+	
+}
+
+q,cite {
+	font-style: italic;
+}
+
+q cite,q q {
+	font-style: normal;
+}
+
+/* delete auto dobble quotes */
+q {
+	quotes: none;
+}
+
+q:before,q:after {
+	content: ""; /* for Safari/Chrome */
+}
+
+/*================== Style for Codes =================*/
+.xoopsCode {
+	display: block;
+	width: 95%;
+	max-height: 400px;
+	overflow: auto;
+	margin: .5em;
+	padding: .5em;
+	border-width: 1px 1px 1px 3px;
+	border-color: #c2cdd6;
+	border-style: solid;
+}
+
+code {
+	
+}
+
+code,pre {
+	white-space: -pre-wrap /* for opera */;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+/* ==================== Links for Quotes ==================== */
+.xoopsQuote a:link,.xoopsQuote a:visited {
+	color: #444;
+	font-weight: normal;
+	background-color: transparent;
+}
+
+.xoopsQuote a:hover,.xoopsQuote a:active {
+	color: #1778cb;
+	background-color: transparent;
+}
+
+/* ==================== Redirect messages ==================== */
+.errorMsg,.confirmMsg {
+	background: #FEF7CB;
+	color: #333;
+	text-align: center;
+	border: 1px solid #E5C71D;
+	padding: 5px;
+	font-weight: normal;
+	font-size: 0.9em;
+	line-height: 140%;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+/* ==================== For redirect pages ====================*/
+.message,.notreload {
+	text-align: center;
+}
+
+/* ==================== General small ==================== */
+.fontSmall {
+	font-size: 10px;
+	background-color: transparent;
+}
+
+a.fontSmall {
+	color: #006699;
+}
+
+a.fontSmall:hover {
+	color: #C23030;
+	text-decoration: underline;
+}
+
+hr {
+	height: 3px;
+}
+
+ul {
+	margin: 2px;
+	padding: 2px;
+	list-style: decimal inside;
+	text-align: left;
+}
+
+li {
+	margin-left: 2px;
+	list-style: square inside;
+	color: #000;
+}
+
+a:link {
+	text-decoration: none;
+	color: #4177A6;
+	font-weight: normal;
+	background-color: transparent;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #4177A6;
+	font-weight: normal;
+	background-color: transparent;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #FF4500;
+	font-weight: normal;
+	background-color: transparent;
+}
+
+a {
+	color: #507CD3;
+	font-weight: normal;
+}
